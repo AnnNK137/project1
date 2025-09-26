@@ -1,0 +1,31 @@
+
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; /* for consistent with and height when styling */
+}
+
+/* navbar for all pages styling */
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+nav a{
+    padding-left: 20px;
+}
+
+/* INDEX.HTML STYLING */
+
+
+
+/* JOBS.HTML STYLING */
+
+
+
+/* APPLY.HTML STYLING */
+
+
+
+/* ABOUT.HTML STYLING */
