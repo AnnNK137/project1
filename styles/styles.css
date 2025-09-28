@@ -5,15 +5,36 @@
     box-sizing: border-box; /* for consistent with and height when styling */
 }
 
-/* navbar for all pages styling */
-nav{
+/* navbar on top for all pages styling */
+header nav{
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    border: 1px solid red;
 }
 
-nav a{
-    padding-left: 20px;
+header a{
+    padding-inline: 10px;
+}
+
+/* footer for all pages styling */
+footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border: 1px solid red;
+}
+
+footer ul{
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* REUASBLE ELEMENT OR CLASS NAME */
+.title, .subtitle{
+    text-align: center;
 }
 
 /* INDEX.HTML STYLING */
@@ -27,5 +48,29 @@ nav a{
 /* APPLY.HTML STYLING */
 
 
+/* ABOUT TEAM in about.html */
+.team_group{
+    text-align: center;
+}
+/* ABOUT TEAM MEMBER STYLING IN about.html */
+.member_info{
+    display: flex; /*Makes img + info side by side instead of in vertical */
+    justify-content: space-evenly; /*spacing the 2 section evenly in a line*/
+}
 
-/* ABOUT.HTML STYLING */
+.member_desc{
+    width: 400px; /* set specific length for desc so everything looks even */
+}
+
+.info_section{
+    margin-block: 1.5rem; /*spacing between each set of info*/
+}
+
+/* member interest table in about.html */
+#member_interest{
+    display: flex;
+    flex-direction: column; /*both of these are for better spacing (removing them for comparasion)*/
+}
+
+
+
