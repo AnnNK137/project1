@@ -12,25 +12,10 @@
     --blue-hightlight:  rgb(60, 77, 164);;
 } /* use var(--color) instead of copying color codes over and over again*/
 
-button{
-    border: 2px solid var(--black);
-    border-radius: 10px;
-    background-color: var(--light-beige);
-    padding: 10px;
-    margin: 10px;
-}
 
-button:hover{
-    background-color: var(--dark-beige);
-    transform: scale();
-}
 
-button a{
-    text-decoration: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 400;
-    color: var(--black);
-}
+/* INDEX.HTML STYLING */
+
 
 
 /* INDEX.HTML HERO SECTION STYLING */
@@ -134,3 +119,14 @@ button a{
 .stat_group .icon{
     font-size: 55px;
 }
+
+
+/* jobs.HTML STYLING */
+
+
+
+/* apply.HTML STYLING */
+
+
+
+/* About.HTML STYLING */

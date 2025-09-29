@@ -10,6 +10,7 @@
     --blue: #123458;
     --light-beige: #f1efec;
     --dark-beige: #D4C9BE;
+    --blue-hightlight:  rgb(60, 77, 164);
 } /* use var(--color) instead of copying color codes over and over again*/
 
 
@@ -18,14 +19,29 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/*  REUSABLE ELEMENTS   */
 button{
     border: 2px solid var(--black);
     border-radius: 10px;
     background-color: var(--light-beige);
     padding: 10px;
     margin: 10px;
+}
+
+button:hover{
+    background-color: var(--dark-beige);
+    transform: scale();
+}
+
+button a{
+    text-decoration: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 400;
+    color: var(--black);
+}
+
+.title, .subtitle{
+    text-align: center;
 }
 
 /* Header */
@@ -122,37 +138,16 @@ footer a:hover{
     text-underline-offset: 3px;
     transition: all 0.3s ease;
 }
-/* REUASBLE ELEMENT OR CLASS NAME */
-.title, .subtitle{
-    text-align: center;
-}
 
-/* INDEX.HTML HERO SECTION STYLING */
-.hero_section{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    text-align: center;
-    min-height: 75vh;
-    background-image: url(/images/picture_placeholder.png);   
-}
+/* INDEX.HTML STYLING */
 
-.hero_section article{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.hero_section .btn_list{
-    display: flex;
-    flex-direction: column;
-}
+/* jobs.HTML STYLING */
 
-.hero_sect_info{
-    margin: 3%;
-}
 
-.hero_section aside{
-    max-width: 400px;
-}
 
+/* apply.HTML STYLING */
+
+
+
+/* About.HTML STYLING */
