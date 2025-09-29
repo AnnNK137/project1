@@ -47,30 +47,31 @@ footer ul{
 
 /* APPLY.HTML STYLING */
 
-
-/* ABOUT TEAM in about.html */
+/* ABOUT.HTML STYLING */
+/* About team in about.html */
 .team_group{
     text-align: center;
 }
-/* ABOUT TEAM MEMBER STYLING IN about.html */
-.member_info{
-    display: flex; /*Makes img + info side by side instead of in vertical */
-    justify-content: space-evenly; /*spacing the 2 section evenly in a line*/
-}
 
-.member_desc{
-    width: 400px; /* set specific length for desc so everything looks even */
-}
+/* About our team members in about.html */
+/* .member_info{ */
+    /* display: flex; Makes img + info side by side instead of in vertical */
+    /* justify-content: space-evenly; spacing the 2 section evenly in a line */
+/* } */
 
-.info_section{
-    margin-block: 1.5rem; /*spacing between each set of info*/
-}
+/* .member_desc{ */
+    /* width: 400px; set specific length for desc so everything looks even */
+/* } */
+
+/* .info_section{ */
+    /* margin-block: 1.5rem; spacing between each set of info */
+/* } */
 
 /* member interest table in about.html */
-#member_interest{
-    display: flex;
-    flex-direction: column; /*both of these are for better spacing (removing them for comparasion)*/
-}
+/* #member_interest{ */
+    /* display: flex; */
+    /* flex-direction: column; both of these are for better spacing (removing them for comparasion) */
+/* } */ 
 
 
 
