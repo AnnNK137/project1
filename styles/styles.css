@@ -37,6 +37,34 @@ footer ul{
     text-align: center;
 }
 
+/* INDEX.HTML HERO SECTION STYLING */
+.hero_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    min-height: 75vh;
+    background-image: url(/images/picture_placeholder.png);   
+}
+
+.hero_section article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero_section .btn_list{
+    display: flex;
+    flex-direction: column;
+}
+
+.hero_sect_info{
+    margin: 3%;
+}
+
+.hero_section aside{
+    max-width: 400px;
+}
 /* INDEX.HTML STYLING */
 
 
