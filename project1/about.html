@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
 
-    <link rel="stylesheet" href="/styles/styles.css">
+    <!-- <link rel="stylesheet" href="/styles/styles.css"> -->
+    <link rel="stylesheet" href="/styles/aboutpage.css">
 </head>
 <body>
     <!-- navigation bar (same on all pages) -->
      <header>
          <nav>
-             <a href="index.html" class="brand_logo">INSERT BRAND NAME</a>
+             <a href="index.html" class="brand_logo">brand name</a>
              <section class="nav_items">
                  <a href="index.html">Home</a>
                  <a href="jobs.html">Job Info</a>
@@ -23,145 +24,113 @@
 
     <!-- MAIN CONTENT -->
     <section class="team_group">
-        <h1 class="title">About our team</h1>
-        <h3 class="subtitle">We are "3Ners"</h3>
-        <figure>
-            <img src="/images/picture_placeholder.png" width="400x" alt="our group picture">
-            <figcaption>
-                Our team photo
-            </figcaption>
-        </figure>
+        <div class="about_group_background">
+            <p>We are</p>
+            <h1>3Ners</h1>
+        </div>
+        <div class="about_team">
+            <h1 class="about_team_title">About our team</h1>
+            <hr class="about_team_line">
 
-        <br> 
-        
-        <article>
-            <p>Our team share the same class (COS10026.2) on Friday from 2PM to 5PM</p>
-            <p>Our tutor is Miss Linda</p>
-            <p>We have been working together for weeks to work on this project</p>
-        </article>
+            <article>
+                <p>Our team share the same class (COS10026.2) on Friday from 2PM to 5PM</p>
+                <p>Our tutor is Miss Linda</p>
+                <p>We have been working together for weeks to work on this project</p>
+            </article>
+        </div>
     </section>
 
-     <section class="team_members">
-        <h1 class="title">About our Team members</h1>
+    <section class="team_members">
+        <h1 class="team_members_title">About our Team members</h1>
+        <hr class="about_members_line">
+
         <!-- TEAMATE 1 INFO - PMN -->
         <article class="member_info" id="team_member_1">
-            <figure>
-                <img src="/images/member_potrait_example.png" width="150px" alt="image of member 1">
-            </figure>
-            
             <section class="member_desc">
+                <figure>
+                    <img src="/images/member_potrait_example.png" alt="image of member 1">
+                </figure>
+
                 <section class="info_section">
-                    <h4 class="subtitle">Student Information</h4>
+                    <h4 class="subtitle">Pham Minh Ngoc</h4>
                     <ul>
-                        <li>Name: Phạm Minh Ngọc</li>
                         <li>Student ID: SWH02971</li>
-                        <li>Major: idk i forgor :(</li>
+                        <li>Major: IOT</li>
+                        <li>Interest: Cleaning, listening to music</li>
+                        <hr class="member_desc_line">
+                        <li>Contribution: Manage <a href="jobs.html">Position Descriptions page</a>
+                        and styling for <a href="about.html">About Page</a> </li>
                     </ul>
-                </section>
-                 
-                <section class="info_section">
-                    <h4 class="subtitle">Contribution</h4>
-                    <p>Manage <a href="jobs.html">Position Descriptions page</a>
-                        and styling for <a href="about.html">About Page</a></p>
                 </section>
             </section>
         </article>
 
         <!-- TEAMATE 2 INFO - VTNK -->
         <article class="member_info" id="team_member_2">
-            <figure>
-                <img src="/images/member_potrait_example.png" width="150px" alt="image of member 1">
-            </figure>
-            
             <section class="member_desc">
                 <section class="info_section">
-                    <h4 class="subtitle">Student Information</h4>
+                    <h4 class="subtitle">Vuong Thi Ngoc Khanh</h4>
                     <ul>
-                        <li>Name: Vương Thị Ngọc Khánh</li>
                         <li>Student ID: SWH03067</li>
-                        <li>Major: idk i forgor :(</li>
+                        <li>Major: Software Development</li>
+                        <li>Interest: Watching films, traveling</li>
+                        <hr class="member_desc_line">
+                        <li>Contribution: Manage <a href="apply.html">Application form page</a> </li>
                     </ul>
                 </section>
-                 
-                <section class="info_section">
-                    <h4 class="subtitle">Contribution</h4>
-                    <p>Manage <a href="apply.html">Application form page</a></p>
-                </section>
+
+                <figure>
+                    <img src="/images/member_potrait_example.png" alt="image of member 2">
+                </figure>
             </section>
         </article>
 
         <!-- TEAMATE 3 INFO - NKA -->
         <article class="member_info" id="team_member_3">
-            <figure>
-                <img src="/images/member_potrait_example.png" width="150px" alt="image of member 1">
-            </figure>
+        
             
             <section class="member_desc">
+                <figure>
+                    <img src="/images/member_potrait_example.png" alt="image of member 1">
+                </figure>
+
                 <section class="info_section">
-                    <h4 class="subtitle">Student Information</h4>
+                    <h4 class="subtitle">Nguyen Khanh An</h4>
                     <ul>
-                        <li>Name: Nguyễn Khánh An</li>
                         <li>Student ID: SWH03020</li>
                         <li>Major: Software Development</li>
+                        <li>Interest: Playing Roblox, design UI/UX</li>
+                        <hr class="member_desc_line">
+                        <li>Contribution: Manage <a href="index.html">Home page</a>
+                        and layout for <a href="about.html">About Page</a> </li>
                     </ul>
-                </section>
-                 
-                <section class="info_section">
-                    <h4 class="subtitle">Contribution</h4>
-                    <p>Manage <a href="index.html">Home page</a>
-                        and layout for <a href="about.html">About Page</a></p>
                 </section>
             </section>
         </article> 
     </section>
 
-    <section id="member_interest">
-        <h2 class="title">Our interests</h2>
-         <table> <!--Using table for interest is required -->
-            <thead>
-                <tr>
-                <th></th>
-                <th>Member 1</th>
-                <th>Member 2</th>
-                <th>Member 3</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>Interest 1</td>
-                <td>Cleaning</td>
-                <td>Watching films</td>
-                <td>Playing Roblox</td>
-                </tr>
-                <tr>
-                <td>Interest 2</td>
-                <td>Exploring ideas</td>
-                <td>Traveling</td>
-                <td>Design UI/UX</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
     <!-- FOOTER USE FOR ALL PAGES -->
     <footer>
-        <address>
-            <h3 class="title">Contact us</h3>
-            <ul>
-                <li>Email: <a href="#">info@companyname.com.au</a></li>
-                <li>Jira: <a href="https://cos10026-3ners.atlassian.net/jira/software/projects/SCRUM/boards/1">COS10026 - Group 1</a></li>
-                <li>Github: <a href="https://github.com/AnnNK137/project1"></a>Project part 1</li>
-            </ul>
-        </address>
-        <nav>
-            <h3 class="title">Navigation</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Job Info</a></li>
-                <li><a href="apply.html">Applying</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
+        <h2 class="footer_brand_name">Brand Name</h2> <br> 
+        <section>
+            <div>
+                <h4 class="footer_title">Contact us</h4>
+                <hr class="footer_line">
+                <p>Email: <a href="#">info@companyname.com.au</a></p>
+                <p>Jira: <a href="https://cos10026-3ners.atlassian.net/jira/software/projects/SCRUM/boards/1">COS10026 - Group 1</a></p>
+            </div>
+            <div>
+                <h4 class="footer_title">Navigation</h4>
+                <hr class="footer_line">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Job Info</a></li>
+                    <li><a href="apply.html">Applying</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </section>
+        
     </footer>
 </body>
 </html>
