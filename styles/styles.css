@@ -5,33 +5,114 @@
     box-sizing: border-box; /* for consistent with and height when styling */
 }
 
+:root{
+    --black: #030303;
+    --blue: #123458;
+    --light-beige: #f1efec;
+    --dark-beige: #D4C9BE;
+} /* use var(--color) instead of copying color codes over and over again*/
+
+
 /* navbar on top for all pages styling */
-header nav{
+body {
+    background-color: var(--light-beige);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Header */
+nav {
+    width: 100%;
+    background-color: var(--black);
+    padding: 10px 10px;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-    border: 1px solid red;
 }
 
-header a{
-    padding-inline: 10px;
-}
-
-/* footer for all pages styling */
-footer{
+.brand_logo {  
+    background-color: var(--light-beige);  
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px 15px;
+    color: black;
+    font-size: 12px;
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    border: 1px solid red;
-}
-
-footer ul{
-    height: 90px;
-    display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
+.nav_items {
+    display: flex;
+    gap: 10px;
+}
+
+.nav_items a {
+    text-decoration: none;
+    background-color: var(--light-beige);
+    color: black;
+    padding: 15px; 
+    border-radius: 20px;
+    font-weight: bold;
+}
+.nav_items a:hover {
+    background-color: var(--dark-beige); 
+    transform: scale(1.05);
+}
+
+
+/* footer for all pages styling */
+footer {
+    background: linear-gradient(#f1efec, #123458 , #030303 70%);
+    color:var(--light-beige);
+    padding: 40px;
+    padding-top: 100px;
+}
+
+.footer_brand_name {
+    font-size: 50px;
+}
+
+footer section {
+    display: flex;
+    justify-content: left;
+}
+
+footer section div {
+    width: 100%;
+}
+
+.footer_title {
+    font-size: 30px;
+}
+
+.footer_line {
+    width: 70px;
+    height: 2px;
+    margin: 0 0 10px;
+    margin-top: 10px;
+    color: var(--light-beige);
+    background-color: var(--light-beige);
+}
+
+footer p {
+    font-size: 20px;
+}
+
+footer ul {
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+footer a {
+    color: var(--light-beige);
+    text-decoration: none;
+}
+footer a:hover{
+    color: var(--dark-beige);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: all 0.3s ease;
+}
 /* REUASBLE ELEMENT OR CLASS NAME */
 .title, .subtitle{
     text-align: center;
@@ -65,41 +146,4 @@ footer ul{
 .hero_section aside{
     max-width: 400px;
 }
-/* INDEX.HTML STYLING */
-
-
-
-/* JOBS.HTML STYLING */
-
-
-
-/* APPLY.HTML STYLING */
-
-/* ABOUT.HTML STYLING */
-/* About team in about.html */
-.team_group{
-    text-align: center;
-}
-
-/* About our team members in about.html */
-/* .member_info{ */
-    /* display: flex; Makes img + info side by side instead of in vertical */
-    /* justify-content: space-evenly; spacing the 2 section evenly in a line */
-/* } */
-
-/* .member_desc{ */
-    /* width: 400px; set specific length for desc so everything looks even */
-/* } */
-
-/* .info_section{ */
-    /* margin-block: 1.5rem; spacing between each set of info */
-/* } */
-
-/* member interest table in about.html */
-/* #member_interest{ */
-    /* display: flex; */
-    /* flex-direction: column; both of these are for better spacing (removing them for comparasion) */
-/* } */ 
-
-
 

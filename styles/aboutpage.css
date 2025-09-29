@@ -1,60 +1,10 @@
-/* Color:
-Black: #030303
-Blue: #123458
-Light Beige: #f1efec 
-Dark Beige (for hover): #D4C9BE */
 
-/* Reset default margin and padding */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-    background-color: #f1efec;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-/* Header */
-nav {
-    width: 100%;
-    background-color: #030303;
-    padding: 10px 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.brand_logo {  
-    background-color: #f1efec;  
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    padding: 10px 15px;
-    color: black;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.nav_items {
-    display: flex;
-    gap: 10px;
-}
-
-.nav_items a {
-    text-decoration: none;
-    background-color: #f1efec;
-    color: black;
-    padding: 15px; 
-    border-radius: 20px;
-    font-weight: bold;
-}
-.nav_items a:hover {
-    background-color: #D4C9BE; 
-    transform: scale(1.05);
-}
+:root{
+    --black: #030303;
+    --blue: #123458;
+    --light-beige: #f1efec;
+    --dark-beige: #D4C9BE;
+} /* use var(--color) instead of copying color codes over and over again*/
 
 /* INTRODUCTION in about.html */
 .team_group {
@@ -77,9 +27,9 @@ nav {
 /* ABOUT TEAM in about.html */
 .about_team {
     padding: 100px;
-    background-color: #123458;
+    background-color: var(--blue);
     background: linear-gradient(#030303 2%,#123458 30%,#f1efec);
-    color:#f1efec;
+    color: var(--light-beige);
 }
 
 .about_team_title {
@@ -90,14 +40,14 @@ nav {
     width: 300px;
     height: 2px;
     margin: 10px auto;
-    color:#f1efec;
-    background-color: #f1efec;
+    color: var(--light-beige);
+    background-color:  var(--light-beige);
 }
 
 .about_team article {
     padding-top: 10px;
     font-size: 20px;
-    text-shadow: 1px 1px 3px #123458;
+    text-shadow: 1px 1px 3px var(--blue);
 }
 
 /* ABOUT TEAM MEMBER in about.html */
@@ -112,8 +62,8 @@ nav {
     height: 2.5px;
     margin: 10px auto;
     border: none;
-    color:#123458;
-    background-color:#123458;
+    color: var(--blue);
+    background-color: var(--blue);
 }
 
 .member_info a {
@@ -136,8 +86,8 @@ nav {
     width: 250px;
     height: 250px;
     border-radius: 100%;
-    border: 5px solid #123458;
-    box-shadow: 0 0 10px #D4C9BE;
+    border: 5px solid var(--blue);
+    box-shadow: 0 0 10px var(--dark-beige);
 }
 
 .info_section{
@@ -167,60 +117,7 @@ nav {
     height: 1.5px;
     margin: 10px;
     border: none;
-    color:#123458;
-    background-color:#123458;
+    color: var(--blue);
+    background-color: var(--blue);
 }
 
-/* FOOTER in about.html */
-footer {
-    background: linear-gradient(#f1efec, #123458 , #030303 70%);
-    color:#f1efec;
-    padding: 40px;
-    padding-top: 100px;
-}
-
-.footer_brand_name {
-    font-size: 50px;
-}
-
-footer section {
-    display: flex;
-    justify-content: left;
-}
-
-footer section div {
-    width: 100%;
-}
-
-.footer_title {
-    font-size: 30px;
-}
-
-.footer_line {
-    width: 70px;
-    height: 2px;
-    margin: 0 0 10px;
-    margin-top: 10px;
-    color:#f1efec;
-    background-color: #f1efec;
-}
-
-footer p {
-    font-size: 20px;
-}
-
-footer ul {
-    padding-left: 20px;
-    font-size: 20px;
-}
-
-footer a {
-    color:#f1efec;
-    text-decoration: none;
-}
-footer a:hover{
-    color: #D4C9BE;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    transition: all 0.3s ease;
-}
