@@ -116,6 +116,10 @@ nav {
     background-color:#123458;
 }
 
+.member_info a {
+    color:blue;
+}
+
 .member_info {
     margin: 50px 0;
 }
