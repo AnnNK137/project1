@@ -13,10 +13,19 @@
 } /* use var(--color) instead of copying color codes over and over again*/
 
 
-/* navbar on top for all pages styling */
 body {
     background-color: var(--light-beige);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+button{
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    background-color: var(--light-beige);
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
 }
 
 /* Header */
