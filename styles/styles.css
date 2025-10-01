@@ -20,12 +20,47 @@ body {
 }
 
 /*  REUSABLE ELEMENTS   */
+.center{
+    text-align: center;
+}
+
+.flex_center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colum{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.reverse_row{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.evenly_spacing{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.visual_box_border{
+    border: 1px solid red;
+}
+
 button{
     border: 2px solid var(--black);
     border-radius: 10px;
     background-color: var(--light-beige);
     padding: 10px;
     margin: 10px;
+    font-size: 18px;
 }
 
 button:hover{
@@ -140,105 +175,145 @@ footer a:hover{
 }
 
 /* INDEX.HTML STYLING */
-.hero_section{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    text-align: center;
+.hp_hero_sect_info, .hp_main_content {
+    font-size: clamp(1rem, 2vw, 1.25rem); /* scales with screen width for more responsive*/
+}
+
+/* Index.html HERO SECTION */
+.hp_hero_section {
     min-height: 80vh;
     background: linear-gradient(to bottom, rgba(255,255,255,0) 70%, var(--light-beige) 100%), url("/images/picture_placeholder.png") center/cover no-repeat;  
     position: relative;
-}
-
-.hero_section article{
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding: 1rem;
 }
 
-.hero_section .btn_list{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.hero_sect_info{
+.hp_hero_sect_info {
     margin: 3%;
-    font-size: 20px;
-}
-
-.hero_sect_info{
     max-width: 700px;
 }
 
-.scroll_down {
-  display: inline-block;
-  transition: transform 0.3s ease;
-  animation: float 1.5s ease-in-out infinite;
+/* Scroll icon */
+.hp_scroll_down_icon {
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    animation: float 1.5s ease-in-out infinite;
+    cursor: default;
 }
 
 @keyframes float {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
 
-/* basic styling for each info SECTION */
-.main_content{
+/*Index.html basic styling for each info SECTION */
+.hp_main_content {
     margin: 5%;
+    cursor: default;
 }
 
-.brand_info{
-    margin-bottom: 6%;
+.hp_brand_info {
+    margin-block: 4rem;
 }
 
-.title_number{
-    font-size: 50px;
+.hp_title_number {
+    font-size: clamp(2rem, 5vw, 3rem); /* responsive headline */
     color: var(--blue-hightlight);
     position: relative;
 }
 
-.subtitle_number{
+.hp_subtitle_number {
     color: var(--black);
 }
 
-.desc{
-    display: flex;
-    align-items: center;
+.hp_desc {
     margin-top: 2%;
 }
 
-.desc h2, p{
+.hp_desc h2, p {
     margin-inline: 4%;
 }
 
-/* STAT GROUP STLYING */
-.stat{
-    display: flex;
-    justify-content: space-evenly;
-    padding: 3%;
-    margin-block: 3%;
-    border: 5px solid var(--blue);
+/* STAT GROUP STYLING */
+.hp_stat{
+    color: var(--blue);
+    padding: 2rem;
+    margin-top: 3rem;
     border-radius: 10px;
+    text-align: center;
 }
 
-.stat_group{
-    display: flex;
-    flex-direction: row;
-}
-
-.stat_group .stat_content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.stat_content h4{
+.hp_stat_content h4 {
     color: var(--blue-hightlight);
 }
 
-.stat_group .icon{
-    font-size: 55px;
+.hp_stat_group .hp_stat_icon {
+    font-size: 3rem;
+
+}
+
+/* Index.html VALUES section*/
+#hp_values_list { /* VALUES GRID 2x3 */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.hp_values {
+    margin: 5%;
+}
+
+.hp_values_icon {
+    font-size: 2rem;
+}
+
+/* Index.html Vacancies section */
+.hp_vacancies{
+    background-color: var(--blue);
+    padding: 5%;
+    margin-block: 2%;
+    color: var(--light-beige);
+    border-radius: 10px;
+}
+
+#hp_jobs_link{
+    color: var(--blue-hightlight);
+    text-decoration: none;
+}
+
+/* Index.html responsive*/
+@media (max-width: 768px) {
+    .hp_hero_section {
+        text-align: center;
+        justify-content: center;
+    }
+    .hp_hero_sect_info {
+        margin: auto;
+    }
+    .hp_desc h2, p {
+        margin-inline: 1rem;
+    }
+
+    #hp_values_list { /* VALUES GRID */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .hp_title_number {
+        font-size: 1.8rem;
+    }
+    .hp_stat {
+        padding: 1rem;
+    }
+    .hp_values_icon {
+        font-size: 1.5rem;
+    }
 }
 
 
