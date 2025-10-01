@@ -1,23 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply</title>
-
-    <link rel="stylesheet" href="/styles/styles.css">
+<meta charset="UTF-8">
+<meta charset="viewport", content="width=device-width", initial scale ="1.0">
+<meta name="keyword" content="job, application">
+<title>IT JOB RECRUITMENT</title>
 </head>
 <body>
-    <nav>
-        <p class="brand_logo">INSERT BRAND NAME</p>
-        <div class="nav_items">
-            <a href="index.html">Home</a>
-            <a href="jobs.html">Job Info</a>
-            <a href="apply.html">Applying</a>
-            <a href="about.html">About</a>
-        </div>
-    </nav>
+    <!-- navigation bar (same on all pages) -->
+     <header>
+         <nav>
+             <a href="index.html" class="brand_logo">brand name</a>
+             <section class="nav_items">
+                 <a href="index.html">Home</a>
+                 <a href="jobs.html">Job Info</a>
+                 <a href="apply.html">Applying</a>
+                 <a href="about.html">About</a>
+             </section>
+         </nav>
+     </header>
 
-    <p>This is apply.html</p>
+
+     <!-- MAIN CONTENT -->
+  <link rel="stylesheet" href="/styles/styles.css">
+  <form action="submit" method="post">
+    <fieldset>
+      <h1>JOB APPLICATION FORM</h1>
+      <h3>Fill out our IT Job Application Form to share your skills, experience, and qualifications.Upload your resume and any relevant documents to help our team match you with the right IT role.</h3>
+      <h3>Start your journey with us today and take the first step towards an exciting career in IT!</h3>
+<form action="submit" method="post">
+  <fieldset>
+    <legend>Personal Information</legend>
+  <label for="fullname">Full Name</label>
+  <input type="text"id="fullname" required>
+   <label for="address">Address</label>
+   <input type="text" id="Givenname" required>
+   <p>
+   <label for="birth">Birth</label>
+   <input type="date" id="birth" required>
+   <label for="sex">Sex</label>
+   <select name="tutor" id="tutor" required>
+  <option value="">Please select</option>
+  <option value="">Male</option>
+  <option value="">Female</option>
+  <option value="">Undecided</option>
+</select>
+   </p>
+   <p>
+   <label for="phonenumber">Phone Number</label>
+   <input type="text" id="phonenumber" required pattern="\d{1,10}">
+   <label for="email">Email Address</label>
+   <input type="text" id="email" required>
+   </p>
+  </fieldset>
+</form>
+<form action="submit" method="post">
+  <fieldset>
+    <legend>Education</legend>
+    <label for="University">University/Institution</label>
+    <input type=""id="University" required>
+    <label for="Degree">Degree/Certification</label>
+    <input type="text" id="Degree" required>
+    <label for="year">Year Completed</label>
+    <input type="date" id="year" required>
+  </p>
+</fieldset>
+</form>
+<form action="submit" method="post">
+  <fieldset>
+    <legend>Skills & Qualifications</legend>
+  <label for="subject">HTML</label>
+  <input type="checkbox" id="html" required>
+  <label for="subject">CSS</label>
+  <input type="checkbox" id="CSS" required>
+  <label for="subject">JavaScript</label>
+  <input type="checkbox" id="JavaScript" required>
+  <label for="subject">PHP</label>
+  <input type="checkbox" id="PHP" required>
+  <label for="subject">My SQL</label>
+  <input type="checkbox" id="MySQL" required>  
+<br>
+</p>
+ <label for="description">List relevant skills, certifications or qualifications:</label>
+ <br>
+<textarea id="description" name="description" rows="10" cols="100"  placeholder="Put down your relevant skills, certifications and qualifications here..."required></textarea>
+</fieldset>
+</form>
+<form action="submit" method="post">
+<fieldset>
+  <legend>Recent Employment History</legend>
+  <p>
+    <label for="company">Company Name</label>
+    <input type=""id="University" required>
+    <label for="position">Position Held</label>
+    <input type="text" id="Degree" required>
+    <label for="emdate">Employment Dates</label>
+    <input type="date" id="emdate" required>
+  </p>  
+  <p>
+    <label for="company">Company Name</label>
+    <input type=""id="University">
+    <label for="position">Position Held</label>
+    <input type="text" id="Degree">
+    <label for="emdate">Employment Dates</label>
+    <input type="date" id="emdate">
+  </p>  
+  <p>
+    <label for="company">Company Name</label>
+    <input type=""id="University">
+    <label for="position">Position Held</label>
+    <input type="text" id="Degree">
+    <label for="emdate">Employment Dates</label>
+    <input type="date" id="emdate">
+  </p>  
+</fieldset>
+<fieldset>
+  <legend>Recent Employment History</legend>
+  <p>
+    <label for="reference">Reference Name</label>
+    <input type=""id="reference" required>
+    <label for="relationship">Relationships</label>
+    <input type="text" id="relationship" required>
+    <label for="phonenumber">Phone Number</label>
+    <input type="date" id="phonenumber" required>
+  </p>  
+</fieldset>
+</form>
+<p>
+<input type="checkbox" id="responsibility" required>  
+<label for="responsibility"><strong>I certify that the information provided in this application is accurate and complete. I understand that providing fasle information may result in disqualification from consideration for employment</strong></label>  
+</p>
+<form action="submit" method="post">
+  <button type="submit">Submit</button>
+  <button>Reset Form</button>
+</form>
+</fieldset>
+</form>
+
+  <!-- FOOTER USE FOR ALL PAGES -->
+    <footer>
+        <h2 class="footer_brand_name">Brand Name</h2> <br> 
+        <section>
+            <div>
+                <h4 class="footer_title">Contact us</h4>
+                <hr class="footer_line">
+                <p>Email: <a href="#">info@companyname.com.au</a></p>
+                <p>Jira: <a href="https://cos10026-3ners.atlassian.net/jira/software/projects/SCRUM/boards/1">COS10026 - Group 1</a></p>
+            </div>
+            <div>
+                <h4 class="footer_title">Navigation</h4>
+                <hr class="footer_line">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Job Info</a></li>
+                    <li><a href="apply.html">Applying</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </section>
+        
+    </footer>
+
 </body>
 </html>
