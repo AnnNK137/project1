@@ -54,29 +54,9 @@ body {
     border: 1px solid red;
 }
 
-button{
-    border: 2px solid var(--black);
-    border-radius: 10px;
-    background-color: var(--light-beige);
-    padding: 10px;
-    margin: 10px;
-    font-size: 18px;
-}
-
-button:hover{
-    background-color: var(--dark-beige);
-    transform: scale();
-}
-
-button a{
-    text-decoration: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 400;
-    color: var(--black);
-}
-
-.title, .subtitle{
+.title{
     text-align: center;
+    font-size: 40px;
 }
 
 /* Header */
@@ -177,6 +157,24 @@ footer a:hover{
 /* INDEX.HTML STYLING */
 .hp_hero_sect_info, .hp_main_content {
     font-size: clamp(1rem, 2vw, 1.25rem); /* scales with screen width for more responsive*/
+}
+
+.btn{
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    background-color: var(--light-beige);
+    padding: 10px;
+    margin: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+    color: var(--black);
+}
+
+.btn:hover{
+    background-color: var(--dark-beige);
+    transform: scale();
 }
 
 /* Index.html HERO SECTION */
@@ -281,6 +279,11 @@ footer a:hover{
     border-radius: 10px;
 }
 
+.hp_vacancies img{
+    width: 150px;
+    height: 150px;
+}
+
 #hp_jobs_link{
     color: var(--blue-hightlight);
     text-decoration: none;
@@ -298,7 +301,9 @@ footer a:hover{
     .hp_desc h2, p {
         margin-inline: 1rem;
     }
-
+    .hp_longer_desc{
+        max-width: 70%;
+    }
     #hp_values_list { /* VALUES GRID */
     display: grid;
     grid-template-columns: repeat(2, 1fr); }
