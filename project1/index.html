@@ -24,31 +24,40 @@
 
      <!-- hero section/ introduction to company -->
      <div class="hp_hero_section center flex_center colum evenly_spacing">
-         <section> <!-- Herosection title -->
+        <section> <!-- Herosection title -->
             <h2 class="title">COMPANY BRAND NAME</h2>
             <h2 class="subtitle">Opening for applicants</h2>
         </section>
 
         <!-- hero section desc -->
-            <div class="hp_hero_sect_info">
-                <p class="desc">
-                    We're an innovative IT company driven by passion and creativity. 
-                    Our mission is to build smarter solutions for businesses 
-                    while fostering a workplace where talent thrives. 
-                    Discover career opportunities with us and take the next step 
-                    toward shaping the future of technology.
-                </p>
+        <section class="hp_hero_sect_info">
+            <h4 class="desc">
+                We're an innovative IT company driven by passion and creativity. 
+                Our mission is to build smarter solutions for businesses 
+                while fostering a workplace where talent thrives. 
+                Discover career opportunities with us and take the next step 
+                toward shaping the future of technology.
+            </h4>
 
-                <div class="btn_list center flex_center">
-                    <a class="btn" href="jobs.html">View Vacancies &#9654;</a>
-                    <a class="btn" href="about.html">About Us &#9654;</a>
-                </div>
-            </div>  <!-- End of Herosection Desc -->
+            <div class="btn_list center flex_center">
+                <a class="btn" href="jobs.html">Vacancies &#9654;</a>
+                <a class="btn" href="about.html">About Us &#9654;</a>
+            </div>
+
+                    <!-- SOCIAL MEDIA LINKS -->
+            <figure class="center flex_center row">
+                <a href="#"><img class="hp_hs_icons" src="/images/github.png" alt="github icon"></a>
+                <a href="#"><img class="hp_hs_icons" src="/images/jira.png" alt="jira icon"></a>
+                <a href="#"><img class="hp_hs_icons" src="/images/Facebook.png" alt="facebook icon"></a>
+                <a href="#"><img class="hp_hs_icons" src="/images/Instagram.png" alt="instagram icon"></a>
+                <a href="#"><img class="hp_hs_icons" src="/images/linkedin.png" alt="linkedin icon"></a>
+
+            </figure>
+        </section>  <!-- End of Herosection Desc -->
 
         <!-- A scroll down signal for hero section to read main content -->
-        <div class="hp_scroll_down_icon">
-            <p>Scroll down</p>
-            <span>v</span>
+        <div class="hp_scroll_down_icon flex_center">
+            <img class="hp_icons" src="/images/Scroll-down.png" alt="scroll down">
         </div>
 
         
@@ -58,12 +67,8 @@
     <div class="hp_main_content" >
 
         <!-- About Company section -->
-        <div class="hp_brand_info" id="hp_about">
-            <section>
-                <h2 class="hp_title_number" id="main_content">01.
-                    <span class="hp_subtitle_number">Who we are</span>
-                </h2>
-            </section>
+        <section class="hp_brand_info" id="hp_about">
+            <h2 class="hp_title_number" id="main_content">01. Who we are</h2>
 
             <!-- About DESC -->
             <article class="hp_desc row flex_center">
@@ -79,11 +84,16 @@
                 </p>
             </article>  <!-- End of description -->
 
+            <!-- IMAGES -->
+            <figure class="center">
+                <img class="hp_about_img" src="/images/office_room.jpeg" alt="images of company">
+            </figure>
+
             <!-- About section:  EXPERICENES STAT -->
             <section class="hp_stat row evenly_spacing">
                 <!-- YEARS OF EXPERIENCES -->
                 <figure class="hp_stat_group row flex_center" >
-                    <h2 class="hp_stat_icon">⌚</h2>
+                    <img class="hp_icons" src="/images/clock.png" alt="icons">
                     <figcaption class="hp_stat_content">
                         <h4>Year of Experiences</h4>
                         <h2>5+</h2>
@@ -92,7 +102,7 @@
 
                 <!-- PROJECT DELIVERED -->
                 <figure class="hp_stat_group row flex_center" >
-                    <h2 class="hp_stat_icon">💻</h2>
+                    <img class="hp_icons" src="/images/project.png" alt="icons">
                     <figcaption class="hp_stat_content">
                         <h4>Project Delivered</h4>
                         <h2>45+</h2>
@@ -101,7 +111,7 @@
 
                 <!-- HAPPY CLIENTS -->
                 <figure class="hp_stat_group row flex_center" >
-                    <h2 class="hp_stat_icon">❤️</h2>
+                    <img class="hp_icons" src="/images/heart.png" alt="icons">
                        <figcaption class="hp_stat_content">
                         <h4>Happy clients</h4>
                         <h2>30+</h2>
@@ -109,15 +119,11 @@
                 </figure>
             </section>
 
-        </div> <!-- End of About section -->
+        </section> <!-- End of About section -->
 
         <!-- OUR VALUE section-->
-        <div class="hp_brand_info" id="hp_value">
-            <section> <!-- Title -->
-                <h2 class="hp_title_number">02.
-                    <span class="hp_subtitle_number">Our Values</span>
-                </h2>
-            </section>
+        <section class="hp_brand_info" id="hp_value">
+            <h2 class="hp_title_number">02. Our Values</h2>
 
             <article class="hp_desc colum"> <!-- Description -->
                 <h3 class="hp_short_desc">What makes us different is not just the technology we build, 
@@ -129,11 +135,11 @@
                     These values guide our decisions, influence our culture, and define the way we deliver solutions to our clients.
                 </p>
 
-                <!-- VACANCIES LIST -->
+                <!-- VALUES LIST -->
                 <div id="hp_values_list">
                         <!-- VALUES: INNOVATION -->
                     <section class="hp_values colum flex_center center">
-                        <span class="hp_values_icon">🤯</span>
+                        <img class="hp_icons" src="/images/innovative.png" alt="icons">
                         <h2>Innovation</h2>
                         <p class="hp_value_desc">
                             We embrace new technologies and creative thinking 
@@ -143,7 +149,7 @@
 
                     <!-- VALUES: CLIENT-CENTERED -->
                     <section class="hp_values colum flex_center center">
-                        <span class="hp_values_icon">📌</span>
+                        <img class="hp_icons" src="/images/pin.png" alt="icons">
                         <h2>Client-Centered</h2>
                         <p class="hp_value_desc">
                             We listen to our clients' needs and create 
@@ -153,7 +159,7 @@
     
                     <!-- VALUES: QUALITY FIRST -->
                     <section class="hp_values colum flex_center center">
-                        <span class="hp_values_icon">💎</span>
+                        <img class="hp_icons" src="/images/diamond.png" alt="icons">
                         <h2>Quality First</h2>
                         <p class="hp_value_desc">
                             We don't just build software; we build solutions that last.
@@ -162,7 +168,7 @@
                      
                     <!-- VALUES: COLLABORATION -->
                     <section class="hp_values colum flex_center center">
-                        <span class="hp_values_icon">👥</span>
+                        <img class="hp_icons" src="/images/collab.png" alt="icons">
                         <h2>Collaboration</h2>
                         <p class="hp_value_desc">
                             Success comes from teamwork, 
@@ -172,7 +178,7 @@
 
                     <!-- VALUES: RESPONSIBILITY -->
                     <section class="hp_values colum flex_center center">
-                        <span class="hp_values_icon">📋</span>
+                        <img class="hp_icons" src="/images/task.png" alt="icons">
                         <h2>Responsibility</h2>
                         <p class="hp_value_desc">
                             We take ownership of our work and are committed to delivering on time.
@@ -181,7 +187,7 @@
                      
                     <!-- VALUES: COLLABORATION -->
                     <section class="hp_values colum flex_center center">
-                        <span class="hp_values_icon">🎨</span>
+                        <img class="hp_icons" src="/images/art.png" alt="icons">
                         <h2>Creativity</h2>
                         <p class="hp_value_desc">
                             Every project is a chance to design something unique and meaningful.
@@ -189,15 +195,11 @@
                     </section>    
                 </div> <!-- End of vacancies list -->
             </article><!-- End of vacancies description -->
-        </div> <!-- End of Value section -->
+        </section> <!-- End of Value section -->
         
         <!-- VACANCIES SECTION -->
-        <div class="hp_brand_info" id="hp_vacancies">
-            <section>
-                <h2 class="hp_title_number">03.
-                    <span class="hp_subtitle_number">Current Vacancies</span>
-                </h2>
-            </section>
+        <section class="hp_brand_info" id="hp_vacancies">
+            <h2 class="hp_title_number">03. Current Vacancies</h2>
 
             <article class="hp_desc">
                 <h3 class="hp_short_desc">
@@ -221,7 +223,7 @@
                 <div id="hp_vacancies_list" class="colum flex_center">
                     <!-- JOB 1 -->
                     <section class="hp_vacancies row">
-                        <figure class="colum">
+                        <figure class="colum flex_center">
                             <img src="/images/picture_placeholder.png" alt="job 1">
                             <br>
                             <figcaption>
@@ -237,7 +239,7 @@
 
                     <!-- JOB 2 -->
                     <section class="hp_vacancies row">
-                        <figure class="colum">
+                        <figure class="colum flex_center">
                             <img src="/images/picture_placeholder.png" alt="job 1">
                             <br>
                             <figcaption>
@@ -255,18 +257,15 @@
                     <br>
                 <h3 class=""><a id="hp_jobs_link" href="jobs.html">Learn more about our Jobs offer here</a></h3>
                     <br>
-                    
+
                 <p>
                     &#9654;
                     <a class="btn" href="jobs.html">View Vacancies</a>
                     &#9664;
                 </p>
             </section>
-        </div> <!-- end of vacancies section -->
+        </section> <!-- end of vacancies section -->
         
-
-
-    
     </div> <!-- End of main content -->
 
      
@@ -274,13 +273,14 @@
   <!-- FOOTER USE FOR ALL PAGES -->
     <footer>
         <h2 class="footer_brand_name">Brand Name</h2> <br> 
-        <section>
+        <section  class="row flex_center">
             <div>
                 <h4 class="footer_title">Contact us</h4>
                 <hr class="footer_line">
                 <p>Email: <a href="#">info@companyname.com.au</a></p>
                 <p>Jira: <a href="https://cos10026-3ners.atlassian.net/jira/software/projects/SCRUM/boards/1">COS10026 - Group 1</a></p>
             </div>
+
             <div>
                 <h4 class="footer_title">Navigation</h4>
                 <hr class="footer_line">

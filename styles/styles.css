@@ -166,7 +166,7 @@ footer a:hover{
 
 .btn{ /* Basic design of <a> to look like a button */
     border: 2px solid var(--black);
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: var(--light-beige);
     padding: 10px;
     margin: 10px;
@@ -179,28 +179,42 @@ footer a:hover{
     background-color: var(--dark-beige);
 }
 
+.hp_icons{
+    width: 50px;
+    margin: 2%;
+}
+
 /* Index.html HERO SECTION */
 .hp_hero_section {
     min-height: 80vh; /* almost full screen */
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 70%, var(--light-beige) 100%), 
-        url("/images/picture_placeholder.png") center/cover no-repeat;  
+    background: linear-gradient(to bottom, rgba(0, 20, 121, 0.123) 60%, var(--light-beige) 100%), 
+        url("/styles/images/homepage_herosection_background.jpg") center/cover no-repeat;  
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
+    color: var(--dark-beige);
 }
 
 .hp_hero_sect_info {
-    margin: 3%;
+    margin-inline: 3%;
     max-width: 700px;
 }
 
+.hp_hs_icons{
+    width: 1.5rem;
+    margin: 0.5rem;
+}
+
+.hp_hs_icons:hover{
+    transform: scale(1.2);
+}
+
 /* Scroll icon */
-.hp_scroll_down_icon {
+.hp_scroll_down_icon img{
+    margin: auto;
     position: absolute;
     bottom: 0;
-    display: inline-block;
     transition: transform 0.3s ease;
     animation: scroll_signal 1.5s ease-in-out infinite;
-    cursor: default;
 }
 
 @keyframes scroll_signal { /* making the scroll down signal bouncing */
@@ -229,21 +243,23 @@ footer a:hover{
     margin-inline: 4%;
 }
 
+.hp_about_img{
+    width: 80vw;
+    margin: 3%;
+    border: 8px double var(--blue);
+    border-radius: 15px;
+}
+
 /* STAT GROUP STYLING */
 .hp_stat{
     color: var(--blue);
     padding: 2rem;
-    margin-top: 3rem;
     border-radius: 10px;
     text-align: center;
 }
 
-.hp_stat_content h4 {
-    color: var(--blue-hightlight);
-}
-
-.hp_stat_group .hp_stat_icon {
-    font-size: 3rem;
+.hp_stat_group{
+    font-size: 1rem;
 }
 
 /* Index.html VALUES section*/
@@ -258,10 +274,6 @@ footer a:hover{
     margin: 5%;
 }
 
-.hp_values_icon {
-    font-size: 2rem;
-}
-
 /* Index.html Vacancies section */
 .hp_vacancies{
     background-color: var(--blue);
@@ -274,6 +286,7 @@ footer a:hover{
 .hp_vacancies img{
     width: 150px;
     height: 150px;
+    border-radius: 15px;
 }
 
 #hp_jobs_link{
@@ -283,20 +296,28 @@ footer a:hover{
 
 /* Index.html responsive*/
 @media (max-width: 768px) {
+    .hp_desc h2, p {
+        margin-inline: 1rem;
+    }
     .hp_longer_desc{
         max-width: 70%;
+    }
+    .hp_stat_group , .hp_stat_icon{
+        margin: auto;
+        font-size: 90%;
     }
     #hp_values_list { /* VALUES GRID */
     display: grid;
     grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     .hp_title_number {
         font-size: 1.8rem;
     }
-    .hp_stat {
-        padding: 1rem;
+    .hp_stat_group , .hp_stat_icon{
+        margin: auto;
+        font-size: 78%;
     }
     .hp_values_icon {
         font-size: 1.5rem;
