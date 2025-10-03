@@ -212,8 +212,7 @@ footer a:hover{
     color: var(--blue-hightlight);
 }
 
-/* Scroll icon */
-.hp_scroll_down_icon img{
+.hp_scroll_down_icon img{ /* Scroll icon */
     margin: auto;
     position: absolute;
     bottom: 0;
@@ -229,7 +228,7 @@ footer a:hover{
 
 /*Index.html basic styling for each info SECTION */
 .hp_main_content {
-    margin: 5%;
+    margin: 10%;
     cursor: default; /* keep the pointer default instead of the "I" state */
 }
 
@@ -248,7 +247,7 @@ footer a:hover{
 }
 
 .hp_about_img{
-    width: 80vw;
+    width: 60vw;
     margin: 3%;
     border: 8px double var(--blue);
     border-radius: 15px;
@@ -281,6 +280,7 @@ footer a:hover{
 /* Index.html reasons section */
 #hp_reasons_list li{
     margin: 3%;
+    max-width: 80%;
     list-style: none;
 }
 
