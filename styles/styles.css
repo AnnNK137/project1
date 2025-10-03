@@ -159,7 +159,12 @@ footer a:hover{
     font-size: clamp(1rem, 2vw, 1.25rem); /* scales with screen width for more responsive*/
 }
 
-.btn{
+.btn_list{
+    flex-wrap: wrap;   
+    margin-top: 1rem;
+}
+
+.btn{ /* Basic design of <a> to look like a button */
     border: 2px solid var(--black);
     border-radius: 10px;
     background-color: var(--light-beige);
@@ -167,23 +172,19 @@ footer a:hover{
     margin: 10px;
     font-size: 18px;
     text-decoration: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 400;
     color: var(--black);
 }
 
 .btn:hover{
     background-color: var(--dark-beige);
-    transform: scale();
 }
 
 /* Index.html HERO SECTION */
 .hp_hero_section {
-    min-height: 80vh;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 70%, var(--light-beige) 100%), url("/images/picture_placeholder.png") center/cover no-repeat;  
-    position: relative;
-    display: flex;
-    align-items: center;
+    min-height: 80vh; /* almost full screen */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 70%, var(--light-beige) 100%), 
+        url("/images/picture_placeholder.png") center/cover no-repeat;  
+    position: relative; /* anchor for scroll icon later */
     padding: 1rem;
 }
 
@@ -198,11 +199,11 @@ footer a:hover{
     bottom: 0;
     display: inline-block;
     transition: transform 0.3s ease;
-    animation: float 1.5s ease-in-out infinite;
+    animation: scroll_signal 1.5s ease-in-out infinite;
     cursor: default;
 }
 
-@keyframes float {
+@keyframes scroll_signal { /* making the scroll down signal bouncing */
     0%   { transform: translateY(0); }
     50%  { transform: translateY(-10px); }
     100% { transform: translateY(0); }
@@ -211,25 +212,17 @@ footer a:hover{
 /*Index.html basic styling for each info SECTION */
 .hp_main_content {
     margin: 5%;
-    cursor: default;
+    cursor: default; /* keep the pointer default instead of the "I" state */
 }
 
 .hp_brand_info {
     margin-block: 4rem;
 }
 
-.hp_title_number {
-    font-size: clamp(2rem, 5vw, 3rem); /* responsive headline */
+.hp_title_number, .hp_subtitle_number {
+    font-size: 2rem;
     color: var(--blue-hightlight);
-    position: relative;
-}
-
-.hp_subtitle_number {
-    color: var(--black);
-}
-
-.hp_desc {
-    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .hp_desc h2, p {
@@ -251,7 +244,6 @@ footer a:hover{
 
 .hp_stat_group .hp_stat_icon {
     font-size: 3rem;
-
 }
 
 /* Index.html VALUES section*/
@@ -291,16 +283,6 @@ footer a:hover{
 
 /* Index.html responsive*/
 @media (max-width: 768px) {
-    .hp_hero_section {
-        text-align: center;
-        justify-content: center;
-    }
-    .hp_hero_sect_info {
-        margin: auto;
-    }
-    .hp_desc h2, p {
-        margin-inline: 1rem;
-    }
     .hp_longer_desc{
         max-width: 70%;
     }

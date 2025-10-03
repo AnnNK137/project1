@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
+    <!-- STYLE SHEET LINKS -->
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
@@ -24,11 +25,11 @@
      <!-- hero section/ introduction to company -->
      <div class="hp_hero_section center flex_center colum evenly_spacing">
          <section> <!-- Herosection title -->
-             <h2 class="title">COMPANY BRAND NAME</h2>
+            <h2 class="title">COMPANY BRAND NAME</h2>
             <h2 class="subtitle">Opening for applicants</h2>
         </section>
 
-        <div> <!-- hero section desc -->
+        <!-- hero section desc -->
             <div class="hp_hero_sect_info">
                 <p class="desc">
                     We're an innovative IT company driven by passion and creativity. 
@@ -37,12 +38,12 @@
                     Discover career opportunities with us and take the next step 
                     toward shaping the future of technology.
                 </p>
-                <div class="btn_list hp_hero_sect_info">
+
+                <div class="btn_list center flex_center">
                     <a class="btn" href="jobs.html">View Vacancies &#9654;</a>
                     <a class="btn" href="about.html">About Us &#9654;</a>
                 </div>
-            </div>
-        </div>
+            </div>  <!-- End of Herosection Desc -->
 
         <!-- A scroll down signal for hero section to read main content -->
         <div class="hp_scroll_down_icon">
@@ -51,10 +52,11 @@
         </div>
 
         
-    </div>
+    </div> <!--  END OF HERO SECTION -->
 
     <!-- MAIN CONTENT -->
     <div class="hp_main_content" >
+
         <!-- About Company section -->
         <div class="hp_brand_info" id="hp_about">
             <section>
@@ -63,7 +65,7 @@
                 </h2>
             </section>
 
-            <!-- DESC -->
+            <!-- About DESC -->
             <article class="hp_desc row flex_center">
                 <h3 class="hp_short_desc">We design websites and build software 
                     that bring ideas to life.
@@ -75,10 +77,11 @@
                     From responsive websites to powerful software tools, our dedicated team of developers 
                     and designers works together to deliver reliable and innovative technology.
                 </p>
-            </article>
+            </article>  <!-- End of description -->
 
-            <!-- EXPERICENES STAT -->
+            <!-- About section:  EXPERICENES STAT -->
             <section class="hp_stat row evenly_spacing">
+                <!-- YEARS OF EXPERIENCES -->
                 <figure class="hp_stat_group row flex_center" >
                     <h2 class="hp_stat_icon">⌚</h2>
                     <figcaption class="hp_stat_content">
@@ -87,6 +90,7 @@
                     </figcaption>
                 </figure>
 
+                <!-- PROJECT DELIVERED -->
                 <figure class="hp_stat_group row flex_center" >
                     <h2 class="hp_stat_icon">💻</h2>
                     <figcaption class="hp_stat_content">
@@ -95,6 +99,7 @@
                     </figcaption>
                 </figure>
 
+                <!-- HAPPY CLIENTS -->
                 <figure class="hp_stat_group row flex_center" >
                     <h2 class="hp_stat_icon">❤️</h2>
                        <figcaption class="hp_stat_content">
@@ -104,23 +109,29 @@
                 </figure>
             </section>
 
-        </div>
+        </div> <!-- End of About section -->
 
         <!-- OUR VALUE section-->
         <div class="hp_brand_info" id="hp_value">
-            <section>
+            <section> <!-- Title -->
                 <h2 class="hp_title_number">02.
                     <span class="hp_subtitle_number">Our Values</span>
                 </h2>
             </section>
 
-            <article class="hp_desc">
+            <article class="hp_desc colum"> <!-- Description -->
                 <h3 class="hp_short_desc">What makes us different is not just the technology we build, 
-                    but the values that shape how we build it. Our company is built on a foundation of principles that shape how we work and how we grow. 
-                    These values guide our decisions, influence our culture, and define the way we deliver solutions to our clients.</h3>
+                    but the values that shape how we build it. 
+                </h3>
+                        <br>
+                <p class="hp_long_desc">
+                    Our company is built on a foundation of principles that shape how we work and how we grow. 
+                    These values guide our decisions, influence our culture, and define the way we deliver solutions to our clients.
+                </p>
 
-                    <!-- VALUES: INNOVATION -->
+                <!-- VACANCIES LIST -->
                 <div id="hp_values_list">
+                        <!-- VALUES: INNOVATION -->
                     <section class="hp_values colum flex_center center">
                         <span class="hp_values_icon">🤯</span>
                         <h2>Innovation</h2>
@@ -176,11 +187,11 @@
                             Every project is a chance to design something unique and meaningful.
                         </p>
                     </section>    
-                </div>
-
-            </article>
-        </div>
+                </div> <!-- End of vacancies list -->
+            </article><!-- End of vacancies description -->
+        </div> <!-- End of Value section -->
         
+        <!-- VACANCIES SECTION -->
         <div class="hp_brand_info" id="hp_vacancies">
             <section>
                 <h2 class="hp_title_number">03.
@@ -190,57 +201,74 @@
 
             <article class="hp_desc">
                 <h3 class="hp_short_desc">
-                   We offer a wide range of career opportunities across different areas. 
-                   Whether you're looking to take your first step into the industry 
-                   or advance your professional journey, you'll find roles designed to challenge 
-                   and help you grow. Explore the positions available and discover where your 
-                   skills can make a difference</h3>
+                We offer a wide range of career opportunities across different areas. 
+                </h3>
+                        <br>
+                <p class="hp_long_desc">
+                    Whether you're looking to take your first step into the industry 
+                or advance your professional journey, you'll find roles designed to challenge 
+                and help you grow. Explore the positions available and discover where your 
+                skills can make a difference
+                </p>
 
-                <section class="hp_brand_info center">
-                    <h2 class="hp_title_number">Right now, we are looking for...</h2>
-                    <div id="hp_vacancies_list" class="colum flex_center">
-                        <!-- JOB 1 -->
-                        <section class="hp_vacancies row">
-                            <figure class="colum">
-                                <img src="/images/picture_placeholder.png" alt="job 1">
-                                <br>
-                                <figcaption>
-                                    <h3>Job Title</h3>
-                                </figcaption>
-                            </figure>
-                            <div class="hp_vacancies_desc colum flex_center">
-                                <p>As part of our team, you will contribute to designing and delivering solutions that impact real-world businesses. 
-                                    The role involves collaborating with colleagues across different departments, 
-                                    solving challenges creatively, and continuously developing your technical and professional skills.</p>
-                            </div>
-                        </section>
-
-                        <!-- JOB 2 -->
-                        <section class="hp_vacancies row">
-                            <figure class="colum">
-                                <img src="/images/picture_placeholder.png" alt="job 1">
-                                <br>
-                                <figcaption>
-                                    <h3>Job Title</h3>
-                                </figcaption>
-                            </figure>
-                            <div class="hp_vacancies_desc colum flex_center">
-                                <p>As part of our team, you will contribute to designing and delivering solutions that impact real-world businesses. 
-                                    The role involves collaborating with colleagues across different departments, 
-                                    solving challenges creatively, and continuously developing your technical and professional skills.</p>
-                            </div>
-                        </section>                        
-                    </div>
-                    <h3 class="hp_brand_info"><a id="hp_jobs_link" href="jobs.html">Learn more about our Jobs offer here</a></h3>
-                    <p>
-                        &#9654;
-                        <a class="btn" href="jobs.html">View Vacancies</a>
-                        &#9664;
-                    </p>
-                </section>
             </article>
-        </div>
-    </div>
+
+            <!-- VACANCIES LIST -->
+            <section class="hp_brand_info center">
+                <h2 class="hp_title_number">Right now, we are looking for...</h2>
+
+                <!-- Start list -->
+                <div id="hp_vacancies_list" class="colum flex_center">
+                    <!-- JOB 1 -->
+                    <section class="hp_vacancies row">
+                        <figure class="colum">
+                            <img src="/images/picture_placeholder.png" alt="job 1">
+                            <br>
+                            <figcaption>
+                                <h3>Job Title</h3>
+                            </figcaption>
+                        </figure>
+                        <div class="hp_vacancies_desc colum flex_center">
+                            <p>As part of our team, you will contribute to designing and delivering solutions that impact real-world businesses. 
+                                The role involves collaborating with colleagues across different departments, 
+                                solving challenges creatively, and continuously developing your technical and professional skills.</p>
+                        </div>
+                    </section>
+
+                    <!-- JOB 2 -->
+                    <section class="hp_vacancies row">
+                        <figure class="colum">
+                            <img src="/images/picture_placeholder.png" alt="job 1">
+                            <br>
+                            <figcaption>
+                                <h3>Job Title</h3>
+                            </figcaption>
+                        </figure>
+                        <div class="hp_vacancies_desc colum flex_center">
+                            <p>As part of our team, you will contribute to designing and delivering solutions that impact real-world businesses. 
+                                The role involves collaborating with colleagues across different departments, 
+                                solving challenges creatively, and continuously developing your technical and professional skills.</p>
+                        </div>
+                    </section>                        
+                </div> <!-- End lists -->
+                
+                    <br>
+                <h3 class=""><a id="hp_jobs_link" href="jobs.html">Learn more about our Jobs offer here</a></h3>
+                    <br>
+                    
+                <p>
+                    &#9654;
+                    <a class="btn" href="jobs.html">View Vacancies</a>
+                    &#9664;
+                </p>
+            </section>
+        </div> <!-- end of vacancies section -->
+        
+
+
+    
+    </div> <!-- End of main content -->
+
      
 
   <!-- FOOTER USE FOR ALL PAGES -->
