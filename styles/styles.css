@@ -210,6 +210,7 @@ footer a:hover{
 
 .hp_highlight{
     color: var(--blue-hightlight);
+    text-decoration: none;
 }
 
 .hp_scroll_down_icon img{ /* Scroll icon */
@@ -297,10 +298,6 @@ footer a:hover{
     width: 150px;
     height: 150px;
     border-radius: 15px;
-}
-
-#hp_jobs_link{
-    text-decoration: none;
 }
 
 /* Index.html responsive*/
