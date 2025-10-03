@@ -208,6 +208,10 @@ footer a:hover{
     transform: scale(1.2);
 }
 
+.hp_highlight{
+    color: var(--blue-hightlight);
+}
+
 /* Scroll icon */
 .hp_scroll_down_icon img{
     margin: auto;
@@ -250,7 +254,7 @@ footer a:hover{
     border-radius: 15px;
 }
 
-/* STAT GROUP STYLING */
+/* Index.html stat box below hero section */
 .hp_stat{
     color: var(--blue);
     padding: 2rem;
@@ -274,6 +278,12 @@ footer a:hover{
     margin: 5%;
 }
 
+/* Index.html reasons section */
+#hp_reasons_list li{
+    margin: 3%;
+    list-style: none;
+}
+
 /* Index.html Vacancies section */
 .hp_vacancies{
     background-color: var(--blue);
@@ -290,7 +300,6 @@ footer a:hover{
 }
 
 #hp_jobs_link{
-    color: var(--blue-hightlight);
     text-decoration: none;
 }
 
