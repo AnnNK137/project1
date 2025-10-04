@@ -269,6 +269,10 @@ footer a:hover{
     margin-top: 2rem;
 }
 
+.hp_values h2{
+    border-bottom: 2px solid var(--blue-hightlight);
+}
+
 .hp_values {
     margin: 5%;
 }
