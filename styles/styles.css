@@ -11,6 +11,7 @@
     --light-beige: #f1efec;
     --dark-beige: #D4C9BE;
     --blue-hightlight:  rgb(60, 77, 164);
+    --blue-background: rgba(185, 198, 255, 0.269);
 } /* use var(--color) instead of copying color codes over and over again*/
 
 
@@ -162,7 +163,7 @@ footer a:hover{
 .btn{ /* Basic design of <a> to look like a button */
     border: 2px solid var(--black);
     border-radius: 15px;
-    background-color: var(--light-beige);
+    background-color: var(--blue-background);
     padding: 10px;
     margin: 1rem;
     font-size: 18px;
@@ -171,7 +172,7 @@ footer a:hover{
 }
 
 .btn:hover{
-    background-color: var(--dark-beige);
+    color: var(--blue-hightlight);
 }
 
 .hp_icons{
@@ -196,6 +197,10 @@ footer a:hover{
 .hp_hero_sect_info {
     margin-inline: 3%;
     max-width: 700px;
+}
+
+.hp_hero_section .btn{
+    background-color: var(--light-beige);
 }
 
 .hp_hs_icons{
@@ -275,6 +280,10 @@ footer a:hover{
 
 .hp_values {
     margin: 5%;
+    background-color: var(--blue-background);
+    padding: 5%;
+    border-radius: 20px;
+    border: 2px solid var(--blue);
 }
 
 /* Index.html reasons section */
