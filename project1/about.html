@@ -5,162 +5,195 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
 
-    <link rel="stylesheet" href="/styles/styles.css">
+    <!-- <link rel="stylesheet" href="/styles/styles.css"> -->
+     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
     <!-- navigation bar (same on all pages) -->
      <header>
          <nav>
-             <a href="index.html" class="brand_logo">INSERT BRAND NAME</a>
-             <section class="nav_items">
+             <a href="index.html" class="brand_logo">brand name</a>
+             <div class="nav_items">
                  <a href="index.html">Home</a>
                  <a href="jobs.html">Job Info</a>
                  <a href="apply.html">Applying</a>
                  <a href="about.html">About</a>
-             </section>
+             </div>
          </nav>
      </header>
 
     <!-- MAIN CONTENT -->
-    <section class="team_group">
-        <h1 class="title">About our team</h1>
-        <h3 class="subtitle">We are "3Ners"</h3>
-        <figure>
-            <img src="/images/picture_placeholder.png" width="400x" alt="our group picture">
-            <figcaption>
-                Our team photo
-            </figcaption>
-        </figure>
 
-        <br> 
-        
-        <article>
-            <p>Our team share the same class (COS10026.2) on Friday from 2PM to 5PM</p>
-            <p>Our tutor is Miss Linda</p>
-            <p>We have been working together for weeks to work on this project</p>
+    <!-- HERO SECTION/ INTRODUCTION -->
+    <section id="ap_herosection" class="center colum flex_center">
+            <h2 class="ap_title">About our team</h2>
+        <section class="ap_desc">
+            <h2 class="ap_subtitle">
+                We are "3Ners"
+            </h2>
+            <p class="ap_long_desc">
+                Our team is part of the COS10026.2 class, which takes place every 
+                Friday from 2 PM to 5 PM under the guidance of our tutor, Miss Linda. 
+                We have been collaborating closely for several weeks, combining our 
+                skills and efforts to successfully develop and refine this project together.
+            </p>
+        </section>
+    </section> <!-- end of herosection -->
+
+    <!-- MEMBER DETAILS -->
+    <section class="ap_team ap_section colum flex_center">
+    <h2 class="ap_title">About our Team members</h2>
+
+    <section class="ap_desc row flex_center">
+        <!-- MEMBER 1 NGUYEENX KHANH AN -->
+        <section class="ap_members colum">
+        <h2 class="center">NGUYEN KHANH AN</h2>
+        <article class="ap_members_desc colum flex_center">
+            <figure>
+            <img src="/images/member_potrait_example.png" alt="member_picture">
+            </figure>
+            <section class="ap_member_details">
+            <h3>Student information</h3>
+            <ul>
+                <li>Student ID: SWH03020</li>
+                <li>Major: Software Developing</li>
+            </ul>
+
+            <dl class="center row flex_center">
+                <dt>Contribution:</dt>
+                <dd><a href="index.html">Home Page</a></dd>
+                <dd><a href="about.html">About Page</a></dd>
+                <dd>UI/UX</dd>
+            </dl>
+
+            <br>
+            <a class="btn" href="index.html">
+                &#8594; See more of Ann's work
+            </a>
+            </section>
         </article>
+        </section>
+
+        <!-- MEMBER 2 PHAM MINH NGOC -->
+        <section class="ap_members colum">
+        <h2 class="center">PHAM MINH NGOC</h2>
+        <article class="ap_members_desc colum flex_center">
+            <figure>
+            <img src="/images/member_potrait_example.png" alt="member_picture">
+            </figure>
+            <section class="ap_member_details">
+            <h3>Student information</h3>
+            <ul>
+                <li>Student ID: SWH02971</li>
+                <li>Major: Internet of Things</li>
+            </ul>
+
+            <dl class="center row flex_center">
+                <dt>Contribution:</dt>
+                <dd><a href="jobs.html">Vacancies Page</a></dd>
+                <dd>Navbar and Footer</dd>
+            </dl>
+
+            <br>
+            <a class="btn" href="jobs.html">
+                &#8594; See more of Ngoc's work
+            </a>
+            </section>
+        </article>
+        </section>
+
+        <!-- MEMBER 3 VUONG THI NGOC KHANH -->
+        <section class="ap_members colum">
+        <h2 class="center">VUONG THI NGOC KHANH</h2>
+        <article class="ap_members_desc colum flex_center">
+            <figure>
+            <img src="/images/member_potrait_example.png" alt="member_picture">
+            </figure>
+            <section class="ap_member_details">
+            <h3>Student information</h3>
+            <ul>
+                <li>Student ID: SWH03067</li>
+                <li>Major: Data Science</li>
+            </ul>
+
+            <dl class="center row flex_center">
+                <dt>Contribution:</dt>
+                <dd><a href="apply.html">Application Page</a></dd>
+            </dl>
+
+            <br>
+            <a class="btn" href="apply.html">
+                &#8594; See more of Khanh's work
+            </a>
+            </section>
+        </article>
+        </section>
+    </section>
     </section>
 
-     <section class="team_members">
-        <h1 class="title">About our Team members</h1>
-        <!-- TEAMATE 1 INFO - PMN -->
-        <article class="member_info" id="team_member_1">
-            <figure>
-                <img src="/images/member_potrait_example.png" width="150px" alt="image of member 1">
-            </figure>
-            
-            <section class="member_desc">
-                <section class="info_section">
-                    <h4 class="subtitle">Student Information</h4>
-                    <ul>
-                        <li>Name: Phạm Minh Ngọc</li>
-                        <li>Student ID: SWH02971</li>
-                        <li>Major: idk i forgor :(</li>
-                    </ul>
-                </section>
-                 
-                <section class="info_section">
-                    <h4 class="subtitle">Contribution</h4>
-                    <p>Manage <a href="jobs.html">Position Descriptions page</a>
-                        and styling for <a href="about.html">About Page</a></p>
-                </section>
-            </section>
-        </article>
 
-        <!-- TEAMATE 2 INFO - VTNK -->
-        <article class="member_info" id="team_member_2">
-            <figure>
-                <img src="/images/member_potrait_example.png" width="150px" alt="image of member 1">
-            </figure>
-            
-            <section class="member_desc">
-                <section class="info_section">
-                    <h4 class="subtitle">Student Information</h4>
-                    <ul>
-                        <li>Name: Vương Thị Ngọc Khánh</li>
-                        <li>Student ID: SWH03067</li>
-                        <li>Major: idk i forgor :(</li>
-                    </ul>
-                </section>
-                 
-                <section class="info_section">
-                    <h4 class="subtitle">Contribution</h4>
-                    <p>Manage <a href="apply.html">Application form page</a></p>
-                </section>
-            </section>
-        </article>
+    <!-- PICTURE OF OUR TEAM -->
+    <figure id="ap_team_picture" class="center">
+        <figcaption>
+            <h2>Our group picture</h2>
+        </figcaption>
+        <img src="/images/picture_placeholder.png" alt="team_picture">
+    </figure>
 
-        <!-- TEAMATE 3 INFO - NKA -->
-        <article class="member_info" id="team_member_3">
-            <figure>
-                <img src="/images/member_potrait_example.png" width="150px" alt="image of member 1">
-            </figure>
-            
-            <section class="member_desc">
-                <section class="info_section">
-                    <h4 class="subtitle">Student Information</h4>
-                    <ul>
-                        <li>Name: Nguyễn Khánh An</li>
-                        <li>Student ID: SWH03020</li>
-                        <li>Major: Software Development</li>
-                    </ul>
-                </section>
-                 
-                <section class="info_section">
-                    <h4 class="subtitle">Contribution</h4>
-                    <p>Manage <a href="index.html">Home page</a>
-                        and layout for <a href="about.html">About Page</a></p>
-                </section>
-            </section>
-        </article> 
-    </section>
-
-    <section id="member_interest">
-        <h2 class="title">Our interests</h2>
-         <table> <!--Using table for interest is required -->
-            <thead>
-                <tr>
+    <!-- INTEREST TABLE -->
+     <section id="ap_interests" class="ap_section flex_center colum">
+        <h3 class="ap_title center">Our interests</h3>
+        <table>
+            <tr>
                 <th></th>
-                <th>Member 1</th>
-                <th>Member 2</th>
-                <th>Member 3</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>Interest 1</td>
-                <td>Cleaning</td>
-                <td>Watching films</td>
-                <td>Playing Roblox</td>
-                </tr>
-                <tr>
-                <td>Interest 2</td>
-                <td>Exploring ideas</td>
-                <td>Traveling</td>
+                <th>Interest 1</th>
+                <th>Interest 2</th>
+                <th>Interest 3</th>
+            </tr>
+            <tr>
+                <td><h3>Ann</h3></td>
+                <td>Coding</td>
                 <td>Design UI/UX</td>
-                </tr>
-            </tbody>
+                <td>Sleeping</td>
+            </tr>
+            <tr>
+                <td><h3>Ngoc</h3></td>
+                <td>Cleaning</td>
+                <td>Listening to music</td>
+                <td>Reading</td>
+            </tr>
+            <tr>
+                <td><h3>Khanh</h3></td>
+                <td>Traveling</td>
+                <td>Watching films</td>
+                <td>Teaching</td>
+            </tr>
         </table>
-    </section>
+
+     </section>
 
     <!-- FOOTER USE FOR ALL PAGES -->
     <footer>
-        <address>
-            <h3 class="title">Contact us</h3>
-            <ul>
-                <li>Email: <a href="#">info@companyname.com.au</a></li>
-                <li>Jira: <a href="https://cos10026-3ners.atlassian.net/jira/software/projects/SCRUM/boards/1">COS10026 - Group 1</a></li>
-            </ul>
-        </address>
-        <nav>
-            <h3 class="title">Navigation</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Job Info</a></li>
-                <li><a href="apply.html">Applying</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
+        <h2 class="footer_brand_name">Brand Name</h2> <br> 
+        <section  class="row flex_center">
+            <div>
+                <h4 class="footer_title">Contact us</h4>
+                <hr class="footer_line">
+                <p>Email: <a href="#">info@companyname.com.au</a></p>
+                <p>Jira: <a href="https://cos10026-3ners.atlassian.net/jira/software/projects/SCRUM/boards/1">COS10026 - Group 1</a></p>
+            </div>
+
+            <div>
+                <h4 class="footer_title">Navigation</h4>
+                <hr class="footer_line">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Job Info</a></li>
+                    <li><a href="apply.html">Applying</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </section>
     </footer>
 </body>
 </html>

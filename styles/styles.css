@@ -11,6 +11,7 @@
     --light-beige: #f1efec;
     --dark-beige: #D4C9BE;
     --blue-hightlight:  rgb(60, 77, 164);
+    --blue-background: rgba(185, 198, 255, 0.269);
 } /* use var(--color) instead of copying color codes over and over again*/
 
 
@@ -20,29 +21,60 @@ body {
 }
 
 /*  REUSABLE ELEMENTS   */
-button{
+.center{
+    text-align: center;
+}
+
+.flex_center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colum{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.reverse_row{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.evenly_spacing{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.visual_box_border{
+    border: 1px solid red;
+}
+
+.title{
+    text-align: center;
+    font-size: 40px;
+}
+
+.btn{ /* Basic design of <a> to look like a button */
     border: 2px solid var(--black);
-    border-radius: 10px;
-    background-color: var(--light-beige);
+    border-radius: 15px;
+    background-color: var(--blue-background);
     padding: 10px;
-    margin: 10px;
-}
-
-button:hover{
-    background-color: var(--dark-beige);
-    transform: scale();
-}
-
-button a{
+    margin: 1rem;
+    font-size: 18px;
     text-decoration: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 400;
     color: var(--black);
 }
 
-.title, .subtitle{
-    text-align: center;
+.btn:hover{
+    color: var(--blue-hightlight);
 }
+
 
 /* Header */
 nav {
@@ -151,3 +183,125 @@ footer a:hover{
 
 
 /* About.HTML STYLING */
+.ap_title{ /*title with line below*/
+    font-size: 2.5rem;
+    padding: 1.5%;
+    border-bottom: 3px solid var(--black);
+}
+
+.ap_desc{
+    margin: 5%;
+}
+
+.ap_long_desc{
+    margin-top: 10px;
+}
+
+.ap_section{
+    margin-block: 3rem;
+}
+/* About.html hero section */
+#ap_herosection{
+    height: 80vh; /* almost full screen */
+    background: linear-gradient(to bottom, rgba(0, 20, 121, 0.123) 60%, var(--light-beige) 100%), 
+        url("/styles/herosection_background.jpg") center/cover no-repeat;  
+    position: relative; /* anchor for scroll icon later */
+    padding: 1rem;
+    color: var(--dark-beige);
+}
+
+#ap_herosection .ap_title{
+    border-color: var(--dark-beige);
+}
+
+/* ABOUT.html member details */
+.ap_members{
+    margin: 6%;
+    background-color: var(--blue-background);
+    border: 3px solid var(--blue);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.ap_members li{
+    list-style: none;
+}
+
+.ap_members a{
+    font-size: 90%;
+}
+
+.ap_members h2{
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 3px solid var(--blue);
+    background-color: var(--blue-hightlight);
+    color: var(--dark-beige);
+}
+
+.ap_members dd{
+    margin: 5%;
+}
+
+.ap_member_details{
+    width: 300px;
+    margin: 5%;
+    padding: 10px;
+
+}
+
+.ap_members img {
+    width: 150px;
+    height: 150px;
+    border: 4px solid var(--black);
+    border-radius: 20px;
+    margin-block: 20px;
+}
+
+/* ABOUT.html team group picture */
+#ap_team_picture img{
+    width: 80vw;
+    border: 3px solid var(--blue);
+    border-radius: 20px;
+    margin: 10px;
+}
+
+/* About.html TABLE */
+#ap_interests table{
+    margin: 5%;
+    width: 80%;
+    text-align: center;
+    border-collapse: separate; /*allows border radius */
+    border-spacing: 0; 
+    border-radius: 10px;
+    border: 3px solid var(--blue);
+}
+
+#ap_interests th, #ap_interests td{
+    border: 1px solid var(--blue); 
+    padding: 20px;
+    width: 25%;
+    height: 60px;
+}
+
+
+/* About.html responsive */
+@media (max-width: 768px) {
+    #ap_herosection{
+        max-height: 40vh;
+    }
+    .ap_desc{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .ap_members_desc{
+        display: flex;
+        flex-direction: row;
+        width: 80vw;
+        justify-content: space-evenly;
+    }
+    .btn{
+        font-size: 15px;
+    }
+}
