@@ -217,6 +217,12 @@ footer a:hover{
     margin: 6%;
 }
 
+.ap_member_details{
+    width: 300px;
+    margin: 5%;
+
+}
+
 .ap_members img {
     width: 200px;
     height: 200px;
