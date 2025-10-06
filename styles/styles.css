@@ -338,7 +338,7 @@ footer a:hover{
 .hp_hero_section {
     height: 80vh; /* almost full screen */
     background: linear-gradient(to bottom, rgba(0, 20, 121, 0.123) 60%, var(--light-beige) 100%), 
-        url("/styles/images/homepage_herosection_background.jpg") center/cover no-repeat;  
+        url("../styles/images/homepage_herosection_background.jpg") center/cover no-repeat;  
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
     color: var(--dark-beige);
@@ -538,7 +538,7 @@ footer a:hover{
 #ap_herosection{
     height: 80vh; /* almost full screen */
     background: linear-gradient(to bottom, rgba(0, 20, 121, 0.123) 60%, var(--light-beige) 100%), 
-        url("/styles/herosection_background.jpg") center/cover no-repeat;  
+        url("../styles/herosection_background.jpg") center/cover no-repeat;  
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
     color: var(--dark-beige);
