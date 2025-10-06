@@ -63,7 +63,7 @@
 
 .job_info {
     display: flex;
-    justify-content: center;
+    justify-content:space-evenly;
     align-items: center;
 }
 .job_card_container {
@@ -82,12 +82,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(var(--black), var(--blue));
+    background:url(/images/Card_Background1.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50px;
     z-index: 1;
     transform: translateY(100px);
 }
 .job_card_container:hover .job_slide_1 {
-    transform: translateY(0px);
+    transform: translateY(2px);
 }
 
 .job_card {
@@ -105,7 +108,8 @@
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    background: linear-gradient(var(--black), var(--blue));
+    background: var(--black);
+    border-radius: 50px;
     transform: translateY(-150px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
