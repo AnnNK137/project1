@@ -239,6 +239,10 @@ footer a:hover{
     color: var(--dark-beige);
 }
 
+.ap_members dd{
+    margin: 5%;
+}
+
 .ap_member_details{
     width: 300px;
     margin: 5%;
@@ -265,6 +269,19 @@ footer a:hover{
 /* About.html TABLE */
 #ap_interests table{
     margin: 5%;
+    width: 80%;
+    text-align: center;
+    border-collapse: separate; /*allows border radius */
+    border-spacing: 0; 
+    border-radius: 10px;
+    border: 3px solid var(--blue);
+}
+
+#ap_interests th, #ap_interests td{
+    border: 1px solid var(--blue); 
+    padding: 20px;
+    width: 25%;
+    height: 60px;
 }
 
 
