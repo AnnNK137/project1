@@ -60,6 +60,22 @@ body {
     font-size: 40px;
 }
 
+.btn{ /* Basic design of <a> to look like a button */
+    border: 2px solid var(--black);
+    border-radius: 15px;
+    background-color: var(--blue-background);
+    padding: 10px;
+    margin: 1rem;
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.btn:hover{
+    color: var(--blue-hightlight);
+}
+
+
 /* Header */
 nav {
     width: 100%;
