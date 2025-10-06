@@ -212,13 +212,32 @@ footer a:hover{
     border-color: var(--dark-beige);
 }
 
+/* ABOUT.html member details */
+.ap_members, .ap_members_desc{
+    margin: 6%;
+}
+
+.ap_members img {
+    width: 200px;
+    height: 200px;
+    border: 4px solid var(--black);
+    border-radius: 20px;
+}
+
 /* About.html responsive */
 @media (max-width: 768px) {
     #ap_herosection{
         max-height: 40vh;
     }
-}
-
-@media (max-width: 500px) {
-
+    .ap_desc{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .ap_members_desc{
+        display: flex;
+        flex-direction: row;
+        width: 80vw;
+        justify-content: space-evenly;
+    }
 }
