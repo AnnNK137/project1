@@ -215,14 +215,14 @@ footer a:hover{
 /* ABOUT.html member details */
 .ap_members{
     margin: 6%;
-    background-color: var(--dark-beige);
+    background-color: var(--blue-background);
 }
 
 .ap_members h2{
     padding: 10px;
     border-radius: 10px 10px 0 0;
     border-bottom: 3px solid var(--blue);
-    background-color: var(--blue);
+    background-color: var(--blue-hightlight);
     color: var(--dark-beige);
 }
 
