@@ -167,4 +167,33 @@ footer a:hover{
 
 
 /* About.HTML STYLING */
+.ap_title{ /*title with line below*/
+    font-size: 2.5rem;
+    padding: 1.5%;
+    border-bottom: 3px solid var(--black);
+}
 
+.ap_desc{
+    margin-block: 5%;
+}
+
+.ap_long_desc{
+    margin-top: 10px;
+}
+
+
+/* About.html hero section */
+#ap_herosection{
+    height: 80vh; /* almost full screen */
+    background: linear-gradient(to bottom, rgba(0, 20, 121, 0.123) 60%, var(--light-beige) 100%), 
+        url("/styles/herosection_background.jpg") center/cover no-repeat;  
+    position: relative; /* anchor for scroll icon later */
+    padding: 1rem;
+    color: var(--dark-beige);
+}
+
+#ap_herosection .ap_title{
+    border-color: var(--dark-beige);
+}
+
+/* About.html responsive */
