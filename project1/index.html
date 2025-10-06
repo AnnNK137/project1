@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
+    <!-- STYLE SHEET LINKS -->
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/homepage.css">
 </head>
 <body>
-   <!-- navigation bar (same on all pages) -->
+    <!-- navigation bar (same on all pages) -->
      <header>
          <nav>
              <a href="index.html" class="brand_logo">brand name</a>
@@ -18,37 +18,296 @@
                  <a href="jobs.html">Job Info</a>
                  <a href="apply.html">Applying</a>
                  <a href="about.html">About</a>
-             </section>
+             </div>
          </nav>
      </header>
 
      <!-- hero section/ introduction to company -->
-     <section class="hero_section">
-         
-         <section>
-             <h1 class="title">COMPANY BRAND NAME</h1>
-            <h2 class="subtitle">Software Developing</h2>
+     <div class="hp_hero_section center flex_center colum evenly_spacing">
+        <section> <!-- Herosection title -->
+            <h2 class="title">COMPANY BRAND NAME</h2>
+            <h2 class="subtitle">Opening for applicants</h2>
         </section>
 
-        <article class="">
-            <section class="btn_list hero_sect_info">
-                <button class=""><a href="#">Learn more</a></button>
-                <button class=""><a href="apply.html">Job Apply</a></button>
-            </section>
-            <aside class="hero_sect_info">
-                <p class="desc">
-                    this is a random description of the company blah bloh i havent
-                    thought about it lmao. But imma make it long so it looks super
-                    legit ig. Oh well, please apply because we need employee yay
-                </p>
-            </aside>
-        </article>
-        
-        
-    </section>
-    <!-- MAIN CONTENT -->
+        <!-- hero section desc -->
+        <section class="hp_hero_sect_info">
+            <h4 class="desc">
+                We're an innovative IT company driven by passion and creativity. 
+                Our mission is to build smarter solutions for businesses 
+                while fostering a workplace where talent thrives. 
+                Discover career opportunities with us and take the next step 
+                toward shaping the future of technology.
+            </h4>
 
- <!-- FOOTER USE FOR ALL PAGES -->
+            <div class="btn_list center flex_center">
+                <a class="btn" href="jobs.html">Vacancies &#9654;</a>
+                <a class="btn" href="about.html">About Us &#9654;</a>
+            </div>
+
+                    <!-- SOCIAL MEDIA LINKS -->
+            <figure class="center flex_center row">
+                <a href="#"><img class="hp_hs_icons" src="/images/github.png" alt="github icon"></a>
+                <a href="#"><img class="hp_hs_icons" src="/images/jira.png" alt="jira icon"></a>
+                <a href="#"><img class="hp_hs_icons" src="/images/Facebook.png" alt="facebook icon"></a>
+                <a href="#"><img class="hp_hs_icons" src="/images/Instagram.png" alt="instagram icon"></a>
+                <a href="#"><img class="hp_hs_icons" src="/images/linkedin.png" alt="linkedin icon"></a>
+
+            </figure>
+        </section>  <!-- End of Herosection Desc -->
+
+        <!-- A scroll down signal for hero section to read main content -->
+        <div class="hp_scroll_down_icon flex_center">
+            <img class="hp_icons" src="/images/Scroll-down.png" alt="scroll down">
+        </div>
+
+        
+    </div> <!--  END OF HERO SECTION -->
+
+    <!-- MAIN CONTENT -->
+    <div class="hp_main_content" >
+        <!-- EXPERICENES STAT -->
+        <section class="hp_brand_info hp_stat row evenly_spacing" id="hp_stat_box">
+            <!-- YEARS OF EXPERIENCES -->
+            <figure class="hp_stat_group row flex_center" >
+                <img class="hp_icons" src="/images/clock.png" alt="icons">
+                <figcaption class="hp_stat_content">
+                    <h4>Year of Experiences</h4>
+                    <h2>5+</h2>
+                </figcaption>
+            </figure>
+
+            <!-- PROJECT DELIVERED -->
+            <figure class="hp_stat_group row flex_center" >
+                <img class="hp_icons" src="/images/project.png" alt="icons">
+                <figcaption class="hp_stat_content">
+                    <h4>Project Delivered</h4>
+                    <h2>45+</h2>
+                </figcaption>
+            </figure>
+
+            <!-- HAPPY CLIENTS -->
+            <figure class="hp_stat_group row flex_center" >
+                <img class="hp_icons" src="/images/heart.png" alt="icons">
+                    <figcaption class="hp_stat_content">
+                    <h4>Happy clients</h4>
+                    <h2>30+</h2>
+                </figcaption>
+            </figure>
+        </section> <!-- end of stat showcase -->
+
+        <!-- 01 About Company section -->
+        <section class="hp_brand_info" id="hp_about">
+            <h2 class="hp_title">01. Who we are</h2>
+
+            <!-- About DESC -->
+            <article class="hp_desc row flex_center">
+                <h4 class="hp_short_desc">We design websites and build software 
+                    that bring ideas to life.
+                </h4>
+                <p class="hp_longer_desc">
+                    Our company specializes in creating modern websites and custom software solutions 
+                    for businesses of all sizes. With a focus on design, performance, and user experience, 
+                    we develop digital products that help clients connect with their audience and grow. 
+                </p>
+            </article>  <!-- End of description -->
+            <br>
+            <br>
+            <a href="about.html" class="btn">&#10140; Learn more about us</a>
+
+            <!-- Sample Products -->
+            <!-- All images are sample HTML from htmlcodex.com -->
+            <figure id="hp_samples" class="flex_center center">
+                <img src="/images/sample/sample1.jpg" alt="Samples">
+                <img src="/images/sample/sample2.jpg" alt="Samples">
+                <img src="/images/sample/sample3.jpg" alt="Samples">
+                <img src="/images/sample/sample4.jpg" alt="Samples">
+                <img src="/images/sample/sample5.jpg" alt="Samples">
+                <img src="/images/sample/sample6.jpg" alt="Samples">
+            </figure>
+           
+
+        </section> <!-- End of About section -->
+
+        <!-- 02 OUR VALUE section-->
+        <section class="hp_brand_info" id="hp_value">
+            <h2 class="hp_title">02. Our Values</h2>
+
+            <article class="hp_desc colum"> <!-- Description -->
+                <h3>What makes us different is not just the technology we build, 
+                    but the values that we build. Our company is built on a foundation of principles that shape how we work and how we grow. 
+                    These values guide our decisions, influence our culture, and define the way we deliver solutions to our clients.
+                </h3>
+
+                <!-- VALUES LIST -->
+                <div id="hp_values_list" class="hp_list">
+                        <!-- VALUES: INNOVATION -->
+                    <section class="hp_values colum flex_center center">
+                        <img class="hp_icons" src="/images/innovative.png" alt="icons">
+                        <h2>Innovation</h2>
+                        <p class="hp_value_desc">
+                            We embrace new technologies and creative thinking 
+                            to deliver fresh, modern solutions.
+                        </p>
+                    </section>
+
+                    <!-- VALUES: CLIENT-CENTERED -->
+                    <section class="hp_values colum flex_center center">
+                        <img class="hp_icons" src="/images/pin.png" alt="icons">
+                        <h2>Client-Centered</h2>
+                        <p class="hp_value_desc">
+                            We listen to our clients' needs and create 
+                            solutions that truly fit their goals.
+                        </p>
+                    </section>                  
+    
+                    <!-- VALUES: QUALITY FIRST -->
+                    <section class="hp_values colum flex_center center">
+                        <img class="hp_icons" src="/images/diamond.png" alt="icons">
+                        <h2>Quality First</h2>
+                        <p class="hp_value_desc">
+                            We don't just build software; 
+                            we build solutions that last.
+                        </p>
+                    </section>                     
+                     
+                    <!-- VALUES: COLLABORATION -->
+                    <section class="hp_values colum flex_center center">
+                        <img class="hp_icons" src="/images/collab.png" alt="icons">
+                        <h2>Collaboration</h2>
+                        <p class="hp_value_desc">
+                            Success comes from teamwork 
+                            within our company and partners.
+                        </p>
+                    </section>   
+
+                    <!-- VALUES: RESPONSIBILITY -->
+                    <section class="hp_values colum flex_center center">
+                        <img class="hp_icons" src="/images/task.png" alt="icons">
+                        <h2>Responsibility</h2>
+                        <p class="hp_value_desc">
+                            We take ownership of our work and are committed to delivering on time.
+                        </p>
+                    </section>                     
+                     
+                    <!-- VALUES: COLLABORATION -->
+                    <section class="hp_values colum flex_center center">
+                        <img class="hp_icons" src="/images/art.png" alt="icons">
+                        <h2>Creativity</h2>
+                        <p class="hp_value_desc">
+                            Every project is a chance to design something unique and meaningful.
+                        </p>
+                    </section>    
+                </div> <!-- End of vacancies list -->
+            </article><!-- End of vacancies description -->
+        </section> <!-- End of Value section -->
+        
+        <!-- 03 Why choose us -->
+         <section class="hp_brand_info" id="hp_reason">
+            <h2 class="hp_title">03. Why choose us</h2>
+            <!-- REASON DESC -->
+            <article class="hp_desc">
+                <h3>When you're considering where to apply, 
+                    you want more than just a role - you want a place that lets you grow, 
+                    challenge yourself, and feel genuinely valued. Here, you'll find an 
+                    environment that encourages your ideas, supports your ambitions, 
+                    and gives you the opportunities to make a real impact.
+                </h3>
+            </article> <!-- End of desc -->
+            <br>
+            <!-- List of reason -->
+            <section> 
+                <h3 class="hp_highlight">Here's 5 solid reasons to choose us</h3>
+                <ul id="hp_reasons_list" class="hp_list colum flex_center">
+                    <li class="btn">
+                        <span class="hp_highlight">&#10140; Growth Opportunities:</span> You'll have the chance to learn, 
+                        upskill, and work on projects that expand your expertise.
+                    </li>
+                    <li class="btn">
+                        <span class="hp_highlight">&#10140; Innovative Culture:</span> The company encourages fresh ideas, 
+                        creativity, and modern approaches to problem-solving.
+                    </li>
+                    <li class="btn">
+                        <span class="hp_highlight">&#10140; Supportive Environment:</span> Collaboration and mentorship ensure 
+                        you're not just another employee but a valued part of the team.
+                    </li>
+                    <li class="btn">
+                        <span class="hp_highlight">&#10140; Impactful Work:</span> The projects you contribute to have real-world value, 
+                        allowing you to see the difference your work makes.
+                    </li>
+                    <li class="btn">
+                        <span class="hp_highlight">&#10140; Career Stability:</span> With a solid foundation and long-term vision, 
+                        the company provides security and clear paths for advancement.
+                    </li>
+                </ul>
+            </section> <!-- end of list -->
+         </section> <!-- End of reason seconf -->
+
+
+        <!-- 04 VACANCIES SECTION -->
+        <section class="hp_brand_info" id="hp_vacancies">
+            <h2 class="hp_title">04. Current Vacancies</h2>
+
+            <article class="hp_desc">
+                <h3>
+                    Whether you're looking to take your first step into the industry 
+                    or advance your professional journey, you'll find roles designed to challenge 
+                    and help you grow. Explore the positions available and discover where your 
+                    skills can make a difference                
+                </h3>
+
+            </article>
+
+            <!-- VACANCIES LIST -->
+            <section class="hp_brand_info center">
+                <h2 class="hp_title">Right now, we are looking for...</h2>
+
+                <!-- Start list -->
+                <div id="hp_vacancies_list" class="hp_list colum flex_center">
+                    <!-- JOB 1 -->
+                    <section class="hp_vacancies row">
+                        <figure class="colum flex_center">
+                            <img src="/images/picture_placeholder.png" alt="job 1">
+                            <br>
+                            <figcaption>
+                                <h3>Job Title</h3>
+                            </figcaption>
+                        </figure>
+                        <div class="hp_vacancies_desc colum flex_center">
+                            <p>As part of our team, you will contribute to designing and delivering solutions that impact real-world businesses. 
+                                The role involves collaborating with colleagues across different departments, 
+                                solving challenges creatively, and continuously developing your technical and professional skills.</p>
+                        </div>
+                    </section>
+
+                    <!-- JOB 2 -->
+                    <section class="hp_vacancies row">
+                        <figure class="colum flex_center">
+                            <img src="/images/picture_placeholder.png" alt="job 1">
+                            <br>
+                            <figcaption>
+                                <h3>Job Title</h3>
+                            </figcaption>
+                        </figure>
+                        <div class="hp_vacancies_desc colum flex_center">
+                            <p>As part of our team, you will contribute to designing and delivering solutions that impact real-world businesses. 
+                                The role involves collaborating with colleagues across different departments, 
+                                solving challenges creatively, and continuously developing your technical and professional skills.</p>
+                        </div>
+                    </section>                        
+                </div> <!-- End lists -->
+                
+                    <br>
+                <h3><a class="hp_highlight" href="jobs.html">Learn more about our Jobs offer here</a></h3>
+                    <br>
+                <a class="btn" href="jobs.html">&#10140; View Vacancies</a>
+            </section>
+        </section> <!-- end of vacancies section -->
+        
+    </div> <!-- End of main content -->
+
+     
+
+  <!-- FOOTER USE FOR ALL PAGES -->
     <footer>
         <h2 class="footer_brand_name">Brand Name</h2> <br> 
         <section>
