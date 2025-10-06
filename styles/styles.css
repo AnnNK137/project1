@@ -1,4 +1,3 @@
-
 *{
     margin: 0; 
     padding: 0;
@@ -41,74 +40,9 @@ body {
     flex-direction: row;
 }
 
-.reverse_row{
-    display: flex;
-    flex-direction: row-reverse;
-}
-
 .evenly_spacing{
     display: flex;
     justify-content: space-evenly;
-}
-
-
-:root{
-    --black: #030303;
-    --blue: #123458;
-    --light-beige: #f1efec;
-    --dark-beige: #D4C9BE;
-    --blue-hightlight:  rgb(60, 77, 164);
-    --blue-background: rgba(185, 198, 255, 0.269);
-} /* use var(--color) instead of copying color codes over and over again*/
-
-
-body {
-    background-color: var(--light-beige);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-/*  REUSABLE ELEMENTS   */
-.center{
-    text-align: center;
-}
-
-.flex_center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.colum{
-    display: flex;
-    flex-direction: column;
-}
-
-.row{
-    display: flex;
-    flex-direction: row;
-}
-
-.reverse_row{
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.evenly_spacing{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.visual_box_border{
-    justify-content: space-evenly;
-}
-
-.visual_box_border{
-    border: 1px solid red;
-}
-
-.title{
-    text-align: center;
-    font-size: 40px;
 }
 
 .btn{ /* Basic design of <a> to look like a button */
