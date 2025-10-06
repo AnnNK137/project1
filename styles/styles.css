@@ -518,9 +518,10 @@ footer a:hover{
 
 /* About.HTML STYLING */
 .ap_title{ /*title with line below*/
+    color: var(--blue-hightlight);
     font-size: 2.5rem;
     padding: 1.5%;
-    border-bottom: 3px solid var(--black);
+    border-bottom: 3px solid var(--blue-hightlight);
 }
 
 .ap_desc{
@@ -545,6 +546,7 @@ footer a:hover{
 }
 
 #ap_herosection .ap_title{
+    color: var(--dark-beige);
     border-color: var(--dark-beige);
 }
 
