@@ -430,7 +430,7 @@ footer a:hover{
     padding: 10px;
     border-radius: 10px 10px 0 0;
     border-bottom: 3px solid var(--blue);
-    background-color: var(--blue-hightlight);
+    background-color: var(--blue);
     color: var(--dark-beige);
 }
 
