@@ -245,8 +245,11 @@ footer a:hover{
 
 .hp_title{
     font-size: 2rem;
-    color: var(--blue-hightlight);
+    color: var(--black);
     margin-bottom: 2%;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--black);
 }
 
 .hp_desc h2, p {
