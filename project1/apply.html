@@ -23,19 +23,19 @@
 
      <!-- MAIN CONTENT -->
   <link rel="stylesheet" href="/styles/styles.css">
-  <form action="submit" method="post">
-    <fieldset>
+  <form action="applysuccess.html" method="post">
       <h1>JOB APPLICATION FORM</h1>
-      <h3>Fill out our IT Job Application Form to share your skills, experience, and qualifications.Upload your resume and any relevant documents to help our team match you with the right IT role.</h3>
+      <h3>Fill out our IT Job Application Form to share your skills, experience, and qualifications.</h3>
       <h3>Start your journey with us today and take the first step towards an exciting career in IT!</h3>
-<form action="submit" method="post">
   <fieldset>
     <legend>Personal Information</legend>
+    <p>
   <label for="fullname">Full Name</label>
   <input type="text"id="fullname" required>
    <label for="address">Address</label>
    <input type="text" id="Givenname" required>
-   <p>
+  </p>
+    <p>
    <label for="birth">Birth</label>
    <input type="date" id="birth" required>
    <label for="sex">Sex</label>
@@ -53,10 +53,9 @@
    <input type="text" id="email" required>
    </p>
   </fieldset>
-</form>
-<form action="submit" method="post">
   <fieldset>
     <legend>Education</legend>
+    <p>
     <label for="University">University/Institution</label>
     <input type=""id="University" required>
     <label for="Degree">Degree/Certification</label>
@@ -65,28 +64,29 @@
     <input type="date" id="year" required>
   </p>
 </fieldset>
-</form>
-<form action="submit" method="post">
   <fieldset>
     <legend>Skills & Qualifications</legend>
+    <p>
   <label for="subject">HTML</label>
-  <input type="checkbox" id="html" required>
+  <input type="checkbox" id="html">
   <label for="subject">CSS</label>
-  <input type="checkbox" id="CSS" required>
+  <input type="checkbox" id="CSS">
   <label for="subject">JavaScript</label>
-  <input type="checkbox" id="JavaScript" required>
+  <input type="checkbox" id="JavaScript">
   <label for="subject">PHP</label>
-  <input type="checkbox" id="PHP" required>
+  <input type="checkbox" id="PHP">
   <label for="subject">My SQL</label>
-  <input type="checkbox" id="MySQL" required>  
+  <input type="checkbox" id="MySQL">  
+  <label for="others">Others</label>
+  <input type="checkbox" id="others">
 <br>
 </p>
+<p>
  <label for="description">List relevant skills, certifications or qualifications:</label>
  <br>
 <textarea id="description" name="description" rows="10" cols="100"  placeholder="Put down your relevant skills, certifications and qualifications here..."required></textarea>
+</p>
 </fieldset>
-</form>
-<form action="submit" method="post">
 <fieldset>
   <legend>Recent Employment History</legend>
   <p>
@@ -122,18 +122,18 @@
     <label for="relationship">Relationships</label>
     <input type="text" id="relationship" required>
     <label for="phonenumber">Phone Number</label>
-    <input type="date" id="phonenumber" required>
+    <input type="text" id="phonenumber" required  pattern="\d{1,10}">
   </p>  
-</fieldset>
-</form>
-<p>
+</fieldset>  
+<!-- SUBMIT AND RESET BUTTON -->
+  <p id="submit_reset">
 <input type="checkbox" id="responsibility" required>  
 <label for="responsibility"><strong>I certify that the information provided in this application is accurate and complete. I understand that providing fasle information may result in disqualification from consideration for employment</strong></label>  
-</p>
-<form action="submit" method="post">
-  <button type="submit">Submit</button>
-  <button>Reset Form</button>
-</form>
+  </p>
+<p>
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+  </p>
 </fieldset>
 </form>
 
