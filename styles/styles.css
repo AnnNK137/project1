@@ -196,6 +196,11 @@ footer a:hover{
     color: var(--dark-beige);
 }
 
+#hp_title{
+    color: var(--dark-beige);
+    border-color: var(--dark-beige);
+}
+
 .hp_hero_sect_info {
     margin-inline: 3%;
     max-width: 700px;
