@@ -443,7 +443,8 @@ footer a:hover{
   max-width: 1200px;        
   margin: 250px auto;        
   padding: 40px;
-  background: linear-gradient(to right, #ffffff, #ede9fe);
+  background-color: var(--blue-background);
+  border: 3px solid var(--blue-hightlight);
   border-radius: 15px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   text-align: center;
@@ -455,7 +456,7 @@ footer a:hover{
         max-height: 50vh;
     }
     #app_form textarea{
-        max-width: 00px;
+        max-width: 500px;
     }
 }
 
