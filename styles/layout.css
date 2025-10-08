@@ -1,0 +1,34 @@
+.center{
+    text-align: center;
+}
+
+.flex_center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colum{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.reverse_row{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.evenly_spacing{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.visual_box_border{
+    border: 1px solid red;
+}
+
