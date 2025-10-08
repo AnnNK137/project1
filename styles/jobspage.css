@@ -23,7 +23,7 @@
     font-size: 90px;
     font-weight: bold;
     text-shadow: 1px 1px 10px var(--black);
-    padding: 240px;
+    padding-top: 240px;
 }
 .job_sub_menu{ 
     color: var(--light-beige);
@@ -31,7 +31,6 @@
     text-decoration: none;
     text-transform: uppercase;
     text-shadow: 1px 1px 10px var(--black);
-    margin: 40px;
 }
 .job_sub_menu:hover{
     text-decoration: overline 2px;
@@ -47,7 +46,6 @@
 .main_title{
     font-size: 50px;
     font-weight: bolder;
-    padding-left: 30px;
     padding-top: 30px;
 }
 .main_line{
@@ -55,7 +53,8 @@
     background-color: var(--light-beige);
     height: 3px;
     width: 200px;
-    margin: 30px;
+    margin-left: 60px;
+    margin-top: 20px;
 }
 
 .job_list{
@@ -157,7 +156,6 @@
     color: var(--black);
     font-size: 50px;
     font-weight: bolder;
-    padding-left: 30px;   
     padding-top: 50px;
 }
 .main_line_evp{
@@ -165,7 +163,9 @@
     background-color: var(--black);
     height: 3px;
     width: 200px;
-    margin: 30px;
+    margin-left: 63px;
+    margin-bottom: 50px;
+    margin-top: 20px;
 }
 #jov_evp{
     display: grid;
@@ -218,19 +218,19 @@
     margin: 100px;
 }
 .job_quote_icon{
-    width: 100px;
+    width: 70px;
     margin-bottom: 70px;
 }
 .job_quote_title{
-    margin-top: -70px;
-    font-size: 50px;
+    margin-top: -60px;
+    font-size: 45px;
 }
 .job_quote_p1{
     margin-top: 20px;
 }
 .job_quote_p2{
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 20px;
 }
 .job_quote_img{
     width: 70%;
