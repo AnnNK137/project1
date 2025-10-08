@@ -23,123 +23,139 @@
          </nav>
      </header>
 
+        <!-- HERO SECTION/ INTRODUCTION -->
+    <section id="app_herosection" class="center colum flex_center">
+            <img id="hp_hs_logo" src="../images/logo.png" alt="3ners">
+            <h2 class="ap_title">JOB APPLICATION FORM</h2>
+        <section class="ap_desc">
+            <h3 class="ap_subtitle">
+            Fill out our IT Job Application Form to share your skills, experience, and qualifications.
+            Start your journey with us today and take the first step towards an exciting career in IT!
+            </h3>
+            <br>
+            <br>
+        </section>
+    </section> <!-- end of herosection -->
+
 
 
      <!-- MAIN CONTENT -->
-  <form action="applysuccess.html" method="get">
-      <h1>JOB APPLICATION FORM</h1>
-      <h3>Fill out our IT Job Application Form to share your skills, experience, and qualifications.</h3>
-      <h3>Start your journey with us today and take the first step towards an exciting career in IT!</h3>
-  <fieldset>
-    <legend>Personal Information</legend>
-    <p>
-  <label for="fullname">Full Name</label>
-  <input type="text" id="fullname" required>
-   <label for="address">Address</label>
-   <input type="text" id="address" required>
-  </p>
-    <p>
-   <label for="birth">Birth</label>
-   <input type="date" id="birth" required>
-   <label for="sex">Sex</label>
-        <select id="sex" name="sex" required>
-          <option value="">Please select</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="undecided">Undecided</option>
-</select>
-   </p>
-   <p>
-   <label for="phonenumber1">Phone Number</label>
-   <input type="text" id="phonenumber1" required pattern="\d{1,10}">
-   <label for="email">Email Address</label>
-   <input type="text" id="email" required>
-   </p>
-  </fieldset>
-  <fieldset>
-    <legend>Education</legend>
-    <p>
-    <label for="university">University/Institution</label>
-    <input type="text" id="university" required>
-    <label for="degree">Degree/Certification</label>
-    <input type="text" id="degree" required>
-    <label for="year">Year Completed</label>
-    <input type="date" id="year" required>
-  </p>
-</fieldset>
-  <fieldset>
-    <legend>Skills & Qualifications</legend>
-    <p>
-       <label><input type="checkbox" value="HTML"> HTML</label>
-        <label><input type="checkbox" value="CSS"> CSS</label>
-        <label><input type="checkbox" value="JavaScript"> JavaScript</label>
-        <label><input type="checkbox" value="PHP"> PHP</label>
-        <label><input type="checkbox" value="MySQL"> MySQL</label>
-        <label><input type="checkbox" value="Others"> Others</label>
-<br>
-</p>
-<p>
- <label for="description">List relevant skills, certifications or qualifications:</label>
- <br>
-<textarea id="description" name="description" rows="10" cols="100"  placeholder="Put down your relevant skills, certifications and qualifications here..." required></textarea>
-</p>
-</fieldset>
-<fieldset>
-  <legend>Recent Employment History</legend>
-   <p>
-        <label for="company1">Company Name</label>
-        <input type="text" id="company1" required>
+    <form id="app_form" class="colum flex_center center" action="applysuccess.html" method="get">        
+        <fieldset>
+            <legend>Personal Information</legend>
+            <p>
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" required>
 
-        <label for="position1">Position Held</label>
-        <input type="text" id="position1" required>
+        <label for="address">Address</label>
+        <input type="text" id="address" required>
+        </p>
+            <p>
+        <label for="birth">Birth</label>
+        <input type="date" id="birth" required>
+        <label for="sex">Sex</label>
+                <select id="sex" name="sex" required>
+                <option value="">Please select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="undecided">Undecided</option>
+        </select>
+        </p>
+        <p>
+        <label for="phonenumber1">Phone Number</label>
+        <input type="text" id="phonenumber1" required pattern="\d{1,10}">
+        <label for="email">Email Address</label>
+        <input type="text" id="email" required>
+        </p>
+        </fieldset>
 
-        <label for="emdate1">Employment Dates</label>
-        <input type="date" id="emdate1" required>
-      </p>
+        <fieldset>
+            <legend>Education</legend>
+            <p>
+            <label for="university">University/Institution</label>
+            <input type="text" id="university" required>
+            <label for="degree">Degree/Certification</label>
+            <input type="text" id="degree" required>
+            <label for="year">Year Completed</label>
+            <input type="date" id="year" required>
+        </p>
+        </fieldset>
 
-      <p>
-        <label for="company2">Company Name</label>
-        <input type="text" id="company2">
+        <fieldset>
+            <legend>Skills & Qualifications</legend>
+            <p>
+            <label><input type="checkbox" value="HTML"> HTML</label>
+                <label><input type="checkbox" value="CSS"> CSS</label>
+                <label><input type="checkbox" value="JavaScript"> JavaScript</label>
+                <label><input type="checkbox" value="PHP"> PHP</label>
+                <label><input type="checkbox" value="MySQL"> MySQL</label>
+                <label><input type="checkbox" value="Others"> Others</label>
+        <br>
+        </p>
+        <p>
+        <label for="description">List relevant skills, certifications or qualifications:</label>
+        <br>
+        <textarea id="description" name="description" rows="10" cols="100"  placeholder="Put down your relevant skills, certifications and qualifications here..." required></textarea>
+        </p>
+        </fieldset>
 
-        <label for="position2">Position Held</label>
-        <input type="text" id="position2">
+        <fieldset>
+        <legend>Recent Employment History</legend>
+        <p>
+                <label for="company1">Company Name</label>
+                <input type="text" id="company1" required>
 
-        <label for="emdate2">Employment Dates</label>
-        <input type="date" id="emdate2">
-      </p>
+                <label for="position1">Position Held</label>
+                <input type="text" id="position1" required>
 
-      <p>
-        <label for="company3">Company Name</label>
-        <input type="text" id="company3">
+                <label for="emdate1">Employment Dates</label>
+                <input type="date" id="emdate1" required>
+            </p>
 
-        <label for="position3">Position Held</label>
-        <input type="text" id="position3">
+            <p>
+                <label for="company2">Company Name</label>
+                <input type="text" id="company2">
 
-        <label for="emdate3">Employment Dates</label>
-        <input type="date" id="emdate3">
-      </p>
-</fieldset>
-<fieldset>
-  <legend>Recent Employment History</legend>
-  <p>
-    <label for="reference">Reference Name</label>
-    <input type="text" id="reference" required>
-    <label for="relationship">Relationships</label>
-    <input type="text" id="relationship" required>
-    <label for="phonenumber2">Phone Number</label>
-    <input type="text" id="phonenumber2" required pattern="\d{1,10}">
-  </p>  
-</fieldset>  
-<!-- SUBMIT AND RESET BUTTON -->
-  <p id="submit_reset">
-<input type="checkbox" id="responsibility" required>  
-<label for="responsibility"><strong>I certify that the information provided in this application is accurate and complete. I understand that providing fasle information may result in disqualification from consideration for employment</strong></label>  
-  </p>
-<p>
-<input type="submit" value="Submit">
-<input type="reset" value="Reset">
-  </p>
-</form>
+                <label for="position2">Position Held</label>
+                <input type="text" id="position2">
+
+                <label for="emdate2">Employment Dates</label>
+                <input type="date" id="emdate2">
+            </p>
+
+            <p>
+                <label for="company3">Company Name</label>
+                <input type="text" id="company3">
+
+                <label for="position3">Position Held</label>
+                <input type="text" id="position3">
+
+                <label for="emdate3">Employment Dates</label>
+                <input type="date" id="emdate3">
+            </p>
+        </fieldset>
+
+        <fieldset>
+        <legend>Recent Employment History</legend>
+        <p>
+            <label for="reference">Reference Name</label>
+            <input type="text" id="reference" required>
+            <label for="relationship">Relationships</label>
+            <input type="text" id="relationship" required>
+            <label for="phonenumber2">Phone Number</label>
+            <input type="text" id="phonenumber2" required pattern="\d{1,10}">
+        </p>  
+        </fieldset>  
+        <!-- SUBMIT AND RESET BUTTON -->
+        <p id="submit_reset">
+        <input type="checkbox" id="responsibility" required>  
+        <label for="responsibility"><strong>I certify that the information provided in this application is accurate and complete. I understand that providing fasle information may result in disqualification from consideration for employment</strong></label>  
+        </p>
+        <p>
+        <input class="btn" type="submit" value="Submit">
+        <input class="btn" type="reset" value="Reset">
+        </p>
+    </form>
 
   <!-- FOOTER (same on all pages) -->
     <footer>

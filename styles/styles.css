@@ -188,9 +188,9 @@ footer a:hover{
 
 /* Index.html HERO SECTION */
 .hp_hero_section {
-    height: 80vh; /* almost full screen */
+    height: 95vh; /* almost full screen */
     background: linear-gradient(to bottom, rgba(0, 20, 121, 0.123) 60%, var(--light-beige) 100%), 
-        url("../styles/images/homepage_herosection_background.jpg") center/cover no-repeat;  
+        url("../styles/images/herosection_background.jpg") center/cover no-repeat;  
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
     color: var(--dark-beige);
@@ -376,30 +376,64 @@ footer a:hover{
 
 
 /* apply.HTML STYLING */
-form {
-  max-width: 1000px;       /* widthform */
-  margin: 0 auto;         /* center */
-  padding: 20px;
-  background: #ffffff;   
+#app_herosection{
+    height: 80vh; /* almost full screen */
+    background: linear-gradient(to bottom, rgba(0, 20, 121, 0.123) 60%, var(--light-beige) 100%), 
+        url("../styles/images/app_background.jpg") center/cover no-repeat;  
+    position: relative; /* anchor for scroll icon later */
+    padding: 1rem;
+    color: var(--dark-beige);
+}
+
+#app_herosection .ap_title{
+    color: var(--dark-beige);
+    border-color: var(--dark-beige);
+}
+
+
+#app_form {
+  margin-top: 0 auto;
+  background: var(--light-beige);   
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1); /* box shadow */
 }
-h1, h3 {
-    text-align: center; /*title*/
-    line-height: 2;    
-}
-fieldset {
-  margin: 20px 0;   
+
+#app_form fieldset {
+  margin: 20px auto;    
   padding: 15px;  
   border-radius: 8px; 
+  border: 2px solid var(--black);
+  width: 90%;                 
+  max-width: 800px;   
 }
-legend { 
+
+#app_form legend { 
     text-align: center; 
     font-size: large;     /*heading*/
     font-weight: bold;
     line-height: 4;
+    color: var(--blue-hightlight);
 }
-p {
+
+#app_form textarea{
+    max-width: 700px;
+    background-color: var(--light-beige);
+    border-radius: 5px;
+}
+
+#app_form input{
+    background-color: var(--light-beige);
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+}
+
+#app_form .btn{
+    background-color: var(--blue-background);
+    border: 2px solid var(--blue);
+    border-radius: 10px;
+}
+
+#app_form p {
     line-height: 2;
     text-align: center;
 }
@@ -414,6 +448,18 @@ p {
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   text-align: center;
 }
+
+/* apply.html responsive */
+@media (max-width: 768px) {
+    #app_herosection{
+        max-height: 50vh;
+    }
+    #app_form textarea{
+        max-width: 00px;
+    }
+}
+
+
 /* About.HTML STYLING */
 .ap_title{ /*title with line below*/
     color: var(--blue-hightlight);
@@ -437,7 +483,7 @@ p {
 #ap_herosection{
     height: 80vh; /* almost full screen */
     background: linear-gradient(to bottom, rgba(0, 20, 121, 0.123) 60%, var(--light-beige) 100%), 
-        url("../styles/herosection_background.jpg") center/cover no-repeat;  
+        url("../styles/images/ap_background.jpg") center/cover no-repeat;  
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
     color: var(--dark-beige);
@@ -522,7 +568,7 @@ p {
 /* About.html responsive */
 @media (max-width: 768px) {
     #ap_herosection{
-        max-height: 40vh;
+        max-height: 50vh;
     }
     .ap_desc{
         display: flex;
@@ -534,6 +580,10 @@ p {
         flex-direction: row;
         width: 80vw;
         justify-content: space-evenly;
+    }
+    .ap_member_details{
+        display: flex;
+        flex-direction: column;
     }
     .btn{
         font-size: 15px;
