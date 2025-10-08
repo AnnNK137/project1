@@ -370,11 +370,45 @@ footer a:hover{
 /* jobs.HTML STYLING */
 
 
-
 /* apply.HTML STYLING */
-
-
-
+form {
+  max-width: 1000px;       /* widthform */
+  margin: 0 auto;         /* center */
+  padding: 20px;
+  background: #ffffff;   
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* box shadow */
+}
+h1, h3 {
+    text-align: center; /*title*/
+    line-height: 2;    
+}
+fieldset {
+  margin: 20px 0;   
+  padding: 15px;  
+  border-radius: 8px; 
+}
+legend { 
+    text-align: center; 
+    font-size: large;     /*heading*/
+    font-weight: bold;
+    line-height: 4;
+}
+p {
+    line-height: 2;
+    text-align: center;
+}
+/* applysuccess.HTML STYLING */
+.submitintro {       
+   width: 90%;               
+  max-width: 1200px;        
+  margin: 250px auto;        
+  padding: 40px;
+  background: linear-gradient(to right, #ffffff, #ede9fe);
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  text-align: center;
+}
 /* About.HTML STYLING */
 .ap_title{ /*title with line below*/
     color: var(--blue-hightlight);
