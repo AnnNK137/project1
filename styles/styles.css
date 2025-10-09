@@ -783,6 +783,7 @@ footer a:hover{
     text-align: center;
     min-height: 500px;
     min-width: 320px;
+
 }
 
 .ap_members li{
@@ -860,6 +861,9 @@ footer a:hover{
 @media (max-width: 768px) {
     #ap_herosection{
         max-height: 50vh;
+    }
+    .ap_members{
+        min-height: 100px;
     }
     .ap_desc{
         display: flex;
