@@ -186,7 +186,7 @@ footer a:hover{
 
 /* Index.html HERO SECTION */
 .hp_hero_section {
-    height: 95vh; /* almost full screen */
+    height: 90vh; /* almost full screen */
     background: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
         url(../styles/images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
@@ -391,6 +391,7 @@ footer a:hover{
     font-size: 90px;
     font-weight: bold;
     text-shadow: 1px 1px 10px var(--black);
+    border-bottom: 3px solid white; /*adding a line to the titles*/
 }
 .job_sub_menu{ 
     color: var(--light-beige);
@@ -738,10 +739,10 @@ footer a:hover{
 
 /* About.HTML STYLING */
 .ap_title{ /*title with line below*/
-    color: var(--blue-hightlight);
+    color: white;
     font-size: 2.5rem;
     padding: 1.5%;
-    border-bottom: 3px solid var(--blue-hightlight);
+    border-bottom: 3px solid white;
 }
 
 .ap_desc{
@@ -757,24 +758,26 @@ footer a:hover{
 }
 /* About.html hero section */
 #ap_herosection{
-    height: 80vh; /* almost full screen */
-    background: linear-gradient(to bottom, rgba(0, 20, 121, 0.123) 60%, var(--light-beige) 100%), 
-        url("../styles/images/ap_background.jpg") center/cover no-repeat;  
+    height: 90vh; /* almost full screen */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+        url(../styles/images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
-    color: var(--dark-beige);
+    color: white;
 }
 
 #ap_herosection .ap_title{
-    color: var(--dark-beige);
-    border-color: var(--dark-beige);
+    color: white;
+    border-color: white;
 }
 
 /* ABOUT.html member details */
 .ap_members{
+    color: var(--black);
     margin: 6%;
-    background-color: var(--blue-background);
-    border: 3px solid var(--blue);
+    background-color: var(--light-beige);
+    border: 3px solid var(--blue-hightlight);
     border-radius: 20px;
     text-align: center;
 }
@@ -791,7 +794,7 @@ footer a:hover{
     padding: 10px;
     border-radius: 10px 10px 0 0;
     border-bottom: 3px solid var(--blue);
-    background-color: var(--blue);
+    background-color: var(--blue-hightlight);
     color: var(--dark-beige);
 }
 
@@ -823,18 +826,27 @@ footer a:hover{
 }
 
 /* About.html TABLE */
+#ap_interests{
+    background-color: var(--light-beige);
+    color: var(--black);
+}
+
+#ap_interests .ap_title{
+    color: var(--black);
+    border-color: var(--black);
+}
+
 #ap_interests table{
     margin: 5%;
     width: 80%;
     text-align: center;
     border-collapse: separate; /*allows border radius */
-    border-spacing: 0; 
     border-radius: 10px;
-    border: 3px solid var(--blue);
+    border: 3px solid var(--blue-hightlight);
 }
 
 #ap_interests th, #ap_interests td{
-    border: 1px solid var(--blue); 
+    border: 1px solid var(--blue-hightlight); 
     padding: 20px;
     width: 25%;
     height: 60px;
