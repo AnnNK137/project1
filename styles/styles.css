@@ -383,12 +383,12 @@ footer a:hover{
 .job_intro{
     background: url(/images/job_images/jobpage_background\(1\).jpg);
     width: 100%;
-    height: 60vw;
+    height: 35vw;
     text-align: center;
 }
 .job_intro_text{
     color: var(--light-beige);
-    font-size: 90px;
+    font-size: 50px;
     font-weight: bold;
     text-shadow: 1px 1px 10px var(--black);
     border-bottom: 3px solid white; /*adding a line to the titles*/
@@ -652,7 +652,8 @@ footer a:hover{
 /* apply.HTML STYLING */
 #app_herosection{
     height: 80vh; /* almost full screen */
-    background: url(/images/job_images/jobpage_background\(1\).jpg);  
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), /*add black opacity over to see the white text*/
+    url(/images/job_images/jobpage_background\(1\).jpg);  
     padding: 1rem;
     color: white;
 }
