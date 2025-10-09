@@ -528,7 +528,7 @@ footer a:hover{
 }
 .main_line_evp{
     border: none;
-    background-color: var(--black);
+    background-color: var(--light-beige);
     height: 3px;
     width: 200px;
     margin-left: 63px;
