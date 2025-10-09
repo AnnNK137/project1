@@ -15,7 +15,8 @@
 
 
 body {
-    background-color: var(--light-beige);
+    background-color: black;
+    color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -158,14 +159,11 @@ footer a:hover{
 }
 
 /* INDEX.HTML STYLING */
-.hp_hero_sect_info, .hp_main_content {
-    font-size: clamp(1rem, 2vw, 1.25rem); /* scales with screen width for more responsive*/
-}
 
 .btn{ /* Basic design of <a> to look like a button */
     border: 2px solid var(--black);
     border-radius: 15px;
-    background-color: var(--blue-background);
+    background-color: var(--light-beige);
     padding: 10px;
     margin: 1rem;
     font-size: 18px;
@@ -189,16 +187,17 @@ footer a:hover{
 /* Index.html HERO SECTION */
 .hp_hero_section {
     height: 95vh; /* almost full screen */
-    background: linear-gradient(to bottom, rgba(0, 20, 121, 0.123) 60%, var(--light-beige) 100%), 
-        url("../styles/images/herosection_background.jpg") center/cover no-repeat;  
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+        url(../styles/images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
-    color: var(--dark-beige);
+    color: white;
 }
 
 #hp_title{
-    color: var(--dark-beige);
-    border-color: var(--dark-beige);
+    color: white;
+    border-color: white;
 }
 
 .hp_hero_sect_info {
@@ -219,10 +218,10 @@ footer a:hover{
     width: 100px;
 }
 
-.hp_highlight{
-    color: var(--blue-hightlight);
+/* .hp_highlight{
+    color: var();
     text-decoration: none;
-}
+} */
 
 .hp_scroll_down_icon img{ /* Scroll icon */
     margin: auto;
@@ -249,12 +248,11 @@ footer a:hover{
 }
 
 .hp_title{
-    font-size: 2rem;
-    color: var(--blue-hightlight);
+    font-size: 3rem;
+    color: white;
     margin-bottom: 2%;
-    text-align: center;
     padding-bottom: 20px;
-    border-bottom: 3px solid var(--blue-hightlight);
+    border-bottom: 3px solid white;
 }
 
 .hp_desc h2, p {
@@ -270,7 +268,7 @@ footer a:hover{
 
 /* Index.html stat box below hero section */
 .hp_stat{
-    color: var(--blue);
+    color: white;
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
@@ -314,11 +312,11 @@ footer a:hover{
 }
 
 .hp_values {
+    color: black;
     margin: 5%;
-    background-color: var(--blue-background);
+    background-color: var(--light-beige);
     padding: 5%;
     border-radius: 20px;
-    border: 2px solid var(--blue);
 }
 
 /* Index.html reasons section */
@@ -341,6 +339,12 @@ footer a:hover{
     width: 150px;
     height: 150px;
     border-radius: 15px;
+}
+
+#hp_cfa{
+    background-color: var(--light-beige);
+    height: 200px;
+    color: var(--black);
 }
 
 /* Index.html responsive*/
