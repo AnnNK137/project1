@@ -268,10 +268,11 @@ footer a:hover{
 
 /* Index.html stat box below hero section */
 .hp_stat{
-    color: white;
+    color: black;
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
+    background-color: var(--light-beige);
 }
 
 .hp_stat_group{
@@ -382,7 +383,7 @@ footer a:hover{
 .job_intro{
     background: url(/images/job_images/jobpage_background\(1\).jpg);
     width: 100%;
-    height: 700px;
+    height: 60vw;
     text-align: center;
 }
 .job_intro_text{
@@ -390,7 +391,6 @@ footer a:hover{
     font-size: 90px;
     font-weight: bold;
     text-shadow: 1px 1px 10px var(--black);
-    padding-top: 240px;
 }
 .job_sub_menu{ 
     color: var(--light-beige);
@@ -427,7 +427,7 @@ footer a:hover{
 .job_list{
     display: flex;
     justify-content: space-between;
-    background: var(--dark-beige);
+    background: var(--light-beige);
     border-radius: 7px;
     margin: 30px;
     padding: 10px;
@@ -435,9 +435,9 @@ footer a:hover{
 }
 .job_hiring_btn{    
     font-weight: bold;
-    border: 2px solid var(--black);
+    border: 2px solid var(--blue);
     border-radius: 10px;
-    background-color: var(--dark-beige);
+    background-color: var(--blue-background);
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -638,26 +638,31 @@ footer a:hover{
     color: var(--light-beige);
 }
 
+/* JOBS.html responsive */
+@media (max-width: 768px) {
+    .job_intro{
+        max-height: 50vw;
+    }
+    .job_intro_text{
+        font-size: 3rem;
+    }
+}
 
 /* apply.HTML STYLING */
 #app_herosection{
     height: 80vh; /* almost full screen */
-    background: linear-gradient(to bottom, rgba(0, 20, 121, 0.123) 60%, var(--light-beige) 100%), 
-        url("../styles/images/app_background.jpg") center/cover no-repeat;  
-    position: relative; /* anchor for scroll icon later */
+    background: url(/images/job_images/jobpage_background\(1\).jpg);  
     padding: 1rem;
-    color: var(--dark-beige);
+    color: white;
 }
 
 #app_herosection .ap_title{
-    color: var(--dark-beige);
-    border-color: var(--dark-beige);
+    color: white;
+    border-color: white;
 }
-
 
 #app_form {
   margin-top: 0 auto;
-  background: var(--light-beige);   
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1); /* box shadow */
 }
@@ -666,7 +671,7 @@ footer a:hover{
   margin: 20px auto;    
   padding: 15px;  
   border-radius: 8px; 
-  border: 2px solid var(--black);
+  border: 2px solid white;
   width: 90%;                 
   max-width: 800px;   
 }
@@ -676,11 +681,11 @@ footer a:hover{
     font-size: large;     /*heading*/
     font-weight: bold;
     line-height: 4;
-    color: var(--blue-hightlight);
 }
 
 #app_form textarea{
     max-width: 700px;
+    height: 55px; /*set size for typing area*/
     background-color: var(--light-beige);
     border-radius: 5px;
 }
@@ -700,6 +705,12 @@ footer a:hover{
 #app_form p {
     line-height: 2;
     text-align: center;
+}
+
+#app_certified{
+    height: 200px;
+    background-color: var(--light-beige);
+    color: black;
 }
 /* applysuccess.HTML STYLING */
 .submitintro {       
