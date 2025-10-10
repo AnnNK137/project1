@@ -350,7 +350,7 @@ footer a:hover{
 /* Index.html responsive*/
 @media (max-width: 768px) {
     .hp_hero_section{
-        max-height: 60vh;
+        max-height: 90vh;
     }
     .hp_longer_desc{
         max-width: 70%;
@@ -640,11 +640,8 @@ footer a:hover{
 
 /* JOBS.html responsive */
 @media (max-width: 768px) {
-    .job_intro{
-        max-height: 50vw;
-    }
     .job_intro_text{
-        font-size: 3rem;
+        font-size: 2rem;
     }
 }
 
@@ -730,10 +727,15 @@ footer a:hover{
 /* apply.html responsive */
 @media (max-width: 768px) {
     #app_herosection{
-        max-height: 50vh;
+        max-height: 65vh;
     }
     #app_form textarea{
         max-width: 500px;
+    }
+}
+@media (max-width: 500px) {
+    #app_form textarea{
+        max-width: 300px;
     }
 }
 
@@ -860,7 +862,7 @@ footer a:hover{
 /* About.html responsive */
 @media (max-width: 768px) {
     #ap_herosection{
-        max-height: 50vh;
+        max-height: 65vh;
     }
     .ap_members{
         min-height: 100px;
@@ -881,6 +883,31 @@ footer a:hover{
         flex-direction: column;
     }
     .btn{
-        font-size: 15px;
+        font-size: 10px;
     }
+}
+
+@media (max-width: 550px) {
+    #ap_herosection{
+        max-height: 65vh;
+    }
+    .ap_members{
+        min-height: 100px;
+    }
+    .ap_desc{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .ap_members_desc{
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        justify-content: space-evenly;
+    }
+    .ap_member_details{
+        display: flex;
+        flex-direction: column;
+    }
+
 }
