@@ -84,7 +84,7 @@
         <fieldset>
             <legend>Skills & Qualifications</legend>
             <p>
-            <label><input type="checkbox" value="HTML"> HTML</label>
+                <label><input type="checkbox" value="HTML"> HTML</label>          
                 <label><input type="checkbox" value="CSS"> CSS</label>
                 <label><input type="checkbox" value="JavaScript"> JavaScript</label>
                 <label><input type="checkbox" value="PHP"> PHP</label>
@@ -100,23 +100,22 @@
         </fieldset>
         <fieldset>
             <legend>Apply For Job</legend>
-            <div class="container"> 
-                <div class="box">Software Developer</div> 
-                <input type="radio" id="box"> 
-                <div class="box">Network Administrator</div>
-                <input type="radio" id="box">
-                <div class="box">Cloud Engineer</div> 
-                <input type="radio" id="box"> 
-            </div>
+            <label for="job">JOB YOU WOULD LIKE TO APPLY</label>
+                <select id="job" name="job" required>
+                <option value="">Please select</option>       <!-- APPLY FOR JOB -->
+                <option value="software">Software Developer</option>
+                <option value="net">Network Administrator</option>
+                <option value="cloud">Cloud Engineer</option>
+        </select>
         </fieldset>
         <fieldset>
-        <legend>Recent Employment History</legend>
+        <legend>Recent Employment History</legend>  
         <p>
                 <label for="company1">Company Name</label>
                 <input type="text" id="company1" required pattern="[A-Za-z\s]+">
 
                 <label for="position1">Position Held</label>
-                <input type="text" id="position1" required pattern="[A-Za-z\s]+">
+                <input type="text" id="position1" required pattern="[A-Za-z\s]+"> <!-- EMPLOYMENT HISTORY -->
 
                 <label for="emdate1">Employment Dates</label>
                 <input type="date" id="emdate1" required>
@@ -151,7 +150,7 @@
             <label for="reference">Reference Name</label>
             <input type="text" id="reference" required pattern="[A-Za-z\s]+">
             <label for="relationship">Relationships</label>
-            <input type="text" id="relationship" required pattern="[A-Za-z\s]+">
+            <input type="text" id="relationship" required pattern="[A-Za-z\s]+">   <!-- EMPLOYMENT CONTACT -->
             <label for="phonenumber2">Phone Number</label>
             <input type="text" id="phonenumber2" required pattern="\d{1,10}">
         </p>  
