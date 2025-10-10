@@ -653,13 +653,13 @@ footer a:hover{
 #app_herosection{
     height: 80vh; /* almost full screen */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), /*add black opacity over to see the white text*/
-    url(/images/job_images/jobpage_background\(1\).jpg);  
+    url(/images/job_images/jobpage_background\(1\).jpg);  /*image*/
     padding: 1rem;
     color: white;
 }
 
 #app_herosection .ap_title{
-    color: white;
+    color: white;          
     border-color: white;
 }
 
@@ -670,12 +670,12 @@ footer a:hover{
 }
 
 #app_form fieldset {
-  margin: 20px auto;    
-  padding: 15px;  
+  margin: 20px auto;    /*outside border*/
+  padding: 15px;       /*inside border*/
   border-radius: 8px; 
-  border: 2px solid white;
-  width: 90%;                 
-  max-width: 800px;   
+  border: 4px solid white; /* bigger border*/
+  width: 100%;                 
+  max-width: 1200px;   /*larger box*/
 }
 
 #app_form legend { 
@@ -684,11 +684,31 @@ footer a:hover{
     font-weight: bold;
     line-height: 4;
 }
-
+#app_form .container {
+    display: flex;               /* feature the box with horizontal line */
+  justify-content: center;    
+  gap: 30px;                   /* space */
+  background-color: black;    
+  padding: 40px;              /*content inside the box*/
+}
+#app_form .box {
+  background-image: url(/images/IT.jpg);
+  width: 200px;
+  height: 100px;
+  border: 4px solid #f1efec;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 #app_form textarea{
     max-width: 700px;
     height: 55px; /*set size for typing area*/
-    background-color: var(--light-beige);
+    background-color: white;
     border-radius: 5px;
 }
 
