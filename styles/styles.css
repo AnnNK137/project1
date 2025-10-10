@@ -158,8 +158,8 @@ footer a:hover{
 }
 
 @media (max-width: 550px) {
-    footer li{
-        font-size: 14px;
+    footer li, .nav_items li{
+        font-size: 13px;
     }
 }
 
