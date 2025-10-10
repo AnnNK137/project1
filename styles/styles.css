@@ -157,12 +157,6 @@ footer a:hover{
     transition: all 0.3s ease;
 }
 
-@media (max-width: 550px) {
-    footer li, .nav_items li{
-        font-size: 13px;
-    }
-}
-
 /* INDEX.HTML STYLING */
 
 .btn{ /* Basic design of <a> to look like a button */
@@ -194,7 +188,7 @@ footer a:hover{
     height: 90vh; /* almost full screen */
     background: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-        url(styles/images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
+        url(../styles/images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
     color: white;
@@ -350,46 +344,9 @@ footer a:hover{
 #hp_cfa{
     background-color: var(--light-beige);
     height: 200px;
+    width: 100vw;
     color: var(--black);
 }
-
-/* Index.html responsive*/
-@media (max-width: 768px) {
-    .hp_hero_section{
-        max-height: 90vh;
-    }
-    .hp_longer_desc{
-        max-width: 70%;
-    }
-    .hp_stat_group{
-        margin: auto;
-        font-size: 80%;
-    }
-    #hp_values_list, #hp_samples { /* GRID changed*/
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    }
-    #hp_samples img{
-        width: 250px;
-    }
-}
-
-@media (max-width: 550px) {
-    .hp_main_content p, .hp_stat,#hp_reasons_list li, .hp_values h2, .hp_desc{
-        font-size: 13px;
-    }
-    .hp_title {
-        font-size: 1.5rem;
-    }
-    .hp_icons{
-        width: 40px;
-    }
-    #hp_samples{
-        display: flex;
-        flex-direction: column;
-    }
-}
-
 
 /* jobs.HTML STYLING */
 
@@ -781,7 +738,7 @@ footer a:hover{
     height: 90vh; /* almost full screen */
     background: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-        url(styles/images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
+        url(../styles/images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
     color: white;
@@ -928,3 +885,57 @@ footer a:hover{
     }
 
 }
+
+/* Index.html HALF SCREEN PC*/
+@media (max-width: 768px) {
+    /* INDEXHTML */
+    .hp_hero_section{
+        max-height: 80vh;
+    }
+    .hp_longer_desc, .hp_desc, .hp_hero_sect_info{
+        font-size: 11px;
+    }
+    #hp_title{
+        font-size: 18px;
+    }
+    .hp_stat_group{
+        margin: auto;
+        font-size: 80%;
+    }
+    #hp_values_list, #hp_samples { /* GRID changed*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    }
+    #hp_samples img{
+        width: 250px;
+    }
+} 
+
+/* PHONE RESPONSIVE */
+@media (max-width: 500px) {
+    /* NAVBAR */
+    .nav_items a{
+        font-size: 14px;
+        padding: 9px;
+    }
+    /* FOOTER */
+    footer li{
+        font-size: 14px;
+    }
+
+    /* INDEX.HTML */
+    .hp_main_content p, .hp_stat,#hp_reasons_list li, .hp_values h2, .hp_desc{
+        font-size: 13px;
+    }
+    .hp_title {
+        font-size: 1.5rem;
+    }
+    .hp_icons{
+        width: 40px;
+    }
+    #hp_samples{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
