@@ -157,6 +157,12 @@ footer a:hover{
     transition: all 0.3s ease;
 }
 
+@media (max-width: 550px) {
+    footer li{
+        font-size: 14px;
+    }
+}
+
 /* INDEX.HTML STYLING */
 
 .btn{ /* Basic design of <a> to look like a button */
