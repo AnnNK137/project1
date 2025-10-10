@@ -355,7 +355,7 @@ footer a:hover{
     .hp_longer_desc{
         max-width: 70%;
     }
-    .hp_stat_group , .hp_stat_icon{
+    .hp_stat_group{
         margin: auto;
         font-size: 80%;
     }
@@ -365,13 +365,26 @@ footer a:hover{
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
+    .hp_main_content p{
+        font-size: 13px;
+    }
     .hp_title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     .hp_desc{
         margin: auto;
-        font-size: 60%;
+        font-size: 12px;
+    }
+    .hp_icons{
+        width: 40px;
+    }
+    .hp_stat{
+        font-size: 11px;
+    }
+    #hp_samples{
+        display: flex;
+        flex-direction: column;
     }
 }
 
