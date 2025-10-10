@@ -194,7 +194,7 @@ footer a:hover{
     height: 90vh; /* almost full screen */
     background: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-        url(../styles/images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
+        url(styles/images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
     color: white;
@@ -781,7 +781,7 @@ footer a:hover{
     height: 90vh; /* almost full screen */
     background: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-        url(../styles/images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
+        url(styles/images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
     color: white;
