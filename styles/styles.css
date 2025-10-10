@@ -407,6 +407,9 @@ footer a:hover{
     text-shadow: 1px 1px 10px var(--black);
     border-bottom: 3px solid white; /*adding a line to the titles*/
 }
+.job_intro ol{
+    list-style-position: inside; /*Makes the numbers align directly with the text*/
+}
 .job_sub_menu{ 
     color: var(--light-beige);
     font-size: 20px;
