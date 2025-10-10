@@ -596,24 +596,26 @@ footer a:hover{
 }
 .job_quote_part{
     margin: 100px;
+    float: left;
 }
 .job_quote_icon{
     width: 70px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 .job_quote_title{
-    margin-top: -60px;
     font-size: 45px;
 }
 .job_quote_p1{
     margin-top: 20px;
+    margin-left: -5px;
 }
 .job_quote_p2{
     margin-top: 20px;
+    margin-left: -5px;
     font-size: 20px;
 }
 .job_quote_img{
-    width: 70%;
+    width: 50%;
     float: right;
 }
 
