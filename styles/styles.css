@@ -135,7 +135,6 @@ footer {
     margin: 0 0 10px;
     margin-top: 10px;
     color: var(--light-beige);
-    background-color: var(--light-beige);
 }
 
 footer p {
@@ -351,12 +350,12 @@ footer a:hover{
 /* Index.html responsive*/
 @media (max-width: 768px) {
     .hp_hero_section{
-        max-height: 60vh;
+        max-height: 90vh;
     }
     .hp_longer_desc{
         max-width: 70%;
     }
-    .hp_stat_group , .hp_stat_icon{
+    .hp_stat_group{
         margin: auto;
         font-size: 80%;
     }
@@ -366,13 +365,26 @@ footer a:hover{
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
+    .hp_main_content p{
+        font-size: 13px;
+    }
     .hp_title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     .hp_desc{
         margin: auto;
-        font-size: 60%;
+        font-size: 12px;
+    }
+    .hp_icons{
+        width: 40px;
+    }
+    .hp_stat{
+        font-size: 11px;
+    }
+    #hp_samples{
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -460,7 +472,7 @@ footer a:hover{
     height: 250px;
     cursor: pointer;
 }
-.job_card_container .job_slide {
+.job_card_container .job_slide {   /*Select any element with the class .job_slide that is inside an element with the class .job_card_container.*/
     width: 100%;
     height: 100%;
     transition: 0.6s;
@@ -537,7 +549,7 @@ footer a:hover{
 }
 #jov_evp{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);  /*Creates a layout with 3 equal columns, and if have more than 3 items, automatically wrap to the next row.*/
     flex-direction: column; 
     gap: 20px; 
     padding-left: 70px;
@@ -578,30 +590,32 @@ footer a:hover{
     background-color: var(--black);
     color: var(--light-beige);
     width: 100%;
-    max-height: 600px;
+    max-height: 630px;
     display: flex;
     justify-content: space-between;
 }
 .job_quote_part{
     margin: 100px;
+    float: left;
 }
 .job_quote_icon{
     width: 70px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 .job_quote_title{
-    margin-top: -60px;
     font-size: 45px;
 }
 .job_quote_p1{
     margin-top: 20px;
+    margin-left: -5px;
 }
 .job_quote_p2{
     margin-top: 20px;
+    margin-left: -5px;
     font-size: 20px;
 }
 .job_quote_img{
-    width: 70%;
+    width: 50%;
     float: right;
 }
 /* APPLY BUTTON*/
@@ -639,11 +653,8 @@ footer a:hover{
 }
 /* JOBS.html responsive */
 @media (max-width: 768px) {
-    .job_intro{
-        max-height: 50vw;
-    }
     .job_intro_text{
-        font-size: 3rem;
+        font-size: 2rem;
     }
 }
 
@@ -728,10 +739,15 @@ footer a:hover{
 /* apply.html responsive */
 @media (max-width: 768px) {
     #app_herosection{
-        max-height: 50vh;
+        max-height: 65vh;
     }
     #app_form textarea{
         max-width: 500px;
+    }
+}
+@media (max-width: 500px) {
+    #app_form textarea{
+        max-width: 300px;
     }
 }
 
@@ -779,6 +795,9 @@ footer a:hover{
     border: 3px solid var(--blue-hightlight);
     border-radius: 20px;
     text-align: center;
+    min-height: 500px;
+    min-width: 320px;
+
 }
 
 .ap_members li{
@@ -855,7 +874,10 @@ footer a:hover{
 /* About.html responsive */
 @media (max-width: 768px) {
     #ap_herosection{
-        max-height: 50vh;
+        max-height: 65vh;
+    }
+    .ap_members{
+        min-height: 100px;
     }
     .ap_desc{
         display: flex;
@@ -875,4 +897,23 @@ footer a:hover{
     .btn {
         font-size: 15px;
     }
+    .ap_members{
+        min-height: 100px;
+    }
+    .ap_desc{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .ap_members_desc{
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        justify-content: space-evenly;
+    }
+    .ap_member_details{
+        display: flex;
+        flex-direction: column;
+    }
+
 }
