@@ -694,12 +694,16 @@ footer a:hover{
     line-height: 4;      /*gap between contents and title*/
 }
 #app_form textarea{
-    max-width: 700px;
+    width: 100%;          /*remain inside the border*/
+    max-width: 100%;
     height: 55px; /*set size for typing area*/
     background-color: white;
     border-radius: 5px;
 }
-
+#app_form .checkbox {
+    width: 100%;
+    max-width: 100%;
+}
 #app_form input{
     background-color: var(--light-beige);
     border: 3px solid var(--blue);
