@@ -402,27 +402,34 @@ footer a:hover{
 
 /* PAGE INTRODUCTION & MENU */
 .job_intro{
-    background: url(/images/job_images/jobpage_background\(1\).jpg);
+    background: url(../images/job_images/jobpage_background\(1\).jpg);
     width: 100%;
-    height: 35vw;
+    height: 100%;
     text-align: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
 }
 .job_intro_text{
     color: var(--light-beige);
     font-size: 50px;
-    font-weight: bold;
     text-shadow: 1px 1px 10px var(--black);
     border-bottom: 3px solid white; /*adding a line to the titles*/
+    width: fit-content;
+    margin: 0 auto;   
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 .job_intro ol{
     list-style-position: inside; /*Makes the numbers align directly with the text*/
+    padding-top: 50px;
+    font-weight: bold;
+    text-shadow: 1px 1px 10px var(--black);  
+
 }
 .job_sub_menu{ 
     color: var(--light-beige);
     font-size: 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 10px var(--black);
+    text-decoration: none;    
 }
 .job_sub_menu:hover{
     text-decoration: overline 2px;
@@ -475,13 +482,16 @@ footer a:hover{
 
 .job_info {
     display: flex;
-    justify-content:space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
     align-items: center;
 }
 .job_card_container {
     position: relative;
     width: 300px;
     height: 250px;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 .job_card_container .job_slide {   /*Select any element with the class .job_slide that is inside an element with the class .job_card_container.*/
@@ -667,8 +677,22 @@ footer a:hover{
 
 /* JOBS.html responsive */
 @media (max-width: 768px) {
-    .job_intro_text{
-        font-size: 2rem;
+    .job_intro_text {
+        font-size: 1.8rem;
+    }
+    .job_info {
+        flex-direction: column;
+        align-items: center;
+    }
+    #jov_evp {
+        grid-template-columns: 1fr 1fr;
+        padding-left: 20px;
+    }
+}
+@media (max-width: 480px) {
+    #jov_evp {
+        grid-template-columns: 1fr;
+        padding-left: 0;
     }
 }
 
