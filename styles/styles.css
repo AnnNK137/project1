@@ -663,7 +663,7 @@ footer a:hover{
 #app_herosection{
     height: 80vh; /* almost full screen */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), /*add black opacity over to see the white text*/
-    url(/images/job_images/jobpage_background\(1\).jpg);  /*image*/
+    url(/images/job_images/jobpage_background\(1\).jpg);  /* origin image taken from: https://www.pexels.com/photo/black-and-gray-building-illustration-66905/ */
     padding: 1px;
     color: white;
 }
