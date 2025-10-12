@@ -201,7 +201,7 @@ footer a:hover{
     height: 90vh; /* almost full screen */
     background: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-        url(stylesimages/ap_background.jpg);  /*put black opacity/gradient over the original background*/
+        url(images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
     color: white;
@@ -708,7 +708,7 @@ footer a:hover{
 #app_herosection{
     height: 80vh; /* almost full screen */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), /*add black opacity over to see the white text*/
-    url(stylesimages/app_background.jpg);  
+    url(images/app_background.jpg);  
     padding: 1rem;
     color: white;
 }
@@ -823,7 +823,7 @@ footer a:hover{
     height: 90vh; /* almost full screen */
     background: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-        url(stylesimages/ap_background.jpg);  /*put black opacity/gradient over the original background*/
+        url(images/ap_background.jpg);  /*put black opacity/gradient over the original background*/
     position: relative; /* anchor for scroll icon later */
     padding: 1rem;
     color: white;
