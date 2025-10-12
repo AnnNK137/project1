@@ -648,11 +648,10 @@ footer a:hover{
     width: 50%;
     float: right;
 }
-
-/* APPLY BUTTON */
+/* APPLY BUTTON*/
 .job_apply_section{
     background: var(--light-beige);
-    color: var(--black);
+    color: black;
     padding: 32px;
     display: flex;
     align-items: center;
@@ -682,7 +681,6 @@ footer a:hover{
     font-weight: bold;
     color: var(--light-beige);
 }
-
 /* JOBS.html responsive */
 @media (max-width: 768px) {
     .job_intro_text {
@@ -705,6 +703,7 @@ footer a:hover{
 }
 
 /* apply.HTML STYLING */
+/*Introduction to application form*/
 #app_herosection{
     height: 80vh; /* almost full screen */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), /*add black opacity over to see the white text*/
@@ -712,12 +711,11 @@ footer a:hover{
     padding: 1rem;
     color: white;
 }
-
 #app_herosection .ap_title{
-    color: white;
+    color: white;          
     border-color: white;
 }
-
+/*the entire background*/
 #app_form {
   margin-top: 0;
   border-radius: 10px;
@@ -725,37 +723,36 @@ footer a:hover{
 }
 
 #app_form fieldset {
-  margin: 20px auto;    
-  padding: 15px;  
+  margin: 20px auto;    /*outside border*/
+  padding: 15px;       /*inside border*/
   border-radius: 8px; 
-  border: 2px solid white;
-  width: 90%;                 
-  max-width: 800px;   
+  border: 4px solid white; /* bigger border*/
+  width: 100%;                 
+  max-width: 150vh  /*larger fixed fieldset*/
 }
 
 #app_form legend { 
     text-align: center; 
     font-size: large;     /*heading*/
-    font-weight: bold;
-    line-height: 4;
+    font-weight: bold;     
+    line-height: 4;      /*gap between contents and title*/
 }
-
 #app_form textarea{
     max-width: 700px;
     height: 55px; /*set size for typing area*/
-    background-color: var(--light-beige);
+    background-color: white;
     border-radius: 5px;
 }
 
 #app_form input{
     background-color: var(--light-beige);
-    border: 1px solid var(--blue);
+    border: 3px solid var(--blue);
     border-radius: 5px;
 }
 
 #app_form .btn{
-    background-color: var(--blue-background);
-    border: 2px solid var(--blue);
+    background-color:rgb(240, 242, 227);
+    border: 2px solid rgb(136, 116, 240);
     border-radius: 10px;
 }
 
@@ -767,9 +764,9 @@ footer a:hover{
 #app_certified{
     height: 200px;
     background-color: var(--light-beige);
-    width: 100%;
-    color: black;
+    color: rgb(7, 7, 7);
 }
+
 /* applysuccess.HTML STYLING */
 .submitintro {       
    width: 90%;               
@@ -941,14 +938,8 @@ footer a:hover{
         display: flex;
         flex-direction: column;
     }
-    .btn{
-        font-size: 10px;
-    }
-}
-
-@media (max-width: 550px) {
-    #ap_herosection{
-        max-height: 65vh;
+    .btn {
+        font-size: 15px;
     }
     .ap_members{
         min-height: 100px;

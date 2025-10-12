@@ -12,7 +12,11 @@
      <header>
          <nav>
             <a href="index.html" class="brand_logo">
+<<<<<<< HEAD
                 <img src="images/logo.png" alt="3Ners"> 
+=======
+                <img src="images/logo.png" alt="3Ners">              
+>>>>>>> app-branch
             </a>
              <ul class="nav_items">
                 <li><a href="index.html">Home</a></li>
@@ -24,8 +28,13 @@
      </header>
 
         <!-- HERO SECTION/ INTRODUCTION -->
+         <!-- test commit -->
     <section id="app_herosection" class="center colum flex_center">
+<<<<<<< HEAD
             <img id="hp_hs_logo" src="images/logo.png" alt="3ners">
+=======
+            <img id="hp_hs_logo" src="images/logo.png" alt="3ners"> 
+>>>>>>> app-branch
             <h2 class="ap_title">JOB APPLICATION FORM</h2>
         <section class="ap_desc">
             <h3 class="ap_subtitle">
@@ -40,12 +49,12 @@
 
 
      <!-- MAIN CONTENT -->
-    <form id="app_form" class="colum flex_center center" action="applysuccess.html" method="get">        
+    <form id="app_form" class="colum flex_center center" action="applysuccess.html" method="get">
         <fieldset>
             <legend>Personal Information</legend>
             <p>
         <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" required>
+        <input type="text" id="fullname" required pattern="[A-Za-z\s]+">
 
         <label for="address">Address</label>
         <input type="text" id="address" required>
@@ -73,18 +82,18 @@
             <legend>Education</legend>
             <p>
             <label for="university">University/Institution</label>
-            <input type="text" id="university" required>
+            <input type="text" id="university" required pattern="[A-Za-z\s]+">
             <label for="degree">Degree/Certification</label>
-            <input type="text" id="degree" required>
+            <input type="text" id="degree" required pattern="[A-Za-z\s]+">
             <label for="year">Year Completed</label>
             <input type="date" id="year" required>
-        </p>
+            </p>
         </fieldset>
 
         <fieldset>
             <legend>Skills & Qualifications</legend>
             <p>
-            <label><input type="checkbox" value="HTML"> HTML</label>
+                <label><input type="checkbox" value="HTML"> HTML</label>
                 <label><input type="checkbox" value="CSS"> CSS</label>
                 <label><input type="checkbox" value="JavaScript"> JavaScript</label>
                 <label><input type="checkbox" value="PHP"> PHP</label>
@@ -98,15 +107,24 @@
         <textarea id="description" name="description" rows="10" cols="100"  placeholder="Put down your relevant skills, certifications and qualifications here..." required></textarea>
         </p>
         </fieldset>
-
+        <fieldset>
+            <legend>Apply For Job</legend>
+            <label for="job">JOB YOU WOULD LIKE TO APPLY</label>
+                <select id="job" name="job" required>
+                <option value="">Please select</option>       <!-- APPLY FOR JOB -->
+                <option value="software">Software Developer</option>
+                <option value="net">Network Administrator</option>
+                <option value="cloud">Cloud Engineer</option>
+        </select>
+        </fieldset>
         <fieldset>
         <legend>Recent Employment History</legend>
         <p>
                 <label for="company1">Company Name</label>
-                <input type="text" id="company1" required>
+                <input type="text" id="company1" required pattern="[A-Za-z\s]+">
 
                 <label for="position1">Position Held</label>
-                <input type="text" id="position1" required>
+                <input type="text" id="position1" required pattern="[A-Za-z\s]+"> <!-- EMPLOYMENT HISTORY -->
 
                 <label for="emdate1">Employment Dates</label>
                 <input type="date" id="emdate1" required>
@@ -136,21 +154,22 @@
         </fieldset>
 
         <fieldset>
-        <legend>Recent Employment History</legend>
+        <legend>Recent Employment Contact</legend>
         <p>
             <label for="reference">Reference Name</label>
-            <input type="text" id="reference" required>
+            <input type="text" id="reference" required pattern="[A-Za-z\s]+">
             <label for="relationship">Relationships</label>
-            <input type="text" id="relationship" required>
+            <input type="text" id="relationship" required pattern="[A-Za-z\s]+">   <!-- EMPLOYMENT CONTACT -->
             <label for="phonenumber2">Phone Number</label>
             <input type="text" id="phonenumber2" required pattern="\d{1,10}">
-        </p>  
-        </fieldset>  
+        </p>
+        </fieldset>
         <!-- SUBMIT AND RESET BUTTON -->
          <div id="app_certified" class="center colum flex_center">
             <p id="submit_reset">
-            <input type="checkbox" id="responsibility" required>  
-            <label for="responsibility"><strong>I certify that the information provided in this application is accurate and complete. I understand that providing fasle information may result in disqualification from consideration for employment</strong></label>  
+                <br>
+            <input type="checkbox" id="responsibility" required>
+            <label for="responsibility"><strong>I certify that the information provided in this application is accurate and complete. I understand that providing fasle information may result in disqualification from consideration for employment</strong></label>
             </p>
             <p>
             <input class="btn" type="submit" value="Submit">
@@ -171,7 +190,7 @@
                     <li>Github: <a href="https://github.com/AnnNK137/project1">Project 1</a></li>
                 </ul>
             </section>
-            <section class="colum"> <!-- navigation -->
+            <section class="colum"> <!-- navigation bar -->
                 <h4 class="footer_title">Navigation</h4>
                 <ul class="center">
                     <li><a href="index.html">Home</a></li>
