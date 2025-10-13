@@ -354,7 +354,7 @@ footer a:hover{
 /* Index.html responsive*/
 @media (max-width: 900px) {
     .hp_hero_section{
-        max-height: 50vh;
+        max-height: 60vh;
     }
     .hp_longer_desc{
         max-width: 70%;
@@ -401,7 +401,7 @@ footer a:hover{
 
 /* PAGE INTRODUCTION & MENU */
 .job_intro{
-    background: url(images/job_images/jobpage_background\(1\).jpg);
+    background: url("images/jobpage_background.jpg");
     width: 100%;
     height: 100%;
     text-align: center;
@@ -505,7 +505,7 @@ footer a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    background:url(images/job_images/jobpage_card.jpg);
+    background:url("images/jobpage_card.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50px;
