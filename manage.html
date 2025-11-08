@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR MANAGEMENT</title>
+
+        <!-- STYLE SHEET LINKS -->
+    <link rel="stylesheet" href="styles/styles.css"> <!-- Main css -->
+    <link rel="stylesheet" href="styles/manage.css"> <!-- Manage.php css -->
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <a href="index.php" class="brand_logo">
+                <img src="images/logo.png" alt="3Ners">              
+            </a>
+            <h2>3Ners HR Management</h2>
+        </div>
+        <div class="filter">
+            <form action="filter.php">
+                <label for="filter">Filter EOIs by:</label>
+                <select name="filter" id="filter">
+                    <option value="">-- Select Filter --</option>
+                    <option value="all">All EOIs</option>
+                    <option value="job_ref">Job Reference Number</option>
+                    <option value="first_name">First Name</option>
+                    <option value="last_name">Last Name</option>
+                    <option value="full_name">First & Last Name</option>
+                </select>
+            </form>
+        </div>
+    </header>
+
+    <div class="eoi"> 
+    </div>     
+    <!-- • Delete all EOIs with a specified job reference number -->
+     
+    <!-- • Change the Status of an EOI. -->
+     
+</body>
+</html>
