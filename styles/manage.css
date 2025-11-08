@@ -3,52 +3,51 @@
 /* HEADER BAR */
 header{
     background-color: var(--black);
-    margin: 2% 3%;
+    padding: 2% 3%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     position: sticky;
 }
 
-header .brand{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-bottom: 5%;
-}
-
 header img{
-    width: 40px;
+    width: 35px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 5px;
+    left: 5px;
 }
 
 header .filter{
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 /* FILTER DESIGN */
-.filter label{
-    font-weight: 1000;
-    font-size: 20px;
+.filter-option{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.filter select{
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    font-weight: 600;
+}
+
+select, input{
     text-align: center;
-    width: 250px;
-    padding: 5px;
     border-radius: 10px;
-    font-weight: 555;
-}
-
-.filter option{
-    font-weight: 555;
+    padding: 5px;
+    border: 1px solid var(--blue);
 }
 
 /* EOI TABLE */
@@ -57,4 +56,13 @@ header .filter{
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
         url("images/ap_background.jpg");  /*put black opacity/gradient over the original background*/
     height: 100vh;
+}
+
+table{
+    text-align: center;
+}
+
+/* FOOTER EDIT BUTTON */
+.footer{
+    position: absolute;
 }
