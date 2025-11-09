@@ -64,27 +64,27 @@ $conn = @mysqli_connect($host,$user,$pwd,$sql_db); //connect to 3ners_db
 
     <!-- SHOW EOI TABLE AFTER FILTER FUNCTION-->
     <div class="eoi">
-        <table border="1">
+        <table>
             <!-- HEADING -->
-            <tr>
-                <th>Status</th>
-                <th>ID</th>
-                <th>Job</th>
-                <th>First Name</th>
-                <th>Last name</th>
-                <th>Date Of Birth</th>
-                <th>Gender</th>
-                <th>Street Address</th>
-                <th>Suburb Town</th>
-                <th>State</th>
-                <th>Post Code</th>
-                <th>Email</th>
-                <th>Phone number</th>
-                <th>Skill 1</th>
-                <th>SKill 2</th>
-                <th>SKill 3</th>
-                <th>Other Skills</th>
-            </tr>
+                <tr>
+                    <th class="sticky-col sticky-head first-col">Status</th>
+                    <th class="sticky-col sticky-head second-col">ID</th>
+                    <th class="sticky-col sticky-head third-col">First Name</th>
+                    <th>Last name</th>
+                    <th>Job</th>
+                    <th>Date Of Birth</th>
+                    <th>Gender</th>
+                    <th>Street Address</th>
+                    <th>Suburb Town</th>
+                    <th>State</th>
+                    <th>Post Code</th>
+                    <th>Email</th>
+                    <th>Phone number</th>
+                    <th>Skill 1</th>
+                    <th>SKill 2</th>
+                    <th>SKill 3</th>
+                    <th>Other Skills</th>
+                </tr>
 
             <!-- FIlter Process -->
         <?php
@@ -119,11 +119,11 @@ $conn = @mysqli_connect($host,$user,$pwd,$sql_db); //connect to 3ners_db
         // Display table
         while($row = mysqli_fetch_assoc($result)){
             echo "<tr>
-                <td>{$row['Status']}</td>
-                <td>{$row['EOInumber']}</td>
-                <td>{$row['JobReferenceNumber']}</td>
-                <td>{$row['FirstName']}</td>
+                <td class='sticky-col first-col'>{$row['Status']}</td>
+                <td class='sticky-col second-col'>{$row['EOInumber']}</td>
+                <td class='sticky-col third-col'>{$row['FirstName']}</td>
                 <td>{$row['LastName']}</td>
+                <td>{$row['JobReferenceNumber']}</td>
                 <td>{$row['DateOfBirth']}</td>
                 <td>{$row['Gender']}</td>
                 <td>{$row['StreetAddress']}</td>

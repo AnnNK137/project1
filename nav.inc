@@ -1,4 +1,4 @@
-     <header>
+     <header id="header">
          <nav>
             <a href="index.php" class="brand_logo">
                 <img src="images/logo.png" alt="3Ners">              
