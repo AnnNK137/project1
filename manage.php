@@ -13,6 +13,10 @@ $conn = @mysqli_connect($host,$user,$pwd,$sql_db); //connect to 3ners_db
         <!-- STYLE SHEET LINKS -->
     <link rel="stylesheet" href="styles/styles.css"> <!-- Main css -->
     <link rel="stylesheet" href="styles/manage.css"> <!-- Manage.php css -->
+
+    <!-- Font Awesome Free 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body>
     <header>
@@ -146,8 +150,13 @@ $conn = @mysqli_connect($host,$user,$pwd,$sql_db); //connect to 3ners_db
      
     <!-- • Change the Status of an EOI. -->
     <div class="footer">
-        <form action="edit.php">
-            <button type="submit" class="btn">Edit Status</button>
+        <form action="status.php">
+            <button type="submit" class="btn"><i class="fa-solid fa-pen-to-square"></i>
+            Edit Status</button>
+        </form>
+        <form action="delete.php">
+            <button type="submit" class="btn"><i class="fa-solid fa-user-slash"></i>
+            Delete Applicant</button>
         </form>
     </div>
 </body>

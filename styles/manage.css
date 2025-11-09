@@ -1,7 +1,16 @@
+.btn{
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+:root{
+    --table-grey: rgb(76, 86, 104);
+} 
+
 /* HEADER BAR */
 header{
     background-color: var(--black);
-    padding: 2% 3%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,12 +63,13 @@ select, input{
     overflow-x: auto;   /* Enables horizontal scrolling */
     overflow-y: auto;
     width: 90vw;
+    height: 65vh;
     margin-left: 5%;
-    border-radius: 10px;
+    border-radius:  6px;
 }
 
 table{
-    background-color: grey;
+    background-color: var(--table-grey);
     text-align: center;
     border-collapse: collapse;
 }
@@ -70,6 +80,11 @@ table{
     background: #8F93A2; /* Ensures background covers what's behind */
     color: var(--black);
     left: 0;
+    z-index: 2;
+}
+
+table tr{
+    border-bottom: 1px solid #555; /* color of the row grid */
 }
 
 table th, .sticky-head { /*HEADER*/
@@ -80,8 +95,12 @@ table th, .sticky-head { /*HEADER*/
 }
 
 table td{
-    background-color: grey;
+    background-color: var(--table-grey);
     padding: 0px 15px; 
 }
 
 /* FOOTER EDIT BUTTON */
+.footer{
+    display: flex;
+    justify-content: center;
+}
