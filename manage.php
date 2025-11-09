@@ -19,12 +19,7 @@ $conn = @mysqli_connect($host,$user,$pwd,$sql_db); //connect to 3ners_db
 
 </head>
 <body>
-    <header>
-        <a href="index.php" class="brand_logo">
-            <img src="images/logo.png" alt="3Ners">              
-        </a>
-        <h2>3Ners HR Management</h2>
-    </header>
+    <?php include "header_hr.inc" ?>
     
     <!-- START OF FILTER FORM -->
     <form action="manage.php" method="GET" class="filter">
