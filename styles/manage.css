@@ -90,13 +90,19 @@ table tr{
 table th, .sticky-head { /*HEADER*/
     position: sticky;
     background-color: var(--blue);
-    padding: 0px 15px; 
+    padding: 0px 16px; 
     color: white;
 }
 
 table td{
     background-color: var(--table-grey);
-    padding: 0px 15px; 
+    padding: 0px 16px; 
+}
+
+.status-dropdown{
+    font-size: 12px;
+    width: 58px;
+    text-align: center;
 }
 
 /* FOOTER EDIT BUTTON */
