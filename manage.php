@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['status'])) {
     }
 }
 
+//filter function
 // Get filter values
 $jobRef     = $_GET['job_ref'] ?? '';
 $firstName  = $_GET['first_name'] ?? '';
@@ -90,9 +91,9 @@ $result = mysqli_query($conn, $query);
     <!-- EOI TABLE -->
     <form method="POST" action="manage.php"> <!-- Form for save and cancelling -->
         <!-- Keeps the filtered on-->
-        <input type="hidden" name="job_ref" value="<?= htmlspecialchars($jobRef) ?>">
-        <input type="hidden" name="first_name" value="<?= htmlspecialchars($firstName) ?>">
-        <input type="hidden" name="last_name" value="<?= htmlspecialchars($lastName) ?>">
+        <input type="hidden" name="job_ref" value="<?= ($jobRef) ?>">
+        <input type="hidden" name="first_name" value="<?= ($firstName) ?>">
+        <input type="hidden" name="last_name" value="<?= ($lastName) ?>">
 
         <div class="eoi">
             <table>
