@@ -1,37 +1,15 @@
 <?php
 require_once "settings.php";
 
-// Connect the database
+// Connect to the database
 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$createTableSQL = "
-CREATE TABLE IF NOT EXISTS eoi (
-    EOInumber INT AUTO_INCREMENT PRIMARY KEY,
-    JobReference VARCHAR(20) NOT NULL,
-    FirstName VARCHAR(20) NOT NULL,
-    LastName VARCHAR(20) NOT NULL,
-    DateOfBirth DATE NOT NULL,
-    Gender VARCHAR(10) NOT NULL,
-    StreetAddress VARCHAR(40) NOT NULL,
-    SuburbTown VARCHAR(40) NOT NULL,
-    State VARCHAR(3) NOT NULL,
-    Postcode CHAR(4) NOT NULL,
-    Email VARCHAR(50) NOT NULL,
-    Phone VARCHAR(12) NOT NULL,
-    Skill1 VARCHAR(20),
-    Skill2 VARCHAR(20),
-    Skill3 VARCHAR(20),
-    OtherSkills TEXT,
-    Status VARCHAR(10) NOT NULL DEFAULT 'New'
-)";
-mysqli_query($conn, $createTableSQL);
-
-// Test the sent form
+// Process the form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Collect data and sanitize
+    // Collect and sanitize form data
     $job       = mysqli_real_escape_string($conn, trim($_POST['job']));
     $fname     = mysqli_real_escape_string($conn, trim($_POST['fullname']));
     $lname     = mysqli_real_escape_string($conn, trim($_POST['lastname'] ?? ''));
@@ -46,15 +24,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $skills    = $_POST['skills'] ?? [];
     $other     = mysqli_real_escape_string($conn, trim($_POST['description'] ?? ''));
 
-    // Check basic validation
+    // Basic validation
     $errors = [];
-    if (empty($fname) || !preg_match("/^[A-Za-z\s]{1,20}$/", $fname)) $errors[] = "First name invalid";
-    if (empty($lname) || !preg_match("/^[A-Za-z\s]{1,20}$/", $lname)) $errors[] = "Last name invalid";
+
+    if (empty($fname) || !preg_match("/^[\p{L}\s]{1,20}$/u", $fname)) $errors[] = "First name invalid";
+    if (empty($lname) || !preg_match("/^[\p{L}\s]{1,20}$/u", $lname)) $errors[] = "Last name invalid";
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Email invalid";
-    if (!preg_match("/^\d{8,12}$/", str_replace(' ', '', $phone))) $errors[] = "Phone invalid";
+    
+    $phone_clean = preg_replace("/[^\d]/", "", $phone);
+    if (!preg_match("/^\d{8,12}$/", $phone_clean)) $errors[] = "Phone invalid";
+
     if (empty($job)) $errors[] = "Job must be selected";
     if (empty($gender)) $errors[] = "Gender must be selected";
     if (empty($address)) $errors[] = "Address required";
+    if (!isset($_POST['responsibility'])) $errors[] = "You must accept responsibility";
 
     if (count($errors) > 0) {
         echo "<h2>Form errors:</h2><ul>";
@@ -68,12 +51,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $skill2 = $skills[1] ?? '';
     $skill3 = $skills[2] ?? '';
 
-    // Insert database into eoi
+    // Insert data into eoi table
     $insertSQL = "INSERT INTO eoi
         (JobReference, FirstName, LastName, DateOfBirth, Gender, StreetAddress, SuburbTown, State, Postcode, Email, Phone, Skill1, Skill2, Skill3, OtherSkills)
         VALUES
         ('$job', '$fname', '$lname', '$dob', '$gender', '$address', '$suburb', '$state', '$postcode', '$email', '$phone', '$skill1', '$skill2', '$skill3', '$other')";
-    
+
     if (mysqli_query($conn, $insertSQL)) {
         $id = mysqli_insert_id($conn);
         echo "<h2>Application Submitted Successfully!</h2>";
@@ -153,4 +136,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include "footer.inc"; ?>
 </body>
 </html>
-
