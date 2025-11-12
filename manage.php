@@ -2,7 +2,7 @@
 session_start();
 
 // Check if the user is logged in
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['ID'])) {
     // Not logged in, redirect to login page
     header("Location: hr_login.php");
     exit();
@@ -65,7 +65,7 @@ $result = mysqli_query($conn, $query);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <?php include "header_hr.inc"; ?>
+    <?php include "header_hr.php"; ?>
 
     <!-- FILTER FORM -->
     <form action="manage.php" method="GET" class="filter">

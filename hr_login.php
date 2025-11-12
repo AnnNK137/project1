@@ -3,17 +3,27 @@ session_start();
 require_once "settings.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//Get input and sanitize it
-    $user = mysqli_real_escape_string($conn, $_POST['hr_id']);
+    // Get input and sanitize it
+    $hr_id = mysqli_real_escape_string($conn, $_POST['hr_id']);
     $pass = mysqli_real_escape_string($conn, $_POST['hr_password']);
 
-    //query checking
-    $query = "SELECT * FROM hr WHERE hr_ID='$user' AND password='$pass'";
+    // Query checking
+    $query = "SELECT * FROM hr WHERE hr_ID='$hr_id' AND password='$pass'";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) > 0) {
-        $_SESSION['username'] = $user;
+        // Fetch the row
+        $row = mysqli_fetch_assoc($result);
+
+        //storing session
+        $_SESSION['ID'] = $row['hr_ID'];
+        $_SESSION['firstName'] = $row['firstName'];
+        $_SESSION['lastName'] = $row['lastName'];
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['position'] = $row['position'];
+
         header("Location: manage.php");
+        exit();
     } else {
         echo "Invalid ID or password.";
     }
@@ -35,12 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <a href="index.php" class="brand_logo">
-            <img src="images/logo.png" alt="3Ners">              
-        </a>
-        <h2>3Ners HR Management</h2>
-    </header>
     <div class="container">
         <form class="form" method="post" action="hr_login.php">
             <p class="form-title">Login in to Management Site</p>

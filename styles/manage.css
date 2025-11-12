@@ -112,7 +112,8 @@ table td{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    min-height: 70vh;
+    flex-direction: column;
 }
 
 .form {
@@ -177,4 +178,29 @@ table td{
 
 .signup-link a {
   text-decoration: underline;
+}
+
+/* PROFILE  */
+.profile{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid var(--blue);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--dark-beige);
+}
+
+.banner{
+    padding: 60px 30px;
+    height: auto;
+    background-color: var(--blue);
+}
+
+.basic-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    color: var(--blue);
 }
