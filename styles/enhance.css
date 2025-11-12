@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+}
+
+.container .title{
+    text-align: center;
+}
