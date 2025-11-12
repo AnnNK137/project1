@@ -1,6 +1,16 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    // Not logged in, redirect to login page
+    header("Location: hr_login.php");
+    exit();
+}
+?>
+
 <?php 
 require_once "settings.php"; //connect to settings.php
-$conn = @mysqli_connect($host,$user,$pwd,$sql_db); //connect to 3ners_db
 
 // Handle form submission to update statuses
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['status'])) {

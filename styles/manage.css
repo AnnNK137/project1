@@ -8,21 +8,18 @@
     --table-grey: rgb(76, 86, 104);
 } 
 
-/* HEADER BAR */
-header{
-    background-color: var(--black);
+/* .hr_header BAR */
+header .brand_logo{
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 20px;
+    color: white;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-header img{
-    width: 35px;
-    top: 5px;
-    left: 5px;
-}
-
-header .filter{
+/* FILTER DESIGN */
+.hr_header .filter{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -30,7 +27,6 @@ header .filter{
     align-items: center;
 }
 
-/* FILTER DESIGN */
 .filter-option{
     display: flex;
     align-items: center;
@@ -87,7 +83,7 @@ table tr{
     border-bottom: 1px solid #555; /* color of the row grid */
 }
 
-table th, .sticky-head { /*HEADER*/
+table th, .sticky-head { /*.hr_header*/
     position: sticky;
     background-color: var(--blue);
     padding: 0px 16px; 
