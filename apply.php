@@ -1,167 +1,138 @@
+<?php
+require_once "settings.php";
+
+// Connect to the database
+$conn = mysqli_connect($host, $user, $pwd, $sql_db);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Process the form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Collect and sanitize form data
+    $job       = mysqli_real_escape_string($conn, trim($_POST['job']));
+    $fname     = mysqli_real_escape_string($conn, trim($_POST['fullname']));
+    $lname     = mysqli_real_escape_string($conn, trim($_POST['lastname'] ?? ''));
+    $dob       = mysqli_real_escape_string($conn, trim($_POST['birth']));
+    $gender    = mysqli_real_escape_string($conn, trim($_POST['sex']));
+    $address   = mysqli_real_escape_string($conn, trim($_POST['address']));
+    $suburb    = mysqli_real_escape_string($conn, trim($_POST['suburb'] ?? ''));
+    $state     = mysqli_real_escape_string($conn, trim($_POST['state'] ?? ''));
+    $postcode  = mysqli_real_escape_string($conn, trim($_POST['postcode'] ?? ''));
+    $email     = mysqli_real_escape_string($conn, trim($_POST['email']));
+    $phone     = mysqli_real_escape_string($conn, trim($_POST['phonenumber1']));
+    $skills    = $_POST['skills'] ?? [];
+    $other     = mysqli_real_escape_string($conn, trim($_POST['description'] ?? ''));
+
+    // Basic validation
+    $errors = [];
+
+    if (empty($fname) || !preg_match("/^[\p{L}\s]{1,20}$/u", $fname)) $errors[] = "First name invalid";
+    if (empty($lname) || !preg_match("/^[\p{L}\s]{1,20}$/u", $lname)) $errors[] = "Last name invalid";
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Email invalid";
+    
+    $phone_clean = preg_replace("/[^\d]/", "", $phone);
+    if (!preg_match("/^\d{8,12}$/", $phone_clean)) $errors[] = "Phone invalid";
+
+    if (empty($job)) $errors[] = "Job must be selected";
+    if (empty($gender)) $errors[] = "Gender must be selected";
+    if (empty($address)) $errors[] = "Address required";
+    if (!isset($_POST['responsibility'])) $errors[] = "You must accept responsibility";
+
+    if (count($errors) > 0) {
+        echo "<h2>Form errors:</h2><ul>";
+        foreach ($errors as $err) echo "<li>$err</li>";
+        echo "</ul><a href='apply.php'>Go Back</a>";
+        exit;
+    }
+
+    // Map skills
+    $skill1 = $skills[0] ?? '';
+    $skill2 = $skills[1] ?? '';
+    $skill3 = $skills[2] ?? '';
+
+    // Insert data into eoi table
+    $insertSQL = "INSERT INTO eoi
+        (JobReference, FirstName, LastName, DateOfBirth, Gender, StreetAddress, SuburbTown, State, Postcode, Email, Phone, Skill1, Skill2, Skill3, OtherSkills)
+        VALUES
+        ('$job', '$fname', '$lname', '$dob', '$gender', '$address', '$suburb', '$state', '$postcode', '$email', '$phone', '$skill1', '$skill2', '$skill3', '$other')";
+
+    if (mysqli_query($conn, $insertSQL)) {
+        $id = mysqli_insert_id($conn);
+        echo "<h2>Application Submitted Successfully!</h2>";
+        echo "<p>Your EOInumber is: <strong>$id</strong></p>";
+        echo "<a href='apply.php'>Submit another application</a>";
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
+
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- LINK TO LIVE GITHUB PAGE: https://annnk137.github.io/project1/ -->
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keyword" content="job, application">
-    <title>IT Job Recruitment</title>
+    <title>Job Application Form</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <!-- NAVIGATION BAR (same on all pages) -->
-    <?php include "nav.inc" ?>
+    <?php include "header.inc"; ?>
+    <?php include "nav.inc"; ?>
 
-        <!-- HERO SECTION/ INTRODUCTION -->
-         <!-- test commit -->
-    <section id="app_herosection" class="center colum flex_center">
-            <img id="hp_hs_logo" src="images/logo.png" alt="3ners"> 
-            <h2 class="ap_title">JOB APPLICATION FORM</h2>
-        <section class="ap_desc">
-            <h3 class="ap_subtitle">
-            Fill out our IT Job Application Form to share your skills, experience, and qualifications.
-            Start your journey with us today and take the first step towards an exciting career in IT!
-            </h3>
-            <br>
-            <br>
-        </section>
-    </section> <!-- end of herosection -->
-
-
-
-     <!-- MAIN CONTENT -->
-    <form id="app_form" class="colum flex_center center" action="applysuccess.html" method="get">
+    <!-- FORM -->
+    <form action="apply.php" method="POST" novalidate>
         <fieldset>
             <legend>Personal Information</legend>
-            <p>
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" required pattern="[A-Za-z\s]+">
+            <label>Full Name: <input type="text" name="fullname" required></label>
+            <label>Last Name: <input type="text" name="lastname" required></label>
+            <label>Date of Birth: <input type="date" name="birth" required></label>
+            <label>Gender:
+                <select name="sex" required>
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </label>
+            <label>Address: <input type="text" name="address" required></label>
+            <label>Suburb/Town: <input type="text" name="suburb"></label>
+            <label>State: <input type="text" name="state"></label>
+            <label>Postcode: <input type="text" name="postcode"></label>
+            <label>Email: <input type="email" name="email" required></label>
+            <label>Phone: <input type="text" name="phonenumber1" required></label>
+        </fieldset>
 
-        <label for="address">Address</label>
-        <input type="text" id="address" required>
-        </p>
-            <p>
-        <label for="birth">Birth</label>
-        <input type="date" id="birth" required>
-        <label for="sex">Sex</label>
-                <select id="sex" name="sex" required>
-                <option value="">Please select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="undecided">Undecided</option>
-        </select>
+        <fieldset>
+            <legend>Skills</legend>
+            <label><input type="checkbox" name="skills[]" value="HTML"> HTML</label>
+            <label><input type="checkbox" name="skills[]" value="CSS"> CSS</label>
+            <label><input type="checkbox" name="skills[]" value="JS"> JavaScript</label>
+            <label><input type="checkbox" name="skills[]" value="PHP"> PHP</label>
+            <label>Other: <textarea name="description"></textarea></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Job Application</legend>
+            <label>Job: 
+                <select name="job" required>
+                    <option value="">Select</option>
+                    <option value="software">Software Developer</option>
+                    <option value="net">Network Administrator</option>
+                    <option value="cloud">Cloud Engineer</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <p>
+            <input type="checkbox" name="responsibility" required> I certify the information is correct.
         </p>
         <p>
-        <label for="phonenumber1">Phone Number</label>
-        <input type="text" id="phonenumber1" required pattern="\d{1,10}">
-        <label for="email">Email Address</label>
-        <input type="text" id="email" required>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
         </p>
-        </fieldset>
-
-        <fieldset>
-            <legend>Education</legend>
-            <p>
-            <label for="university">University/Institution</label>
-            <input type="text" id="university" required pattern="[A-Za-z\s]+">
-            <label for="degree">Degree/Certification</label>
-            <input type="text" id="degree" required pattern="[A-Za-z\s]+">
-            <label for="year">Year Completed</label>
-            <input type="date" id="year" required>
-            </p>
-        </fieldset>
-
-        <fieldset>
-            <legend>Skills & Qualifications</legend>
-            <p>
-                <label><input type="checkbox" value="HTML"> HTML</label>
-                <label><input type="checkbox" value="CSS"> CSS</label>
-                <label><input type="checkbox" value="JavaScript"> JavaScript</label>
-                <label><input type="checkbox" value="PHP"> PHP</label>
-                <label><input type="checkbox" value="MySQL"> MySQL</label>
-                <label><input type="checkbox" value="Others"> Others</label>
-        <br>
-        </p>
-        <p>
-        <label for="description">List relevant skills, certifications or qualifications:</label>
-        <br>
-        <textarea id="description" name="description" rows="10" cols="100"  placeholder="Put down your relevant skills, certifications and qualifications here..." required></textarea>
-        </p>
-        </fieldset>
-        <fieldset>
-            <legend>Apply For Job</legend>
-            <label for="job">JOB YOU WOULD LIKE TO APPLY</label>
-                <select id="job" name="job" required>
-                <option value="">Please select</option>       <!-- APPLY FOR JOB -->
-                <option value="software">Software Developer</option>
-                <option value="net">Network Administrator</option>
-                <option value="cloud">Cloud Engineer</option>
-        </select>
-        </fieldset>
-        <fieldset>
-        <legend>Recent Employment History</legend>
-        <p>
-                <label for="company1">Company Name</label>
-                <input type="text" id="company1" required pattern="[A-Za-z\s]+">
-
-                <label for="position1">Position Held</label>
-                <input type="text" id="position1" required pattern="[A-Za-z\s]+"> <!-- EMPLOYMENT HISTORY -->
-
-                <label for="emdate1">Employment Dates</label>
-                <input type="date" id="emdate1" required>
-            </p>
-
-            <p>
-                <label for="company2">Company Name</label>
-                <input type="text" id="company2">
-
-                <label for="position2">Position Held</label>
-                <input type="text" id="position2">
-
-                <label for="emdate2">Employment Dates</label>
-                <input type="date" id="emdate2">
-            </p>
-
-            <p>
-                <label for="company3">Company Name</label>
-                <input type="text" id="company3">
-
-                <label for="position3">Position Held</label>
-                <input type="text" id="position3">
-
-                <label for="emdate3">Employment Dates</label>
-                <input type="date" id="emdate3">
-            </p>
-        </fieldset>
-
-        <fieldset>
-        <legend>Recent Employment Contact</legend>
-        <p>
-            <label for="reference">Reference Name</label>
-            <input type="text" id="reference" required pattern="[A-Za-z\s]+">
-            <label for="relationship">Relationships</label>
-            <input type="text" id="relationship" required pattern="[A-Za-z\s]+">   <!-- EMPLOYMENT CONTACT -->
-            <label for="phonenumber2">Phone Number</label>
-            <input type="text" id="phonenumber2" required pattern="\d{1,10}">
-        </p>
-        </fieldset>
-        <!-- SUBMIT AND RESET BUTTON -->
-         <div id="app_certified" class="center colum flex_center">
-            <p id="submit_reset">
-                <br>
-            <input type="checkbox" id="responsibility" required>
-            <label for="responsibility"><strong>I certify that the information provided in this application is accurate and complete. I understand that providing fasle information may result in disqualification from consideration for employment</strong></label>
-            </p>
-            <p>
-            <input class="btn" type="submit" value="Submit">
-            <input class="btn" type="reset" value="Reset">
-            </p>
-        </div>
     </form>
 
-  <!-- FOOTER (same on all pages) -->
-  <?php include "footer.inc" ?>
-
+    <?php include "footer.inc"; ?>
 </body>
 </html>
