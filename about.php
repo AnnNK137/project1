@@ -59,13 +59,14 @@
     
                     <dl class="center row flex_center">
                         <dt>Contribution:</dt>
-                        <dd><a href="index.html">Home Page</a></dd>
-                        <dd><a href="about.html">About Page</a></dd>
+                        <dd><a href="index.php">Home Page</a></dd>
+                        <dd><a href="about.php">About Page</a></dd>
+                        <dd><a href="manage.php">HR Manage Webpage</a></dd>
                         <dd>UI/UX</dd>
                     </dl>
     
                     <br>
-                    <a class="btn" href="index.html">
+                    <a class="btn" href="manage.php">
                         &#8594; See more of Ann's work
                     </a>
                     </section>
@@ -88,12 +89,12 @@
     
                     <dl class="center row flex_center">
                         <dt>Contribution:</dt>
-                        <dd><a href="jobs.html">Vacancies Page</a></dd>
+                        <dd><a href="jobs.php">Vacancies Page</a></dd>
                         <dd>Navbar and Footer</dd>
                     </dl>
     
                     <br>
-                    <a class="btn" href="jobs.html">
+                    <a class="btn" href="jobs.php">
                         &#8594; See more of Ngoc's work
                     </a>
                     </section>
@@ -116,12 +117,12 @@
     
                     <dl class="center row flex_center">
                         <dt>Contribution:</dt>
-                        <dd><a href="apply.html">Application Page</a></dd>
-                        <dd><a href="applysuccess.html">Submission Page</a></dd>
+                        <dd><a href="apply.php">Application Page</a></dd>
+                        <dd><a href="applysuccess.php">Submission Page</a></dd>
                     </dl>
     
                     <br>
-                    <a class="btn" href="apply.html">
+                    <a class="btn" href="apply.php">
                         &#8594; See more of Khanh's work
                     </a>
                     </section>
