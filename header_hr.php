@@ -13,12 +13,12 @@ if (session_status() === PHP_SESSION_NONE) {
         </a>
         <ul class="nav_items">
             <li><a href="manage.php">Applicants</a></li>
-            <li><a href="hr_profile.php">Profile</a></li>
             <?php 
             if (isset($_SESSION['position']) && $_SESSION['position'] == 'admin') {
                 echo '<li><a href="hr_admin.php">Staff Control</a></li>';
             }
             ?>
+            <li><a href="hr_profile.php">Profile</a></li>
         </ul>
     </nav>
 </header>

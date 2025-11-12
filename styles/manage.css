@@ -52,7 +52,7 @@ select, input{
 }
 
 /* EOI TABLE */
-.eoi {
+.eoi, . {
     background: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
         url("images/ap_background.jpg");  /*put black opacity/gradient over the original background*/
