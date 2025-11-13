@@ -98,6 +98,12 @@ table td{
     text-align: center;
 }
 
+#hr_eoi{
+    margin-left: 25%;
+    width: 50vw;
+    height: 40vh;
+}
+
 /* FOOTER EDIT BUTTON */
 .footer{
     display: flex;
