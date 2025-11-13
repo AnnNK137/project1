@@ -15,7 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <li><a href="manage.php">Applicants</a></li>
             <?php 
             if (isset($_SESSION['position']) && $_SESSION['position'] == 'admin') {
-                echo '<li><a href="hr_admin.php">Staff Control</a></li>';
+                echo '<li><a href="hr_admin.php">Staff Management</a></li>';
             }
             ?>
             <li><a href="hr_profile.php">Profile</a></li>

@@ -38,7 +38,10 @@ if (!isset($_SESSION['email'])) {
         </div>
         <div class="btn-group">
             <form action="edit_profile.php">
-                <button type="submit" class="btn">Edit profile</button>
+                <button type="submit" class="btn">Edit email</button>
+            </form>
+            <form action="edit_pwd.php">
+                <button type="submit" class="btn">Edit password</button>
             </form>
             <form action="logout.php">
                 <button type="submit" class="btn">Logout</button>
