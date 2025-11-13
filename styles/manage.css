@@ -52,10 +52,7 @@ select, input{
 }
 
 /* EOI TABLE */
-.eoi, . {
-    background: 
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-        url("images/ap_background.jpg");  /*put black opacity/gradient over the original background*/
+.eoi{
     overflow-x: auto;   /* Enables horizontal scrolling */
     overflow-y: auto;
     width: 90vw;
