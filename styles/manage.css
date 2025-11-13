@@ -178,6 +178,10 @@ table td{
 }
 
 /* PROFILE  */
+.btn-group{
+    display: flex;
+}
+
 .profile{
     display: flex;
     flex-direction: row;
@@ -197,7 +201,16 @@ table td{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    min-width: 200px;
+    margin: 5%;
+    align-items: left;
+    min-width: 300px;
     color: var(--blue);
+}
+
+/*update profile*/
+#change-pwd{
+    margin: 5px;
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid;
 }

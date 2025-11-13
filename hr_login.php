@@ -3,32 +3,37 @@ session_start();
 require_once "settings.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get input and sanitize it
-    $hr_id = mysqli_real_escape_string($conn, $_POST['hr_id']);
-    $pass = mysqli_real_escape_string($conn, $_POST['hr_password']);
+    // Get input and sanitize
+    $hr_email = mysqli_real_escape_string($conn, $_POST['hr_email']);
+    $pass = $_POST['hr_password']; //leave raw for password_verify
 
-    // Query checking
-    $query = "SELECT * FROM hr WHERE hr_ID='$hr_id' AND password='$pass'";
+    // Query user by hr_email
+    $query = "SELECT * FROM hr WHERE email='$hr_email'";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) > 0) {
-        // Fetch the row
         $row = mysqli_fetch_assoc($result);
 
-        //storing session
-        $_SESSION['ID'] = $row['hr_ID'];
-        $_SESSION['firstName'] = $row['firstName'];
-        $_SESSION['lastName'] = $row['lastName'];
-        $_SESSION['email'] = $row['email'];
-        $_SESSION['position'] = $row['position'];
+        // Verify hashed password
+        if (password_verify($pass, $row['password'])) {
+            // Password matches, store session
+            $_SESSION['ID'] = $row['hr_id'];
+            $_SESSION['firstName'] = $row['firstName'];
+            $_SESSION['lastName'] = $row['lastName'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['position'] = $row['position'];
 
-        header("Location: manage.php");
-        exit();
+            header("Location: manage.php");
+            exit();
+        } else {
+            echo "Invalid ID or password.";
+        }
     } else {
         echo "Invalid ID or password.";
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form class="form" method="post" action="hr_login.php">
             <p class="form-title">Login in to Management Site</p>
                 <div class="input-container">
-                <input type="text" name="hr_id" placeholder="Enter your ID" required>
+                <input type="email" name="hr_email" placeholder="Enter your HR email" required>
             </div>
             <div class="input-container">
                 <input type="password" name="hr_password" placeholder="Enter password" required>

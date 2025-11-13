@@ -2,7 +2,7 @@
 session_start();
 
 // Check if the user is logged in
-if (!isset($_SESSION['ID'])) {
+if (!isset($_SESSION['email'])) {
     // Not logged in, redirect to login page
     header("Location: hr_login.php");
     exit();
@@ -30,13 +30,20 @@ if (!isset($_SESSION['ID'])) {
             <div class="banner">
             </div>
             <div class="basic-info">
-                <h3 class="HR-name"><?php echo ($_SESSION['firstName']); ?></h3>
+                <h3 class="HR-name">Name: <?php echo ($_SESSION['firstName']) . " " . ($_SESSION['lastName']); ?></h3>
                 <p class="HR-position">Position: <?php echo ($_SESSION['position']); ?></p>
+                <p class="HR-email">Email: <?php echo ($_SESSION['email']); ?></p>
+                <p class="HR-password">Password: Hidden</p>
             </div>
         </div>
-        <form action="logout.php">
-            <button type="submit" class="btn">Logout</button>
-        </form>
+        <div class="btn-group">
+            <form action="edit_profile.php">
+                <button type="submit" class="btn">Edit profile</button>
+            </form>
+            <form action="logout.php">
+                <button type="submit" class="btn">Logout</button>
+            </form>
+        </div>
     </div>
 
 
