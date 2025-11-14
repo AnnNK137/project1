@@ -14,7 +14,7 @@ if (!isset($_SESSION['email'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR LOGIN</title>
+    <title>HR PROFILE</title>
 
     <!-- STYLE SHEET LINKS -->
     <link rel="stylesheet" href="styles/styles.css">

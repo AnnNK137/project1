@@ -55,7 +55,7 @@ $result = mysqli_query($conn, $query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR MANAGEMENT</title>
+    <title>APPLICANT MANAGEMENT</title>
 
     <!-- STYLE SHEET LINKS -->
     <link rel="stylesheet" href="styles/styles.css">
@@ -88,11 +88,11 @@ $result = mysqli_query($conn, $query);
             </div>
             <div class="form-group">
                 <label for="first_name">First Name</label>
-                <input type="text" name="first_name" id="first_name" placeholder="Enter first name" value="<?= htmlspecialchars($firstName) ?>">
+                <input type="text" name="first_name" id="first_name" placeholder="Enter first name" value="<?= ($firstName) ?>">
             </div>
             <div class="form-group">
                 <label for="last_name">Last Name</label>
-                <input type="text" name="last_name" id="last_name" placeholder="Enter last name" value="<?= htmlspecialchars($lastName) ?>">
+                <input type="text" name="last_name" id="last_name" placeholder="Enter last name" value="<?= ($lastName) ?>">
             </div>
             <button type="submit" class="btn">Filter</button>
         </div>
@@ -108,9 +108,9 @@ $result = mysqli_query($conn, $query);
         <div class="eoi">
             <table>
                 <tr>
-                    <th class="sticky-col sticky-head first-col">Status</th>
-                    <th class="sticky-col sticky-head second-col">ID</th>
-                    <th class="sticky-col sticky-head third-col">First Name</th>
+                    <th class="sticky-col sticky-head">Status</th>
+                    <th class="sticky-col sticky-head">ID</th>
+                    <th class="sticky-col sticky-head">First Name</th>
                     <th>Last Name</th>
                     <th>Job</th>
                     <th>Date Of Birth</th>
@@ -131,7 +131,7 @@ $result = mysqli_query($conn, $query);
                 while($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
                     // Status dropdown
-                    echo "<td class='sticky-col first-col'>
+                    echo "<td class='sticky-col'>
                             <select class='status-dropdown' name='status[{$row['EOInumber']}]'>
                                 <option value='New' ".($row['Status']=='New'?'selected':'').">New</option>
                                 <option value='Current' ".($row['Status']=='Current'?'selected':'').">Current</option>
@@ -139,8 +139,8 @@ $result = mysqli_query($conn, $query);
                                 <option value='Remove' ".($row['Status']=='Remove'?'selected':'').">Remove</option>
                             </select>
                         </td>";
-                    echo "<td class='sticky-col second-col'>{$row['EOInumber']}</td>";
-                    echo "<td class='sticky-col third-col'>{$row['FirstName']}</td>";
+                    echo "<td class='sticky-col'>{$row['EOInumber']}</td>";
+                    echo "<td class='sticky-col'>{$row['FirstName']}</td>";
                     echo "<td>{$row['LastName']}</td>";
                     echo "<td>{$row['JobReferenceNumber']}</td>";
                     echo "<td>{$row['DateOfBirth']}</td>";

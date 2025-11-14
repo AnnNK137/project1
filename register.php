@@ -8,10 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
     $firstName  = $_POST['firstName'] ?? '';
     $lastName   = $_POST['lastName'] ?? '';
     $email   = $_POST['email'] ?? '';
-    $password = password_hash($_POST['email'], PASSWORD_DEFAULT); //default password is email
+    $password = password_hash($_POST['email'], PASSWORD_DEFAULT); //default password is email and is encrypted
 
     //query
-    $query = "SELECT * FROM hr WHERE email='$email'";
+    $query = "SELECT * FROM hr WHERE email='$email'"; //to check if duplicated
     $result = mysqli_query($conn, $query);
 
     //check if user already exist 
