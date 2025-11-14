@@ -52,10 +52,7 @@ select, input{
 }
 
 /* EOI TABLE */
-.eoi, . {
-    background: 
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-        url("images/ap_background.jpg");  /*put black opacity/gradient over the original background*/
+.eoi{
     overflow-x: auto;   /* Enables horizontal scrolling */
     overflow-y: auto;
     width: 90vw;
@@ -99,6 +96,12 @@ table td{
     font-size: 12px;
     width: 58px;
     text-align: center;
+}
+
+#hr_eoi{
+    margin-left: 25%;
+    width: 50vw;
+    height: 40vh;
 }
 
 /* FOOTER EDIT BUTTON */
@@ -181,6 +184,10 @@ table td{
 }
 
 /* PROFILE  */
+.btn-group{
+    display: flex;
+}
+
 .profile{
     display: flex;
     flex-direction: row;
@@ -200,7 +207,16 @@ table td{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    min-width: 200px;
+    margin: 5%;
+    align-items: left;
+    min-width: 300px;
     color: var(--blue);
+}
+
+/*update profile*/
+#change-pwd{
+    margin: 5px;
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid;
 }

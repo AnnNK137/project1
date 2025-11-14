@@ -1,34 +1,38 @@
 <?php
 session_start();
-require_once "settings.php"; // make sure this connects to your database
 
 // Check if the user is logged in
-if (!isset($_SESSION['ID'])) {
+if (!isset($_SESSION['email'])) {
     header("Location: hr_login.php");
     exit();
 }
 
-// Handle form submission to update HR info
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    foreach ($_POST['position'] as $hr_id => $position) {
-        $hr_id = (int)$hr_id;
-        $position = mysqli_real_escape_string($conn, $position);
-
-        // Update the position in the database
-        mysqli_query($conn, "UPDATE HR SET position='$position' WHERE hr_ID=$hr_id");
-    }
+//check if user is admin
+if (!isset($_SESSION['position']) || $_SESSION['position'] != 'admin') {
+    header("Location: manage.php");
+    exit();
 }
+?>
 
-// Optional filter
-$firstName = $_GET['first_name'] ?? '';
-$lastName  = $_GET['last_name'] ?? '';
+<?php 
+require_once "settings.php"; //connect to settings.php
 
-// Build query
-$query = "SELECT * FROM HR";
+//filter function
+// Get filter values
+$position     = $_GET['position'] ?? '';
+$firstName  = $_GET['first_name'] ?? '';
+$lastName   = $_GET['last_name'] ?? '';
+$email   = $_GET['email'] ?? '';
+
+
+//query
+$query = "SELECT * FROM hr";
 $conditions = [];
 
+if ($position != '') { $conditions[] = "position = '$position'"; }
 if ($firstName != '') { $conditions[] = "firstName LIKE '%$firstName%'"; }
-if ($lastName != '')  { $conditions[] = "lastName LIKE '%$lastName%'"; }
+if ($lastName != '') { $conditions[] = "lastName LIKE '%$lastName%'"; }
+if ($email != '') { $conditions[] = "email LIKE '%$email%'"; }
 
 if (count($conditions) > 0) {
     $query .= " WHERE " . implode(" AND ", $conditions);
@@ -40,58 +44,105 @@ $result = mysqli_query($conn, $query);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HR MANAGEMENT</title>
-<link rel="stylesheet" href="styles/styles.css">
-<link rel="stylesheet" href="styles/manage.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR MANAGEMENT</title>
+
+    <!-- STYLE SHEET LINKS -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/manage.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<?php include "header_hr.php"; ?>
+    <?php include "header_hr.php"; ?>
 
-<!-- FILTER FORM -->
-<form action="manage.php" method="GET" class="filter">
-    <input type="text" name="first_name" placeholder="First Name" value="<?= htmlspecialchars($firstName) ?>">
-    <input type="text" name="last_name" placeholder="Last Name" value="<?= htmlspecialchars($lastName) ?>">
-    <button type="submit" class="btn">Filter</button>
-</form>
+    <!-- FILTER FORM -->
+    <form action="hr_admin.php" method="GET" class="filter">
+        <div class="filter-option">
+            <h3>Filter Option:</h3>
+            <div class="form-group">
+                <label for="position">Staff Position</label>
+                <select name="position" id="position">
+                    <option value="">-- All Position --</option>
+                    <option value="staff" <?= $position=='staff'?'selected':'' ?>>Staff</option>
+                    <option value="admin" <?= $position=='admin'?'selected':'' ?>>Admin</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="first_name" placeholder="Enter first name" >
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name" placeholder="Enter last name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Enter email">
+            </div>
+            <button type="submit" class="btn" name="filter">Filter</button>
+        </div>
+    </form>
 
-<!-- HR TABLE -->
-<form method="POST" action="hr_admin.php">
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Position</th>
-            <th>Favorite Color</th>
-        </tr>
+    <!-- EOI TABLE -->
+    <form method="POST" action="manage.php"> <!-- Form for save and cancelling -->
+        <!-- Keeps the filtered on-->
+        <div class="eoi" id="hr_eoi">
+            <table>
+                <tr>
+                    <th class="sticky-col sticky-head">First Name</th>
+                    <th>Last Name</th>
+                    <th>Position</th>
+                    <th>Email</th>
+                </tr>
 
-        <?php while($row = mysqli_fetch_assoc($result)): ?>
-        <tr>
-            <td><?= $row['hr_ID'] ?></td>
-            <td><?= htmlspecialchars($row['firstName']) ?></td>
-            <td><?= htmlspecialchars($row['lastName']) ?></td>
-            <td><?= htmlspecialchars($row['email']) ?></td>
-            <td>
-                <?php if ($_SESSION['position'] == 'admin'): ?>
-                    <select name="position[<?= $row['hr_ID'] ?>]">
-                        <option value="staff" <?= $row['position']=='staff'?'selected':'' ?>>Staff</option>
-                        <option value="admin" <?= $row['position']=='admin'?'selected':'' ?>>Admin</option>
-                    </select>
-                <?php else: ?>
-                    <?= $row['position'] ?>
-                <?php endif; ?>
-            </td>
-        </tr>
-        <?php endwhile; ?>
-    </table>
+                <?php
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td class='sticky-col'>{$row['firstName']}</td>";
+                    echo "<td>{$row['lastName']}</td>";
+                    echo "<td>{$row['position']}</td>";
+                    echo "<td>{$row['email']}</td>";
+                    echo "</tr>";
+                }
+                ?>
+            </table>
+        </div>
+    </form>
 
-    <?php if ($_SESSION['position'] == 'admin'): ?>
-    <button type="submit" class="btn"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
-    <?php endif; ?>
-</form>
+    <!-- REGISTER FORM -->
+    <form action="register.php" method="POST">
+        <div class="filter-option">
+            <h3>Register for staff:</h3>
+            <div class="form-group">
+                <label for="position">Staff Position</label>
+                <select name="position" id="position">
+                    <option value="">-- All Position --</option>
+                    <option value="staff">Staff</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" placeholder="Enter first name" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" placeholder="Enter last name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Enter email" required>
+            </div>
+
+            <button type="submit" class="btn" name="register">Register</button>
+        </div>
+        <h4 class="filter-option">
+            Note: All default password for new registation is their own email <br>
+            All staff should change their own password after registration.
+        </h4>
+    </form>
 </body>
 </html>
