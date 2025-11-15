@@ -124,7 +124,7 @@ $result = mysqli_query($conn, $query);
                     <th>Gender</th>
                     <th>Street Address</th>
                     <th>Suburb Town</th>
-                    <th>Country</th>
+                    <th>State</th>
                     <th>Post Code</th>
                     <th>Email</th>
                     <th>Phone Number</th>
@@ -154,7 +154,7 @@ $result = mysqli_query($conn, $query);
                     echo "<td>{$row['Gender']}</td>";
                     echo "<td>{$row['StreetAddress']}</td>";
                     echo "<td>{$row['SuburbTown']}</td>";
-                    echo "<td>{$row['Country']}</td>";
+                    echo "<td>{$row['State']}</td>";
                     echo "<td>{$row['Postcode']}</td>";
                     echo "<td>{$row['Email']}</td>";
                     echo "<td>{$row['Phone']}</td>";

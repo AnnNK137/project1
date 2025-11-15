@@ -2,6 +2,8 @@
 session_start();
 require_once "settings.php";
 
+$error = ""; // store error flash message
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get input and sanitize
     $email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -26,10 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: manage.php");
             exit();
         } else {
-            echo "Invalid ID or password.";
+            $error = "Invalid email or password.";
         }
     } else {
-        echo "Invalid ID or password.";
+        $error = "Invalid email or password.";
     }
 }
 ?>
@@ -52,6 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container">
         <form class="form" method="post" action="login.php">
+            <?php if (!empty($error)): ?>
+                <p style="color: red; text-align:center; margin-bottom:10px;">
+                    <?= $error ?>
+                </p>
+            <?php endif; ?>
             <p class="form-title">Login in</p>
                 <div class="input-container">
                 <input type="email" name="email" placeholder="Enter your email" required>

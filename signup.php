@@ -2,7 +2,7 @@
 session_start();
 require_once "settings.php";
 
-$error = ""; // store error message
+$error = ""; // store error flash message
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
