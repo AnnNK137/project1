@@ -18,6 +18,19 @@ header .brand_logo{
     align-items: center;
 }
 
+@media (max-width: 700px) {
+    nav .brand_logo{
+        font-size: 15px;
+    }
+}
+@media (max-width: 600px) {
+    nav .brand_logo{
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+    }
+}
+
 /* FILTER DESIGN */
 .hr_header .filter{
     width: 100%;
@@ -49,6 +62,26 @@ select, input{
     border-radius: 10px;
     padding: 5px;
     border: 1px solid var(--blue);
+}
+
+@media (max-width: 700px) {
+    .filter-option{
+        display: flex;
+        flex-direction: column;
+    }
+    .form-group{
+        display: flex;
+        flex-direction: row;
+    }
+    .form-group label{
+        display: none;
+    }
+    select, input{
+        font-size: 12px;
+        padding: 2px;
+        width: 50vw;
+        margin: 5px;
+    }
 }
 
 /* EOI TABLE */
@@ -100,8 +133,43 @@ table td{
 
 #hr_eoi{
     margin-left: 25%;
-    width: 50vw;
-    height: 40vh;
+    width: 80vw;
+}
+
+@media (max-width: 1000px) {
+    .eoi{
+        height: 50vh;
+        margin-left: 5%;
+        border-radius:  6px;
+    }
+    #hr_eoi{
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 700px) {
+    .eoi{
+        height: 50vh;
+        margin-left: 5%;
+        border-radius:  6px;
+    }
+    table th, table td, table .sticky-head {
+        padding: 0px 15px; 
+        font-size: 14px;
+    }
+    .status-dropdown{
+        font-size: 8px;
+        width: 40px;
+        text-align: center;
+    }
+    .btn{
+        padding: 8px;
+        margin: 5px;
+        font-size: 13px;
+    }
+    #hr_eoi{
+        margin: 0 auto;
+    }
 }
 
 /* FOOTER EDIT BUTTON */
@@ -110,12 +178,16 @@ table td{
     justify-content: center;
 }
 
-/* HR LOGIN FORM */
+/* HR LOGIN/sign up FORM */
+.redirect-link{
+    color: white;
+}
+
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
+    min-height: 90vh;
     flex-direction: column;
 }
 
@@ -183,6 +255,15 @@ table td{
   text-decoration: underline;
 }
 
+#name-input{
+    display: flex;
+    gap: 10px;
+}
+
+#name-input input{
+    width: 145px;
+}
+
 /* PROFILE  */
 .btn-group{
     display: flex;
@@ -191,6 +272,7 @@ table td{
 .profile{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     border: 2px solid var(--blue);
     border-radius: 10px;
     overflow: hidden;
@@ -219,4 +301,10 @@ table td{
     padding: 5px;
     font-size: 12px;
     border: 1px solid;
+}
+
+.btn-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

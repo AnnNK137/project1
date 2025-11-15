@@ -26,7 +26,7 @@ $email   = $_GET['email'] ?? '';
 
 
 //query
-$query = "SELECT * FROM hr";
+$query = "SELECT * FROM users";
 $conditions = [];
 
 if ($position != '') { $conditions[] = "position = '$position'"; }
@@ -110,39 +110,6 @@ $result = mysqli_query($conn, $query);
                 ?>
             </table>
         </div>
-    </form>
-
-    <!-- REGISTER FORM -->
-    <form action="register.php" method="POST">
-        <div class="filter-option">
-            <h3>Register for staff:</h3>
-            <div class="form-group">
-                <label for="position">Staff Position</label>
-                <select name="position" id="position">
-                    <option value="">-- All Position --</option>
-                    <option value="staff">Staff</option>
-                    <option value="admin">Admin</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" name="firstName" placeholder="Enter first name" required>
-            </div>
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" name="lastName" placeholder="Enter last name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" placeholder="Enter email" required>
-            </div>
-
-            <button type="submit" class="btn" name="register">Register</button>
-        </div>
-        <h4 class="filter-option">
-            Note: All default password for new registation is their own email <br>
-            All staff should change their own password after registration.
-        </h4>
     </form>
 </body>
 </html>

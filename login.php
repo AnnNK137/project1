@@ -4,11 +4,11 @@ require_once "settings.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get input and sanitize
-    $hr_email = mysqli_real_escape_string($conn, $_POST['hr_email']);
-    $pass = $_POST['hr_password']; //leave raw for password_verify
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $pass = $_POST['password']; //leave raw for password_verify
 
-    // Query user by hr_email
-    $query = "SELECT * FROM hr WHERE email='$hr_email'";
+    // Query user by email
+    $query = "SELECT * FROM users WHERE email='$email'";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) > 0) {
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verify hashed password
         if (password_verify($pass, $row['password'])) {
             // Password matches, store session
-            $_SESSION['ID'] = $row['hr_id'];
+            $_SESSION['ID'] = $row['id'];
             $_SESSION['firstName'] = $row['firstName'];
             $_SESSION['lastName'] = $row['lastName'];
             $_SESSION['email'] = $row['email'];
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR LOGIN</title>
+    <title>LOGIN</title>
 
     <!-- STYLE SHEET LINKS -->
     <link rel="stylesheet" href="styles/styles.css">
@@ -51,17 +51,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="container">
-        <form class="form" method="post" action="hr_login.php">
-            <p class="form-title">Login in to Management Site</p>
+        <form class="form" method="post" action="login.php">
+            <p class="form-title">Login in</p>
                 <div class="input-container">
-                <input type="email" name="hr_email" placeholder="Enter your HR email" required>
+                <input type="email" name="email" placeholder="Enter your email" required>
             </div>
             <div class="input-container">
-                <input type="password" name="hr_password" placeholder="Enter password" required>
+                <input type="password" name="password" placeholder="Enter password" required>
                 </div>
                 <button type="submit" class="submit">
                 Login
             </button>
+            <p>Don't have an account yet? <a class="redirect-link" href="signup.php">Sign Up</a></p>
         </form>
     </div>
 
