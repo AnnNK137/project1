@@ -8,6 +8,7 @@
                 <li><a href="jobs.php">Job</a></li>
                 <li><a href="apply.php">Applying</a></li>
                 <li><a href="about.php">About</a></li>
+                <li><a href="signup.php">Sign Up</a></li>
              </ul>
          </nav>
      </header>

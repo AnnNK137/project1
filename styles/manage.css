@@ -167,7 +167,11 @@ table td{
     justify-content: center;
 }
 
-/* HR LOGIN FORM */
+/* HR LOGIN/sign up FORM */
+.redirect-link{
+    color: white;
+}
+
 .container{
     display: flex;
     justify-content: center;
@@ -238,6 +242,15 @@ table td{
 
 .signup-link a {
   text-decoration: underline;
+}
+
+#name-input{
+    display: flex;
+    gap: 10px;
+}
+
+#name-input input{
+    width: 145px;
 }
 
 /* PROFILE  */

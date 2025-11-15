@@ -239,20 +239,6 @@ footer a:hover{
     text-decoration: none;
 } */
 
-.hp_scroll_down_icon img{ /* Scroll icon */
-    margin: auto;
-    position: absolute;
-    bottom: 0;
-    transition: transform 0.3s ease;
-    animation: scroll_signal 1.5s ease-in-out infinite;
-}
-
-@keyframes scroll_signal { /* making the scroll down signal bouncing */
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
 /*Index.html basic styling for each info SECTION */
 .hp_main_content {
     margin: 10%;

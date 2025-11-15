@@ -35,8 +35,8 @@
             </h4>
 
             <div class="btn_list center flex_center">
-                <a class="btn" href="jobs.html">Vacancies &#9654;</a>
-                <a class="btn" href="about.html">About Us &#9654;</a>
+                <a class="btn" href="jobs.php">Vacancies &#9654;</a>
+                <a class="btn" href="about.php">About Us &#9654;</a>
             </div>
 
                     <!-- SOCIAL MEDIA LINKS -->
@@ -49,12 +49,6 @@
 
             </figure>
         </section>  <!-- End of Herosection Desc -->
-
-        <!-- A scroll down signal for hero section to read main content -->
-        <div class="hp_scroll_down_icon flex_center">
-            <img class="hp_icons" src="images/scroll.png" alt="scroll down">
-        </div>
-
         
     </div> <!--  END OF HERO SECTION -->
 
@@ -107,7 +101,7 @@
             </article>  <!-- End of description -->
             <br>
             <br>
-            <a href="about.html" class="btn">&#10140; Learn more about us</a>
+            <a href="about.php" class="btn">&#10140; Learn more about us</a>
 
             <!-- Sample Products -->
             <!-- All images are sample HTML from htmlcodex.com -->
@@ -272,7 +266,7 @@
                             <p>As part of our team, you will contribute to designing and delivering solutions that impact real-world businesses. 
                                 The role involves collaborating with colleagues across different departments, 
                                 solving challenges creatively, and continuously developing your technical and professional skills.</p>
-                            <a href="jobs.html" class="btn">&#10140; Learn more</a>                        
+                            <a href="jobs.php" class="btn">&#10140; Learn more</a>                        
                         </div>
                     </section>
 
@@ -289,7 +283,7 @@
                             <p>In this role, you will be responsible for maintaining and optimizing our company's 
                                 network infrastructure to ensure stable, secure, 
                                 and high-performance connectivity across all departments.</p>
-                            <a href="jobs.html" class="btn">&#10140; Learn more</a>
+                            <a href="jobs.php" class="btn">&#10140; Learn more</a>
                         </div>
                     </section>             
                     
@@ -307,7 +301,7 @@
                                 solutions that support our business growth and digital transformation goals. 
                                 You will work closely with developers, network engineers, and security teams to 
                                 ensure efficient cloud operations, cost optimization, and system reliability.</p>
-                                <a href="jobs.html" class="btn">&#10140; Learn more</a>
+                                <a href="jobs.php" class="btn">&#10140; Learn more</a>
                         </div>
                     </section>                        
                 </div> <!-- End lists -->
@@ -317,10 +311,11 @@
     </div> <!-- End of main content -->
 
     <!-- CALL FOR ACTION -->
-     <section id="hp_cfa" class="center colum flex_center">
-        <h2>LEARN MORE ABOUT OUR POSITION</h2>
+    <section id="hp_cfa" class="center colum flex_center">
+         <br>
+        <h2>SIGN UP TO LEARN MORE ABOUT US</h2>
         <br>
-        <a href="jobs.html" class="btn">&#10140; View more</a>
+        <a href="signup.php" class="btn">&#10140; Sign Up</a>
      </section>
      
 
