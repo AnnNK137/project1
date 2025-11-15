@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass = $_POST['password']; //leave raw for password_verify
 
     // Query user by email
-    $query = "SELECT * FROM hr WHERE email='$email'";
+    $query = "SELECT * FROM users WHERE email='$email'";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) > 0) {

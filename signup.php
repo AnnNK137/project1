@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button type="submit" class="submit">
                 Sign Up
                 </button>
-            <p>Already have an account? <a class="redirect-link" href="signup.php">Login</a></p>
+            <p>Already have an account? <a class="redirect-link" href="login.php">Login</a></p>
         </form>
     </div>
 
