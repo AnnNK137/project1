@@ -12,7 +12,7 @@ if (!isset($_SESSION['email'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //canceling
     if(isset($_POST['cancel'])){
-        header("Location: hr_profile.php");
+        header("Location: profile.php");
         exit();
     };
 
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['email'] = $new_email; // update session as well
 
         //returm to profile
-        header("Location: hr_profile.php");
+        header("Location: profile.php");
         exit();
     };
 };

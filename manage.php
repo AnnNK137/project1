@@ -7,6 +7,13 @@ if (!isset($_SESSION['email'])) {
     header("Location: login.php");
     exit();
 }
+
+//only allow admin and staff
+if (!isset($_SESSION['position']) && 
+    ($_SESSION['position'] == 'admin' || $_SESSION['position'] == 'staff')) {
+    header("Location: index.php");
+    exit();
+}
 ?>
 
 <?php 
@@ -39,7 +46,7 @@ $lastName   = $_GET['last_name'] ?? '';
 $query = "SELECT * FROM eoi";
 $conditions = [];
 
-if ($jobRef != '') { $conditions[] = "JobReferenceNumber = '$jobRef'"; }
+if ($jobRef != '') { $conditions[] = "JobReference = '$jobRef'"; }
 if ($firstName != '') { $conditions[] = "FirstName LIKE '%$firstName%'"; }
 if ($lastName != '') { $conditions[] = "LastName LIKE '%$lastName%'"; }
 
@@ -117,7 +124,7 @@ $result = mysqli_query($conn, $query);
                     <th>Gender</th>
                     <th>Street Address</th>
                     <th>Suburb Town</th>
-                    <th>State</th>
+                    <th>Country</th>
                     <th>Post Code</th>
                     <th>Email</th>
                     <th>Phone Number</th>
@@ -142,12 +149,12 @@ $result = mysqli_query($conn, $query);
                     echo "<td class='sticky-col'>{$row['EOInumber']}</td>";
                     echo "<td class='sticky-col'>{$row['FirstName']}</td>";
                     echo "<td>{$row['LastName']}</td>";
-                    echo "<td>{$row['JobReferenceNumber']}</td>";
+                    echo "<td>{$row['JobReference']}</td>";
                     echo "<td>{$row['DateOfBirth']}</td>";
                     echo "<td>{$row['Gender']}</td>";
                     echo "<td>{$row['StreetAddress']}</td>";
                     echo "<td>{$row['SuburbTown']}</td>";
-                    echo "<td>{$row['State']}</td>";
+                    echo "<td>{$row['Country']}</td>";
                     echo "<td>{$row['Postcode']}</td>";
                     echo "<td>{$row['Email']}</td>";
                     echo "<td>{$row['Phone']}</td>";

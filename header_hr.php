@@ -24,8 +24,8 @@ if (session_status() === PHP_SESSION_NONE) {
             }
             ?>
             <?php 
-            if (isset($_SESSION['position']) && $_SESSION['position'] == 'admin'
-                || isset($_SESSION['position']) && $_SESSION['position'] == 'staff') {
+            if (isset($_SESSION['position']) && 
+            ($_SESSION['position'] == 'admin' || $_SESSION['position'] == 'staff')) {
                 echo '<li><a href="manage.php">Applicants</a></li>';
             }
             ?>

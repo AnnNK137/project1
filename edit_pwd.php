@@ -12,7 +12,7 @@ if (!isset($_SESSION['email'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Cancel button
     if (isset($_POST['cancel'])) {
-        header("Location: hr_profile.php");
+        header("Location: profile.php");
         exit();
     }
 
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Update in DB
             $update = "UPDATE hr SET password='$hashed_new_pwd' WHERE email='$current_email'";
             if (mysqli_query($conn, $update)) {
-                header("Location: hr_profile.php"); // redirect after 2 sec
+                header("Location: profile.php"); // redirect after 2 sec
                 exit();
             } else {
                 echo "❌ Failed to update password: " . mysqli_error($conn);
