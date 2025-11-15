@@ -9,8 +9,8 @@ if (!isset($_SESSION['email'])) {
 }
 
 //only allow admin and staff
-if (!isset($_SESSION['position']) && 
-    ($_SESSION['position'] == 'admin' || $_SESSION['position'] == 'staff')) {
+if (!isset($_SESSION['position']) || 
+    ($_SESSION['position'] != 'admin' && $_SESSION['position'] != 'staff')) {
     header("Location: index.php");
     exit();
 }

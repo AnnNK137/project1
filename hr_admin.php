@@ -17,6 +17,26 @@ if (!isset($_SESSION['position']) || $_SESSION['position'] != 'admin') {
 <?php 
 require_once "settings.php"; //connect to settings.php
 
+// Handle form submission to update positiones
+// Handle form submission to update positions
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['position'])) {
+    foreach ($_POST['position'] as $email => $position) {
+
+        //Prevent admin from modifying their own account
+        if ($email === $_SESSION['email']) {
+            continue;
+        }
+
+        if ($position === 'Remove') {
+            mysqli_query($conn, "DELETE FROM users WHERE email='$email'");
+        } else {
+            $position = mysqli_real_escape_string($conn, $position);
+            mysqli_query($conn, "UPDATE users SET position='$position' WHERE email='$email'");
+        }
+    }
+}
+
+
 //filter function
 // Get filter values
 $position     = $_GET['position'] ?? '';
@@ -66,6 +86,7 @@ $result = mysqli_query($conn, $query);
                 <label for="position">Staff Position</label>
                 <select name="position" id="position">
                     <option value="">-- All Position --</option>
+                    <option value="user" <?= $position=='user'?'selected':'' ?>>User</option>
                     <option value="staff" <?= $position=='staff'?'selected':'' ?>>Staff</option>
                     <option value="admin" <?= $position=='admin'?'selected':'' ?>>Admin</option>
                 </select>
@@ -87,28 +108,62 @@ $result = mysqli_query($conn, $query);
     </form>
 
     <!-- EOI TABLE -->
-    <form method="POST" action="manage.php"> <!-- Form for save and cancelling -->
+    <form method="POST" action="hr_admin.php"> <!-- Form for save and cancelling -->
         <!-- Keeps the filtered on-->
+        <input type="hidden" name="position" value="<?= ($position) ?>">
+        <input type="hidden" name="first_name" value="<?= ($firstName) ?>">
+        <input type="hidden" name="last_name" value="<?= ($lastName) ?>">
         <div class="eoi" id="hr_eoi">
             <table>
                 <tr>
+                    <th>Position</th>
                     <th class="sticky-col sticky-head">First Name</th>
                     <th>Last Name</th>
-                    <th>Position</th>
                     <th>Email</th>
                 </tr>
 
-                <?php
-                while($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr>";
-                    echo "<td class='sticky-col'>{$row['firstName']}</td>";
-                    echo "<td>{$row['lastName']}</td>";
-                    echo "<td>{$row['position']}</td>";
-                    echo "<td>{$row['email']}</td>";
-                    echo "</tr>";
+            <?php
+            while($row = mysqli_fetch_assoc($result)) {
+
+                $isSelf = ($row['email'] == $_SESSION['email']); // check if it's your own account
+
+                echo "<tr>";
+
+                echo "<td class='sticky-col'>";
+
+                if ($isSelf) {
+                    // Locked dropdown
+                    echo "<select class='position-dropdown' disabled>";
+                    echo "<option selected>{$row['position']}</option>";
+                    echo "</select>";
+
+                    // Hidden field so value stays the same when saving
+                    echo "<input type='hidden' name='position[{$row['email']}]' value='{$row['position']}'>";
+                } else {
+                    // Normal dropdown for other users
+                    echo "<select class='position-dropdown' name='position[{$row['email']}]'>
+                            <option value='user' ".($row['position']=='user'?'selected':'').">user</option>
+                            <option value='admin' ".($row['position']=='admin'?'selected':'').">admin</option>
+                            <option value='staff' ".($row['position']=='staff'?'selected':'').">staff</option>
+                            <option value='Remove'>Remove</option>
+                        </select>";
                 }
-                ?>
+
+                echo "</td>";
+
+                echo "<td class='sticky-col'>{$row['firstName']}</td>";
+                echo "<td>{$row['lastName']}</td>";
+                echo "<td>{$row['email']}</td>";
+
+                echo "</tr>";
+            }
+            ?>
             </table>
+        </div>
+            <!-- SAVE / CANCEL buttons -->
+        <div class="footer">
+            <button type="submit" class="btn"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+            <button type="reset" class="btn"><i class="fa-solid fa-xmark"></i> Cancel</button>
         </div>
     </form>
 </body>

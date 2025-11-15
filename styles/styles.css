@@ -68,6 +68,12 @@ body {
     color: var(--blue-hightlight);
 }
 
+/* HR LOGIN/sign up FORM */
+.redirect-link{
+    color: white;
+}
+
+
 
 /* Header */
 nav {

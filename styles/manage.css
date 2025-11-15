@@ -178,11 +178,6 @@ table td{
     justify-content: center;
 }
 
-/* HR LOGIN/sign up FORM */
-.redirect-link{
-    color: white;
-}
-
 .container{
     display: flex;
     justify-content: center;
