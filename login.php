@@ -2,39 +2,67 @@
 session_start();
 require_once "settings.php";
 
-$error = ""; // store error flash message
+$error = ""; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get input and sanitize
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $pass = $_POST['password']; //leave raw for password_verify
+    $pass = $_POST['password'];
 
-    // Query user by email
     $query = "SELECT * FROM users WHERE email='$email'";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
 
-        // Verify hashed password
-        if (password_verify($pass, $row['password'])) {
-            // Password matches, store session
-            $_SESSION['ID'] = $row['id'];
-            $_SESSION['firstName'] = $row['firstName'];
-            $_SESSION['lastName'] = $row['lastName'];
-            $_SESSION['email'] = $row['email'];
-            $_SESSION['position'] = $row['position'];
+        // If user is disabled (6 failed attempts)
+        if ($row['is_disabled'] == 1) {
+            $error = "Account with email: " . $email . " will be temporally disable for privacy control. <br>
+                        A mail will be sent to " . $email . " on how to reopen the account" ;
+        }
+        else {
+            // Validate password
+            if (password_verify($pass, $row['password'])) {
+                // SUCCESS → reset attempts
+                mysqli_query($conn, "UPDATE users SET login_attempts = 0 WHERE email='$email'");
 
-            header("Location: manage.php");
-            exit();
-        } else {
-            $error = "Invalid email or password.";
+                $_SESSION['ID'] = $row['id'];
+                $_SESSION['firstName'] = $row['firstName'];
+                $_SESSION['lastName'] = $row['lastName'];
+                $_SESSION['email'] = $row['email'];
+                $_SESSION['position'] = $row['position'];
+
+                header("Location: manage.php");
+                exit();
+            }
+            else {
+                // FAILED → increment attempts
+                $newAttempts = $row['login_attempts'] + 1;
+
+                // If attempts reach 6 → disable account
+                if ($newAttempts >= 6) {
+                    mysqli_query($conn, "UPDATE users SET login_attempts = $newAttempts, is_disabled = 1 
+                                         WHERE email='$email'");
+                    $error = "Too many invalid attempts. Your account has been disabled.";
+                }
+                else {
+                    mysqli_query($conn, 
+                        "UPDATE users SET login_attempts = $newAttempts WHERE email='$email'");
+
+                    // If attempts reach 4 → show warning
+                    if ($newAttempts >= 4) {
+                        $error = "Warning: Multiple invalid attempts ($newAttempts) might lead to disabling account.";
+                    } else {
+                        $error = "Invalid email or password.";
+                    }
+                }
+            }
         }
     } else {
         $error = "Invalid email or password.";
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>

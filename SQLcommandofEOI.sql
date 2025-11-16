@@ -40,4 +40,8 @@ CREATE TABLE users ( /*Command to create user Table for Management*/
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     position ENUM('user', 'staff', 'admin') NOT NULL DEFAULT 'user'
+
+    /*for disabling multiple invalid attempts*/
+    login_attempts INT DEFAULT 0, 
+    is_disabled TINYINT(1) DEFAULT 0;
 );
