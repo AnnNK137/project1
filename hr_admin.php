@@ -173,23 +173,12 @@ $result = mysqli_query($conn, $query);
                 echo "<td>{$row['lastName']}</td>";
                 echo "<td>{$row['email']}</td>";
 
-
-                if ($isSelf) {
-                    // Locked dropdown
-                    echo "<select class='position-dropdown' disabled>";
-                    echo "<option selected>{$row['is_disabled']}</option>";
-                    echo "</select>";
-
-                    // Hidden field so value stays the same when saving
-                    echo "<input type='hidden' name='is_disabled[{$row['email']}]' value='{$row['is_disabled']}'>";
-                } else {
-                    echo "<td>
-                    <select class='position-dropdown' name='is_disabled[{$row['email']}]'>
-                    <option value='usable' ".($row['is_disabled']=='0'?'selected':'').">Usable</option>
-                    <option value='disabled' ".($row['is_disabled']=='1'?'selected':'').">Disabled</option>
-                    </select>
+                echo "<td>
+                        <select class='position-dropdown' name='is_disabled[{$row['email']}]'>
+                            <option value='usable' ".($row['is_disabled']=='0'?'selected':'').">Usable</option>
+                            <option value='disabled' ".($row['is_disabled']=='1'?'selected':'').">Disabled</option>
+                        </select>
                     </td>";
-                }
 
             }
             ?>

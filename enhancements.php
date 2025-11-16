@@ -57,7 +57,7 @@
             <h2 class="title">4. Disable Login after Invalid Attempts</h2>
         <div class="description">
             <p>If a user attempts to log in and fails more than four times, the system will detect the repeated invalid attempts and issue a warning. After the sixth failed attempt, the system will temporarily lock the user’s account for a set duration.</p>
-            <p>The Manager can configure both the number of allowed failed attempts and the lockout duration in the <a href="hr_admin.php">Staff Management Site</a>.</p>
+            <p>The Manager can re-open the disabled account or disable an account at <a href="hr_admin.php">Staff Management Site</a></p>
         </div>
         </section>        
     </div>
