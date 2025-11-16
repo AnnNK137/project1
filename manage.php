@@ -26,12 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['status'])) {
 
         if ($status === 'Remove') { //Delete applicant function
             // Delete the record from the database
-            mysqli_query($conn, "DELETE FROM eoi WHERE EOInumber=$eoi");
+            mysqli_query($conn, "DELETE FROM eoi WHERE id=$eoi");
         } else {
             // Escape status for safe SQL query
             $status = mysqli_real_escape_string($conn, $status);
             // Update the status in the database
-            mysqli_query($conn, "UPDATE eoi SET Status='$status' WHERE EOInumber=$eoi");
+            mysqli_query($conn, "UPDATE eoi SET status='$status' WHERE id=$eoi");
         }
     }
 }
@@ -46,9 +46,9 @@ $lastName   = $_GET['last_name'] ?? '';
 $query = "SELECT * FROM eoi";
 $conditions = [];
 
-if ($jobRef != '') { $conditions[] = "JobReference = '$jobRef'"; }
-if ($firstName != '') { $conditions[] = "FirstName LIKE '%$firstName%'"; }
-if ($lastName != '') { $conditions[] = "LastName LIKE '%$lastName%'"; }
+if ($jobRef != '') { $conditions[] = "job = '$jobRef'"; }
+if ($firstName != '') { $conditions[] = "fullname LIKE '%$firstName%'"; }
+if ($lastName != '') { $conditions[] = "lastname LIKE '%$lastName%'"; }
 
 if (count($conditions) > 0) {
     $query .= " WHERE " . implode(" AND ", $conditions);
@@ -115,53 +115,55 @@ $result = mysqli_query($conn, $query);
         <div class="eoi">
             <table>
                 <tr>
-                    <th class="sticky-col sticky-head">Status</th>
+                    <th class="sticky-col sticky-head">status</th>
                     <th class="sticky-col sticky-head">ID</th>
                     <th class="sticky-col sticky-head">First Name</th>
                     <th>Last Name</th>
                     <th>Job</th>
                     <th>Date Of Birth</th>
-                    <th>Gender</th>
+                    <th>gender</th>
                     <th>Street Address</th>
                     <th>Suburb Town</th>
-                    <th>State</th>
+                    <th>state</th>
                     <th>Post Code</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                    <th>Skill 1</th>
-                    <th>Skill 2</th>
-                    <th>Skill 3</th>
+                    <th>email</th>
+                    <th>Phone number</th>
+                    <th>University</th>
+                    <th>Degree/Certificate</th>
+                    <th>Skills</th>
                     <th>Other Skills</th>
+                    <th>Applicants time of create</th>
                 </tr>
 
                 <?php
                 while($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
-                    // Status dropdown
+                    // status dropdown
                     echo "<td class='sticky-col'>
-                            <select class='status-dropdown' name='status[{$row['EOInumber']}]'>
-                                <option value='New' ".($row['Status']=='New'?'selected':'').">New</option>
-                                <option value='Current' ".($row['Status']=='Current'?'selected':'').">Current</option>
-                                <option value='Final' ".($row['Status']=='Final'?'selected':'').">Final</option>
-                                <option value='Remove' ".($row['Status']=='Remove'?'selected':'').">Remove</option>
+                            <select class='status-dropdown' name='status[{$row['id']}]'>
+                                <option value='New' ".($row['status']=='New'?'selected':'').">New</option>
+                                <option value='Current' ".($row['status']=='Current'?'selected':'').">Current</option>
+                                <option value='Final' ".($row['status']=='Final'?'selected':'').">Final</option>
+                                <option value='Remove' ".($row['status']=='Remove'?'selected':'').">Remove</option>
                             </select>
                         </td>";
-                    echo "<td class='sticky-col'>{$row['EOInumber']}</td>";
-                    echo "<td class='sticky-col'>{$row['FirstName']}</td>";
-                    echo "<td>{$row['LastName']}</td>";
-                    echo "<td>{$row['JobReference']}</td>";
-                    echo "<td>{$row['DateOfBirth']}</td>";
-                    echo "<td>{$row['Gender']}</td>";
-                    echo "<td>{$row['StreetAddress']}</td>";
-                    echo "<td>{$row['SuburbTown']}</td>";
-                    echo "<td>{$row['State']}</td>";
-                    echo "<td>{$row['Postcode']}</td>";
-                    echo "<td>{$row['Email']}</td>";
-                    echo "<td>{$row['Phone']}</td>";
-                    echo "<td>{$row['Skill1']}</td>";
-                    echo "<td>{$row['Skill2']}</td>";
-                    echo "<td>{$row['Skill3']}</td>";
-                    echo "<td>{$row['OtherSkills']}</td>";
+                    echo "<td class='sticky-col'>{$row['id']}</td>";
+                    echo "<td class='sticky-col'>{$row['fullname']}</td>";
+                    echo "<td>{$row['lastname']}</td>";
+                    echo "<td>{$row['job']}</td>";
+                    echo "<td>{$row['birth']}</td>";
+                    echo "<td>{$row['gender']}</td>";
+                    echo "<td>{$row['address']}</td>";
+                    echo "<td>{$row['suburb']}</td>";
+                    echo "<td>{$row['state']}</td>";
+                    echo "<td>{$row['postcode']}</td>";
+                    echo "<td>{$row['email']}</td>";
+                    echo "<td>{$row['phonenumber1']}</td>";
+                    echo "<td>{$row['university']}</td>";
+                    echo "<td>{$row['degree']}</td>";
+                    echo "<td>{$row['skills']}</td>";
+                    echo "<td>{$row['description']}</td>";
+                    echo "<td>{$row['created_at']}</td>";
                     echo "</tr>";
                 }
                 ?>

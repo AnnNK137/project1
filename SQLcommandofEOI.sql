@@ -26,9 +26,12 @@ CREATE TABLE eoi ( /*Create EOI Table for applicant*/
     relationship VARCHAR(50),
     phonenumber2 VARCHAR(20),
     responsibility TEXT,
+
+    status ENUM('New', 'Current', 'Final') NOT NULL DEFAULT 'New',
     
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 
 CREATE TABLE users ( /*Command to create user Table for Management*/
     hr_id INT AUTO_INCREMENT PRIMARY KEY,

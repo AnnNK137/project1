@@ -127,6 +127,7 @@ function display_error_page($errors, $black, $light_beige, $font_base, $error_co
         </style>
     </head>
     <body>
+        <?php include "nav.inc"?>
         <div class="error-box">
             <h1>Submission Failed</h1>
             <ul>
@@ -215,6 +216,7 @@ function display_confirmation_page($eoi_data, $black, $blue_highlight, $light_be
         </style>
     </head>
     <body>
+        <?php include "nav.inc"?>
 
     <?php 
     // Include navigation bar (assuming nav.inc exists)
