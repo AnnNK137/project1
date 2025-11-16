@@ -1,7 +1,8 @@
 <?php
 require_once "settings.php";
+require_once "insert_eoi.php";
 
-// --- Connect to database ---
+// --- 1. Connect to database ---
 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$conn) {
     die("Database connection failed: " . mysqli_connect_error());
@@ -9,22 +10,20 @@ if (!$conn) {
 
 session_start();
 
-// --- Configuration Variables (Matching your CSS/Theme) ---
+// --- 2. Config variables ---
 $black = '#030303';
 $blue_highlight = '#3c4da4';
 $light_beige = '#f1efec';
 $font_base = "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif";
-$error_color = '#d9534f'; 
+$error_color = '#d9534f';
 
-// --- 1. Form Submission Check ---
+// --- 3. Ensure POST submission ---
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    // Redirect if the page is accessed directly without POST data
-    header("Location: apply.html"); 
+    header("Location: apply.html");
     exit;
 }
 
-// --- 2. Data Cleaning/Sanitization Function ---
-// Cleans input data for display purposes (prevents XSS)
+// --- 4. Sanitize input function ---
 function clean_input($data) {
     if (is_array($data)) {
         return array_map('clean_input', $data);
@@ -35,33 +34,25 @@ function clean_input($data) {
     return $data;
 }
 
-// --- 3. Basic Validation Check ---
+// --- 5. Validation ---
 $errors = [];
-$required_fields = ['job', 'fullname', 'lastname', 'birth', 'gender', 'address', 'suburb', 'state', 'postcode', 'phonenumber1', 'email', 'university', 'degree', 'year', 'company1', 'position1', 'emdate1', 'reference', 'relationship', 'phonenumber2', 'responsibility'];
+$required_fields = [
+    'job','fullname','lastname','birth','gender','address','suburb','state','postcode','phonenumber1','email',
+    'university','degree','year','company1','position1','emdate1','reference','relationship','phonenumber2','responsibility'
+];
 
 foreach ($required_fields as $field) {
     if (empty($_POST[$field])) {
-        // Since 'responsibility' is a required checkbox, it will be missing if unchecked.
-        if ($field === 'responsibility') {
-            $errors[] = "You must certify that the information is accurate.";
-        } else {
-            // For simplicity, we just check if the field is present/non-empty.
-            $errors[] = ucfirst(str_replace(['1', '2', '3'], '', $field)) . " is required.";
-        }
+        $errors[] = ucfirst(str_replace(['1','2','3'], '', $field)) . " is required.";
     }
 }
 
-// If there are validation errors, you would typically redirect back to the form
-// with an error message. For this example, we'll just display the errors.
 if (!empty($errors)) {
-    // In a real application, you'd save $errors to a session and redirect.
-    // For now, we'll stop execution and display errors.
     display_error_page($errors, $black, $light_beige, $font_base, $error_color);
     exit;
 }
 
-
-// --- 4. Data Collection (Only executed if validation passes) ---
+// --- 6. Collect Data ---
 $eoi_data = [];
 
 // Personal Info
@@ -82,7 +73,7 @@ $eoi_data['university'] = clean_input($_POST['university']);
 $eoi_data['degree'] = clean_input($_POST['degree']);
 $eoi_data['year'] = clean_input($_POST['year']);
 
-// Skills (Checkbox Array & Description)
+// Skills
 if (isset($_POST['skills']) && is_array($_POST['skills'])) {
     $eoi_data['skills_selected'] = clean_input($_POST['skills']);
     $eoi_data['skills_list'] = implode(", ", $eoi_data['skills_selected']);
@@ -91,12 +82,10 @@ if (isset($_POST['skills']) && is_array($_POST['skills'])) {
 }
 $eoi_data['description'] = clean_input($_POST['description'] ?? '');
 
-// Employment History (1 required, plus optional 2 and 3 if included in HTML)
-for ($i = 1; $i <= 3; $i++) {
-    $eoi_data["company{$i}"] = clean_input($_POST["company{$i}"] ?? 'N/A');
-    $eoi_data["position{$i}"] = clean_input($_POST["position{$i}"] ?? 'N/A');
-    $eoi_data["emdate{$i}"] = clean_input($_POST["emdate{$i}"] ?? 'N/A');
-}
+// Employment History
+$eoi_data['company1'] = clean_input($_POST['company1']);
+$eoi_data['position1'] = clean_input($_POST['position1']);
+$eoi_data['emdate1'] = clean_input($_POST['emdate1']);
 
 // References
 $eoi_data['reference'] = clean_input($_POST['reference']);
@@ -104,20 +93,23 @@ $eoi_data['relationship'] = clean_input($_POST['relationship']);
 $eoi_data['phonenumber2'] = clean_input($_POST['phonenumber2']);
 
 // Certification
-$eoi_data['responsibility'] = "Certified (Information is accurate)"; 
+$eoi_data['responsibility'] = "Certified (Information is accurate)";
 
-// --- 5. Data Processing (Simulate Database Save) ---
-// In a real application, this is where you would connect to the database 
-// and execute the INSERT query using the $eoi_data array.
+// --- 7. Insert into database with debug ---
+try {
+    if (!insert_eoi($conn, $eoi_data)) {
+        throw new Exception("Unknown error occurred during insert.");
+    }
+} catch (Exception $e) {
+    $errors[] = "Database Insert Failed: " . $e->getMessage();
+    display_error_page($errors, $black, $light_beige, $font_base, $error_color);
+    exit;
+}
 
-// Placeholder for database logic:
-// save_eoi_data_to_db($eoi_data); 
-// --- 5.1 Insert data into database ---
-// --- 6. Display Confirmation Page ---
+// --- 8. Display Confirmation ---
 display_confirmation_page($eoi_data, $black, $blue_highlight, $light_beige, $font_base);
 
-// --- Functions to Display Pages ---
-
+// --- 9. Error & Confirmation Page functions ---
 function display_error_page($errors, $black, $light_beige, $font_base, $error_color) {
     ?>
     <!DOCTYPE html>
@@ -127,7 +119,7 @@ function display_error_page($errors, $black, $light_beige, $font_base, $error_co
         <title>Submission Error</title>
         <style>
             body { background-color: <?php echo $black; ?>; color: <?php echo $light_beige; ?>; font-family: <?php echo $font_base; ?>; text-align: center; padding: 50px; }
-            .error-box { max-width: 600px; margin: 0 auto; padding: 20px; border: 2px solid <?php echo $error_color; ?>; border-radius: 10px; background-color: rgba(50, 0, 0, 0.7); }
+            .error-box { max-width: 600px; margin: 0 auto; padding: 20px; border: 2px solid <?php echo $error_color; ?>; border-radius: 10px; background-color: rgba(50,0,0,0.7); }
             h1 { color: <?php echo $error_color; ?>; }
             ul { list-style: none; padding: 0; text-align: left; }
             li { margin-bottom: 10px; color: <?php echo $light_beige; ?>; }
@@ -136,14 +128,13 @@ function display_error_page($errors, $black, $light_beige, $font_base, $error_co
     </head>
     <body>
         <div class="error-box">
-            <h1> Submission Failed</h1>
-            <p>The following errors occurred during validation:</p>
+            <h1>Submission Failed</h1>
             <ul>
                 <?php foreach ($errors as $error): ?>
                     <li>- <?php echo $error; ?></li>
                 <?php endforeach; ?>
             </ul>
-            <p>Please <a href="apply.html">go back</a> and correct the required fields.</p>
+            <p>Please <a href="apply.html">go back</a> and fix the errors.</p>
         </div>
     </body>
     </html>
@@ -152,7 +143,7 @@ function display_error_page($errors, $black, $light_beige, $font_base, $error_co
 
 function display_confirmation_page($eoi_data, $black, $blue_highlight, $light_beige, $font_base) {
     ?>
-    <!DOCTYPE html>
+     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">

@@ -129,7 +129,7 @@
       <div class="form-group grid-3-col">
         <legend>Skills & Qualifications</legend>
       </div>
-      <div?>
+      <div>
         <label>Required Technical Skill List:</label>
       </div>
         <div>
@@ -192,5 +192,6 @@
         </p>
     </div>
 </form>
+</body>
 </html>
 <?php include "footer.inc"; ?>
