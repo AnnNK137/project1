@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- LINK TO LIVE GITHUB PAGE: https://annnk137.github.io/project1/ -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT Jobs Position Description</title>
@@ -10,19 +12,7 @@
 </head>
 <body>
     <!-- navigation bar (same on all pages) -->
-     <header>
-         <nav>
-            <a href="index.html" class="brand_logo">
-                <img src="images/logo.png" alt="3Ners"> 
-            </a>
-             <ul class="nav_items">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Job</a></li>
-                <li><a href="apply.html">Applying</a></li>
-                <li><a href="about.html">About</a></li>
-             </ul>
-         </nav>
-     </header>
+    <?php include "nav.inc" ?>
 
      <!-- MAIN CONTENTS -->
     <div class="job_intro center colum flex_center">
@@ -36,209 +26,59 @@
     <main>
         <!-- JOBS -->
         <section id="job_main_1">
-            <p class="main_title" id="jobs_title">JOB POSITIONS</p>
+            <p class="main_title">JOB POSITIONS</p>
             <hr class="main_line">
-                <!-- AI ENGINEER -->
-            <div class="job_list">
-                <h2>G01- Software Developer</h2>
-                <aside class="job_hiring_btn">
-                    <a href="./apply.html">Hiring for this role?</a> 
-                </aside>            
-            </div>
-            <div class="job_info">
-                <div class="job_card_container">
-                    <div class="job_slide job_slide_1">
-                        <p class="job_card">Role</p>
-                    </div>
-                    <div class="job_slide job_slide_2">
-                        <ul class="job_details">
-                            <li>Design, develop, and maintain functional software solutions.</li>
-                            <li>Collaborate with teams to define requirements and implement features.</li>
-                            <li>Debug, test, and improve existing software.</li>
-                            <li>Follow best coding practices and documentation standards.</li>
-                            <li>Stay current with emerging technologies and tools.</li>
-                        </ul>
-                    </div>
+            <?php
+            require_once "settings.php";   
+
+            if (!$conn) {
+                die("<p>Database connection failed</p>");
+            }
+
+            $query = "SELECT * FROM jobs ORDER BY jobRef ASC";
+            $result = mysqli_query($conn, $query);
+
+            while ($job = mysqli_fetch_assoc($result)) :
+            ?>
+                <div class="job_list">
+                    <h2><?= htmlspecialchars($job["jobRef"]) ?> - <?= htmlspecialchars($job["title"]) ?></h2>
+                    <aside class="job_hiring_btn">
+                        <a href="apply.php?jobRef=<?= urlencode($job["jobRef"]) ?>">Hiring for this role?</a>
+                    </aside>
                 </div>
 
-                <div class="job_card_container">
-                    <div class="job_slide job_slide_1">
-                        <p class="job_card">Responsibilities</p>
-                    </div>
-                    <div class="job_slide job_slide_2">
-                        <ul class="job_details">
-                            <li>Producing clean, efficient code based on specifications.</li>
-                            <li>Testing and deploying programs and systems.</li>
-                            <li>Fixing and improving existing software.</li>
-                        </ul>
-                    </div>
+                <div class="job_info">
+                    <?php
+                    function renderSection($label, $content) {
+                        echo '<div class="job_card_container">';
+                        echo '<div class="job_slide job_slide_1"><p class="job_card">'.$label.'</p></div>';
+                        echo '<div class="job_slide job_slide_2"><ul class="job_details">';
+
+                        foreach (explode("\n", $content) as $line) {
+                            echo '<li>'.htmlspecialchars($line).'</li>';
+                        }
+
+                        echo '</ul></div></div>';
+                    }
+
+                    renderSection("Role", $job["role"]);
+                    renderSection("Responsibilities", $job["responsibilities"]);
+                    renderSection("Job brief", $job["job_brief"]);
+                    renderSection("Requirements and skills", $job["requirements"]);
+                    ?>
                 </div>
 
-                <div class="job_card_container">
-                    <div class="job_slide job_slide_1">
-                        <p class="job_card">Job brief</p>
-                    </div>
-                    <div class="job_slide job_slide_2">
-                        <ul class="job_details">
-                            <li>Design and implement functional programs in collaboration with developers and product managers.</li>
-                            <li>Work as a team player with strong problem-solving skills and attention to detail.</li>
-                            <li>Experience with Agile methods and languages like JavaScript is a plus.</li>
-                            <li><u>Your goal:</u> build efficient, user-focused systems.</li>
-                        </ul>
-                    </div>
-                </div>
+                <br><br><br>
+            <?php endwhile; ?>
 
-                <div class="job_card_container">
-                    <div class="job_slide job_slide_1">
-                        <p class="job_card">Requirements and skills</p>
-                    </div>
-                    <div class="job_slide job_slide_2">
-                        <ul class="job_details">
-                            <li>Proven experience as a Software Developer or Engineer.</li>
-                            <li>Familiar with Agile methods and test-driven development.</li>
-                            <li>Skilled in languages like C++, Java, or JavaScript and tools such as AngularJS or Git.</li>
-                            <li>Experience with databases and ORM frameworks (e.g., Hibernate).</li>
-                            <li>Quick learner with strong problem-solving and communication skills.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>            
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <?php mysqli_close($conn); ?>
 
-                <!-- NETWORK ADMINISTRATOR -->
-            <div class="job_list">
-                <h2>G02 - Network Administrator</h2>
-                <aside class="job_hiring_btn">
-                    <a href="./apply.html">Hiring for this role?</a>
-                </aside>          
-            </div>
-            <div class="job_info">
-                <div class="job_card_container">
-                    <div class="job_slide job_slide_1">
-                        <p class="job_card">Role</p>
-                    </div>
-                    <div class="job_slide job_slide_2">
-                        <p class="job_details">
-                            Maintain and secure the organization’s network systems. Configure, monitor, and troubleshoot 
-                            network hardware and software to ensure reliable connectivity. Implement security measures and 
-                            optimize performance for efficient daily operations.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="job_card_container">
-                    <div class="job_slide job_slide_1">
-                        <p class="job_card">Responsibilities</p>
-                    </div>
-                    <div class="job_slide job_slide_2">
-                        <ul class="job_details">
-                            <li>Fully supporting, configuring, maintaining and upgrading corporate customer’s networks and in house servers.</li>
-                            <li>Installing and integrating new server hardware and applications.</li>
-                            <li>Keeping an eye out for needed updates.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job_card_container">
-                    <div class="job_slide job_slide_1">
-                        <p class="job_card">Job brief</p>
-                    </div>
-                    <div class="job_slide job_slide_2">
-                        <ul class="job_details">
-                            <li>Maintain secure and reliable network operations.</li>
-                            <li>Configure, monitor, and troubleshoot network systems.</li>
-                            <li>Implement security and performance improvements.</li>
-                            <li>Ensure consistent connectivity and uptime.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job_card_container">
-                    <div class="job_slide job_slide_1">
-                        <p class="job_card">Requirements and skills</p>
-                    </div>
-                    <div class="job_slide job_slide_2">
-                        <ul class="job_details">
-                            <li>Experience in network administration.</li>
-                            <li>Proficient in routing, switching, and server management.</li>
-                            <li>Skilled with firewalls, VPNs, and troubleshooting.</li>
-                            <li>Cisco/Juniper certification preferred.</li>
-                            <li>Degree in Computer Science or related field.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-                <!-- CLOUD ENGINEER -->
-            <div class="job_list">
-                <h2>G06 - Cloud Engineer</h2>
-                <aside class="job_hiring_btn">
-                    <a href="./apply.html" >Hiring for this role?</a>  
-                </aside>            
-            </div>
-            <div class="job_info">
-                <div class="job_card_container">
-                    <div class="job_slide job_slide_1">
-                        <p class="job_card">Role</p>
-                    </div>
-                    <div class="job_slide job_slide_2">
-                        <ul class="job_details">
-                            <li>Design, deploy, and maintain cloud-based systems.</li>
-                            <li>Ensure secure and efficient data management.</li>
-                            <li>Troubleshoot and optimize cloud operations.</li>
-                            <li>Support clients and recommend cloud solutions.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job_card_container">
-                    <div class="job_slide job_slide_1">
-                        <p class="job_card">Responsibilities</p>
-                    </div>
-                    <div class="job_slide job_slide_2">
-                        <ul class="job_details">
-                            <li>Collaborating with engineering and development teams to evaluate and identify optimal cloud solutions.</li>
-                            <li>Modifying and improving existing systems.</li>
-                            <li>Educating teams on the implementation of new cloud technologies and initiatives.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job_card_container">
-                    <div class="job_slide job_slide_1">
-                        <p class="job_card">Job brief</p>
-                    </div>
-                    <div class="job_slide job_slide_2">
-                        <ul class="job_details">
-                            <li>Optimize, implement, and maintain cloud-based systems.</li>
-                            <li>Deploy, debug, and execute new cloud initiatives.</li>
-                            <li>Collaborate with IT teams to meet organizational and customer needs.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job_card_container">
-                    <div class="job_slide job_slide_1">
-                        <p class="job_card">Requirements and skills</p>
-                    </div>
-                    <div class="job_slide job_slide_2">
-                        <ul class="job_details">
-                            <li>Proven work experience as a Cloud Engineer or similar role.</li>
-                            <li>Azure, AWS, and GCP certifications preferred.</li>
-                            <li>Troubleshooting and analytical skills.</li>
-                            <li>Client management skills to discuss systems as needed.</li>
-                            <li>Strong communication and collaboration skills.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </section>
 
         <!-- EVP -->
         <div id="job_main_2">
-            <p class="main_title_evp" id="jobs_evp">Employee value proposition (EVP)</p>
+            <p class="main_title_evp">Employee value proposition (EVP)</p>
             <hr class="main_line_evp">
         </div>
         <div id="jov_evp">
@@ -297,6 +137,7 @@
                 <p class="job_quote_p2">Community Member</p>
             </div>
             <img src="images/job_images/job_quote_pic.jpg" alt="Quote Image" class="job_quote_img">
+            <!-- Orignal img taken from https://www.pexels.com/ -->
         </div>
 
         <!-- APPLY BUTTON -->
@@ -308,34 +149,13 @@
                 </div>
                     <br>
                 <div class="job_apply_btn_sec">
-                    <a href="./apply.html" class="btn">&#10140; View more</a>
+                    <a href="./apply.php" class="btn">&#10140; View more</a>
                 </div>
             </div>
         </section>
     </main>
 
   <!-- FOOTER USE FOR ALL PAGES -->
-    <footer>
-        <h2 class="footer_brand_name center">3Ners Corp</h2>
-        <div class="footer_details">
-            <section class="colum"> <!-- Contact -->
-                <h4 class="footer_title">Contact us</h4>
-                <ul>
-                    <li>Email: <a href="#">info@companyname.com.au</a></li>
-                    <li>Jira: <a href="https://cos10026-3ners.atlassian.net/jira/software/projects/SCRUM/boards/1">COS10026 - Group 1</a></li>
-                    <li>Github: <a href="https://github.com/AnnNK137/project1">Project 1</a></li>
-                </ul>
-            </section>
-            <section class="colum"> <!-- navigation -->
-                <h4 class="footer_title">Navigation</h4>
-                <ul class="center">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="jobs.html">Job Info</a></li>
-                    <li><a href="apply.html">Applying</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </section>
-        </div>
-    </footer>
+    <?php include "footer.inc" ?>
 </body>
 </html>
