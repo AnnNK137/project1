@@ -1,0 +1,40 @@
+#hs_enhance{
+    height: 20vw;
+}
+
+#hs_enhance img{
+    width: 70px;
+}
+
+.container{
+    margin-inline: 8%;
+}
+
+.container-group{
+    margin-bottom: 8%;
+}
+
+.container-group .title{
+    font-size: 35px;
+    padding: 20px 10px;
+    border-bottom: 5px solid white;
+    margin-bottom: 3%;
+}
+
+.container-group .description{
+    font-size: 16px;
+    background-color: var(--dark-beige);
+    padding: 10px;
+    color: var(--blue);
+    border-radius: 20px;
+    border: 3px solid var(--blue-hightlight);
+}
+
+.container-group p{
+    margin-block: 20px;
+}
+
+.container-group a{
+    color: var(--blue-hightlight);
+}
+
