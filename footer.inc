@@ -13,10 +13,10 @@
             <section class="colum"> <!-- navigation bar -->
                 <h4 class="footer_title">Navigation</h4>
                 <ul class="center">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="jobs.html">Job Info</a></li>
-                    <li><a href="apply.html">Applying</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="jobs.php">Job Info</a></li>
+                    <li><a href="apply.php">Applying</a></li>
+                    <li><a href="about.php">About</a></li>
                 </ul>
             </section>
         </div>
