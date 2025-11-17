@@ -17,7 +17,24 @@ if (!isset($_SESSION['position']) || $_SESSION['position'] != 'admin') {
 <?php 
 require_once "settings.php"; //connect to settings.php
 
-// Handle form submission to update positiones
+// Handle changes for disabling / enabling accounts
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['is_disabled'])) {
+    foreach ($_POST['is_disabled'] as $email => $state) {
+
+        // Prevent admin from disabling their own account
+        if ($email === $_SESSION['email']) {
+            continue;
+        }
+
+        // Convert text value to number
+        $isDisabled = ($state === 'disabled') ? 1 : 0;
+
+        mysqli_query($conn, 
+            "UPDATE users SET is_disabled='$isDisabled' WHERE email='$email'"
+        );
+    }
+}
+
 // Handle form submission to update positions
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['position'])) {
     foreach ($_POST['position'] as $email => $position) {
@@ -120,6 +137,7 @@ $result = mysqli_query($conn, $query);
                     <th class="sticky-col sticky-head">First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
+                    <th>Account State</th>
                 </tr>
 
             <?php
@@ -155,7 +173,13 @@ $result = mysqli_query($conn, $query);
                 echo "<td>{$row['lastName']}</td>";
                 echo "<td>{$row['email']}</td>";
 
-                echo "</tr>";
+                echo "<td>
+                        <select class='position-dropdown' name='is_disabled[{$row['email']}]'>
+                            <option value='usable' ".($row['is_disabled']=='0'?'selected':'').">Usable</option>
+                            <option value='disabled' ".($row['is_disabled']=='1'?'selected':'').">Disabled</option>
+                        </select>
+                    </td>";
+
             }
             ?>
             </table>

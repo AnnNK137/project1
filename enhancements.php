@@ -41,7 +41,7 @@
                 <p>Manager Registration allows Managers to add new accounts or assign Staff to manage the website and the EOIs Application Table.</p>
                 <p>There are two ways to register new Staff:</p>
                 <p><strong>Assigning roles to existing users:</strong> If a Staff member has already registered on the website using their email, the Manager does not need to create a new account. By visiting the <a href="hr_admin.php">Staff Management Site</a>, the Manager can update the user’s role to 'Staff' or 'Admin'.</p>
-                <p><strong>Manually adding a new Staff account:</strong> If the Staff member has not registered yet, the Manager can use the registration form on the <a href="hr_admin.php">Staff Management Site</a> to enter their details, such as Username, Email, and Password. Accounts created this way are automatically assigned the 'Staff' or 'Admin' role without any additional role changes.</p>
+                <p><strong>Manually adding a new Staff account:</strong> If the Staff member has not registered yet, the Manager can use the registration form on the <a href="register.php">Staff Register Site</a> to enter their details, such as Username, Email, and Password. Accounts created this way are automatically assigned the 'Staff' or 'Admin' role without any additional role changes.</p>
             </div>
         </section>
 
@@ -57,7 +57,7 @@
             <h2 class="title">4. Disable Login after Invalid Attempts</h2>
         <div class="description">
             <p>If a user attempts to log in and fails more than four times, the system will detect the repeated invalid attempts and issue a warning. After the sixth failed attempt, the system will temporarily lock the user’s account for a set duration.</p>
-            <p>The Manager can configure both the number of allowed failed attempts and the lockout duration in the <a href="hr_admin.php">Staff Management Site</a>.</p>
+            <p>The Manager can re-open the disabled account or disable an account at <a href="hr_admin.php">Staff Management Site</a></p>
         </div>
         </section>        
     </div>

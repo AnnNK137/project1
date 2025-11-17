@@ -33,6 +33,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <?php 
             if (isset($_SESSION['position']) && $_SESSION['position'] == 'admin') {
                 echo '<li><a href="hr_admin.php">Staff Management</a></li>';
+                echo '<li><a href="register.php">Staff Register</a></li>';
             }
             ?>
             <li><a href="profile.php">Profile</a></li>

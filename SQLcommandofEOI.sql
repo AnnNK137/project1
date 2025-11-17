@@ -1,4 +1,4 @@
-CREATE TABLE eoi (
+CREATE TABLE eoi ( /*Create EOI Table for applicant*/
     id INT AUTO_INCREMENT PRIMARY KEY,
     job VARCHAR(100) NOT NULL,
     fullname VARCHAR(100) NOT NULL,
@@ -26,6 +26,22 @@ CREATE TABLE eoi (
     relationship VARCHAR(50),
     phonenumber2 VARCHAR(20),
     responsibility TEXT,
+
+    status ENUM('New', 'Current', 'Final') NOT NULL DEFAULT 'New',
     
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE users ( /*Command to create user Table for Management*/
+    hr_id INT AUTO_INCREMENT PRIMARY KEY,
+    firstName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    position ENUM('user', 'staff', 'admin') NOT NULL DEFAULT 'user'
+
+    /*for disabling multiple invalid attempts*/
+    login_attempts INT DEFAULT 0, 
+    is_disabled TINYINT(1) DEFAULT 0;
 );
